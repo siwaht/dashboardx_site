@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
 
     <!-- Primary Meta Tags -->
-    <title>DashboardX - AI Agent Services | Voice, Chat & Avatar Automation Solutions</title>
-    <meta name="title" content="DashboardX - AI Agent Services | Voice, Chat & Avatar Automation Solutions" />
-    <meta name="description" content="Transform your business with intelligent AI agents. Deploy 24/7 voice calling, conversational chat bots, AI avatars & workflow automation. Reduce costs 70%, boost efficiency 10x." />
-    <meta name="keywords" content="AI agents, voice agents, chat agents, AI avatars, conversational AI, business automation, AI automation, virtual agents, intelligent assistants, customer service AI, workflow automation, enterprise AI" />
+    <title>DashboardX - AI Agent Platform | Voice AI, Chat Bots & Workflow Automation</title>
+    <meta name="title" content="DashboardX - AI Agent Platform | Voice AI, Chat Bots & Workflow Automation" />
+    <meta name="description" content="Enterprise AI agent platform with RAG technology. Deploy intelligent voice agents, chat bots, AI avatars & workflow automation. 24/7 availability, 70% cost reduction, 10x efficiency boost. Free consultation available." />
+    <meta name="keywords" content="AI agents, AI agent platform, voice AI agents, chat agents, AI avatars, conversational AI, business automation, RAG retrieval, agentic workflow, virtual agents, intelligent assistants, customer service AI, workflow automation, enterprise AI, AI chatbot, voice automation, LLM agents" />
+    <meta name="category" content="Artificial Intelligence, Business Automation, Enterprise Software" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -136,7 +140,7 @@
     }
     </script>
 
-    <!-- Structured Data - WebPage -->
+    <!-- Structured Data - WebPage with FAQ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -146,13 +150,85 @@
       "publisher": {
         "@type": "Organization",
         "name": "DashboardX"
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is DashboardX?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DashboardX is an enterprise AI agent platform that provides voice calling agents, conversational chat bots, AI avatars, and RAG-powered workflow automation. Our platform offers 24/7 availability, multilingual support, and seamless integration with existing business systems."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the main benefits of using DashboardX AI agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DashboardX AI agents provide 24/7 availability, 10x efficiency improvement, and 70% cost reduction. They handle customer inquiries, support tickets, appointment scheduling, and workflow automation with natural language understanding and multilingual support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is RAG (Retrieval-Augmented Generation)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "RAG (Retrieval-Augmented Generation) is our advanced technology that connects AI agents to your knowledge base, databases, and documents. It enables agents to provide accurate, contextual responses using your actual business data, with source attribution and real-time retrieval visualization."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How quickly can I deploy DashboardX AI agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "DashboardX AI agents can be deployed in hours, not months. Our seamless integration process connects with your CRM, helpdesk, calendar, and business tools quickly. We provide a free consultation to customize the solution for your specific needs."
+            }
+          }
+        ]
       }
     }
     </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dashboardx.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI Agent Services",
+          "item": "https://dashboardx.com#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Features",
+          "item": "https://dashboardx.com#features"
+        }
+      ]
+    }
+    </script>
   </head>
-  <body>
+  <body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Skip to main content for accessibility and SEO -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-purple-600 text-white px-4 py-2 rounded-lg z-[60]">
+      Skip to main content
+    </a>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- AI Assistant Widget -->
     <elevenlabs-convai agent-id="agent_6201k8t1f584etd97mm4r2rjz690"></elevenlabs-convai>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   </body>

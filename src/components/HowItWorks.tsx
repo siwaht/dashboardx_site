@@ -56,7 +56,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section ref={sectionRef} id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-gradient-to-b from-light-primary via-light-secondary to-light-primary dark:from-dark-secondary dark:via-dark-primary dark:to-dark-secondary transition-colors relative overflow-hidden">
+    <section ref={sectionRef} id="services" aria-labelledby="services-heading" itemScope itemType="https://schema.org/Service" className="py-16 md:py-24 bg-gradient-to-b from-light-primary via-light-secondary to-light-primary dark:from-dark-secondary dark:via-dark-primary dark:to-dark-secondary transition-colors relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" style={{ animation: 'float-elegant 15s ease-in-out infinite' }}></div>
         <div className="absolute bottom-20 left-10 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl" style={{ animation: 'float-elegant 12s ease-in-out infinite 3s' }}></div>
@@ -64,10 +64,10 @@ export default function HowItWorks() {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 id="services-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
+          <h2 id="services-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight" itemProp="name">
             Our AI Agent Services
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed" itemProp="description">
             Comprehensive AI solutions designed to automate, enhance, and transform every aspect of your business operations.
           </p>
         </div>
