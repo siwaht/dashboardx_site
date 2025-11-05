@@ -1,4 +1,4 @@
-import { Play, Database, Search, FileText, GitBranch, CheckCircle, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { Play, Brain, Target, Wrench, Zap, Eye, GitBranch, CheckCircle, Sparkles, RefreshCw } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 
 export default function WorkflowAnimation() {
@@ -30,125 +30,167 @@ export default function WorkflowAnimation() {
   }, [hasAnimated]);
 
   const startAnimation = () => {
+    // Input node activates
     setTimeout(() => setActiveNode(0), 300);
 
+    // Input completes, edge to Perception activates
     setTimeout(() => {
       setCompletedNodes([0]);
       setActiveEdges([0]);
     }, 1200);
 
+    // Perception node activates
     setTimeout(() => {
       setCompletedEdges([0]);
       setActiveNode(1);
     }, 1800);
 
+    // Perception completes, edge to Planning activates
     setTimeout(() => {
       setCompletedNodes([0, 1]);
-      setActiveEdges([1, 2]);
+      setActiveEdges([1]);
     }, 2700);
 
+    // Planning node activates
     setTimeout(() => {
-      setCompletedEdges([0, 1, 2]);
+      setCompletedEdges([0, 1]);
       setActiveNode(2);
-      setTimeout(() => setActiveNode(3), 100);
     }, 3300);
 
+    // Planning completes, edge to Tool Selection activates
     setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3]);
-      setActiveEdges([3, 4]);
+      setCompletedNodes([0, 1, 2]);
+      setActiveEdges([2]);
     }, 4200);
 
+    // Tool Selection node activates
     setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4]);
-      setActiveNode(4);
+      setCompletedEdges([0, 1, 2]);
+      setActiveNode(3);
     }, 4800);
 
+    // Tool Selection completes, edge to Action activates
     setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3, 4]);
-      setActiveEdges([5]);
+      setCompletedNodes([0, 1, 2, 3]);
+      setActiveEdges([3]);
     }, 5700);
 
+    // Action Execution node activates
     setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4, 5]);
-      setActiveNode(5);
+      setCompletedEdges([0, 1, 2, 3]);
+      setActiveNode(4);
     }, 6300);
 
+    // Action completes, edge to Observation activates
     setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3, 4, 5]);
-      setActiveEdges([6]);
+      setCompletedNodes([0, 1, 2, 3, 4]);
+      setActiveEdges([4]);
     }, 7200);
 
+    // Observation node activates
     setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4, 5, 6]);
-      setActiveNode(6);
+      setCompletedEdges([0, 1, 2, 3, 4]);
+      setActiveNode(5);
     }, 7800);
 
+    // Observation completes, edge to Decision activates
+    setTimeout(() => {
+      setCompletedNodes([0, 1, 2, 3, 4, 5]);
+      setActiveEdges([5]);
+    }, 8700);
+
+    // Decision node activates
+    setTimeout(() => {
+      setCompletedEdges([0, 1, 2, 3, 4, 5]);
+      setActiveNode(6);
+    }, 9300);
+
+    // Decision completes, edge to Output activates
     setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4, 5, 6]);
+      setActiveEdges([6]);
+    }, 10200);
+
+    // Output node activates
+    setTimeout(() => {
+      setCompletedEdges([0, 1, 2, 3, 4, 5, 6]);
+      setActiveNode(7);
+    }, 10800);
+
+    // All complete
+    setTimeout(() => {
+      setCompletedNodes([0, 1, 2, 3, 4, 5, 6, 7]);
       setActiveNode(-1);
-    }, 8700);
+    }, 11700);
   };
 
   const workflowNodes = [
     {
       icon: Play,
-      label: 'Start',
-      sublabel: 'User Query',
+      label: 'Input',
+      sublabel: 'Task Received',
       x: 8,
       y: 50
     },
     {
+      icon: Brain,
+      label: 'Perception',
+      sublabel: 'Understand Context',
+      x: 20,
+      y: 50
+    },
+    {
+      icon: Target,
+      label: 'Planning',
+      sublabel: 'Strategy & Goals',
+      x: 32,
+      y: 50
+    },
+    {
+      icon: Wrench,
+      label: 'Tool Select',
+      sublabel: 'Choose Actions',
+      x: 44,
+      y: 50
+    },
+    {
+      icon: Zap,
+      label: 'Execute',
+      sublabel: 'Run Actions',
+      x: 56,
+      y: 50
+    },
+    {
+      icon: Eye,
+      label: 'Observe',
+      sublabel: 'Analyze Results',
+      x: 68,
+      y: 50
+    },
+    {
       icon: GitBranch,
-      label: 'Router',
-      sublabel: 'Analyze & Route',
-      x: 23,
-      y: 50
-    },
-    {
-      icon: Database,
-      label: 'SQL Agent',
-      sublabel: 'Query DB',
-      x: 40,
-      y: 20
-    },
-    {
-      icon: FileText,
-      label: 'Doc Agent',
-      sublabel: 'Search Docs',
-      x: 40,
-      y: 80
-    },
-    {
-      icon: Search,
-      label: 'Validator',
-      sublabel: 'Cross-Check',
-      x: 57,
-      y: 50
-    },
-    {
-      icon: Sparkles,
-      label: 'Synthesizer',
-      sublabel: 'Generate Result',
-      x: 74,
+      label: 'Decision',
+      sublabel: 'Continue/Done?',
+      x: 80,
       y: 50
     },
     {
       icon: CheckCircle,
       label: 'Output',
-      sublabel: 'Return Answer',
-      x: 91,
+      sublabel: 'Return Result',
+      x: 92,
       y: 50
     }
   ];
 
   const edges = [
     { from: 0, to: 1, fromY: 50, toY: 50 },
-    { from: 1, to: 2, fromY: 50, toY: 20 },
-    { from: 1, to: 3, fromY: 50, toY: 80 },
-    { from: 2, to: 4, fromY: 20, toY: 50 },
-    { from: 3, to: 4, fromY: 80, toY: 50 },
+    { from: 1, to: 2, fromY: 50, toY: 50 },
+    { from: 2, to: 3, fromY: 50, toY: 50 },
+    { from: 3, to: 4, fromY: 50, toY: 50 },
     { from: 4, to: 5, fromY: 50, toY: 50 },
-    { from: 5, to: 6, fromY: 50, toY: 50 }
+    { from: 5, to: 6, fromY: 50, toY: 50 },
+    { from: 6, to: 7, fromY: 50, toY: 50 }
   ];
 
   const getNodeStatus = (index: number) => {
