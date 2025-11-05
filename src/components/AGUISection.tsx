@@ -35,23 +35,23 @@ export default function AGUISection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16 px-4">
             <h2 id="ag-ui-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-              AG UI Interface
+              RAG Data Retrieval
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-              Our AG UI interface provides a real-time animated graph visualization of your AI's reasoning process.
+              Our advanced Retrieval-Augmented Generation system provides intelligent data access with real-time visualization of your AI's knowledge retrieval process.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-stretch mb-12 md:mb-16">
             <div className="scroll-reveal px-4 lg:px-0">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary">
-                Full Transparency
+                Smart Knowledge Access
               </h3>
               <p className="text-text-light-secondary dark:text-text-dark-secondary mb-6 leading-relaxed">
-                The AG UI interface visualizes your query's journey through your data ecosystem in real-time, providing full transparency into the AI's reasoning process.
+                Our RAG system connects your AI agents to your knowledge base, databases, documents, and APIs, enabling them to provide accurate, contextual responses using your actual business data.
               </p>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                See which sources were accessed, how they connect, and how they contribute to each answer—essential for enterprise decisions and compliance.
+                See which data sources were queried, how information is retrieved and synthesized, and track the complete decision path—ensuring accuracy and compliance.
               </p>
             </div>
 
@@ -63,10 +63,10 @@ export default function AGUISection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-text-light-primary dark:text-text-dark-primary mb-2">
-                      Real-Time Visualization
+                      Real-Time Retrieval
                     </h4>
                     <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                      Watch connections form as AI navigates your data
+                      Watch as AI agents query your knowledge base and retrieve relevant information
                     </p>
                   </div>
                 </div>
@@ -77,10 +77,10 @@ export default function AGUISection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-text-light-primary dark:text-text-dark-primary mb-2">
-                      Agent Decision Path
+                      Semantic Search
                     </h4>
                     <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                      See each reasoning step as agents plan and execute their search strategy
+                      Advanced vector search finds the most relevant information from your documents
                     </p>
                   </div>
                 </div>
@@ -91,10 +91,10 @@ export default function AGUISection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-text-light-primary dark:text-text-dark-primary mb-2">
-                      Interactive Graph
+                      Source Attribution
                     </h4>
                     <p className="text-sm text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                      Click nodes to explore sources, zoom into retrieval chains, and understand agent actions
+                      Every response includes citations showing exactly where information came from
                     </p>
                   </div>
                 </div>

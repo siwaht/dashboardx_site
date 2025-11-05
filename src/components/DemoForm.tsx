@@ -208,10 +208,10 @@ export default function DemoForm() {
                   className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
                 >
                   <option value="">Select a service</option>
-                  <option value="chat-agents">Chat Agents</option>
-                  <option value="voice-agents">Voice Calling Agents</option>
+                  <option value="chat-agents">Chat AI Agents</option>
+                  <option value="voice-agents">Voice Calling AI Agents</option>
                   <option value="ai-avatars">AI Avatars</option>
-                  <option value="workflow-automation">Workflow Automation</option>
+                  <option value="rag-retrieval">RAG Data Retrieval</option>
                   <option value="all-services">All Services</option>
                 </select>
               </div>

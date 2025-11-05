@@ -49,8 +49,8 @@ export default function HowItWorks() {
     },
     {
       icon: Workflow,
-      title: 'Workflow Automation',
-      description: 'End-to-end process automation that connects your tools, streamlines operations, and eliminates repetitive tasks across your entire business.',
+      title: 'RAG Data Retrieval',
+      description: 'Retrieval-Augmented Generation technology that connects your AI agents to your knowledge base, enabling accurate responses powered by your actual business data and documents.',
       gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-mid',
     },
   ];

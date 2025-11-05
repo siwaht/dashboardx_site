@@ -20,14 +20,14 @@ export default function Footer({ onOpenPrivacy }: FooterProps) {
 
             <div className="flex flex-col sm:flex-row items-center gap-6 md:gap-8">
               <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-sm md:text-base">
+                <a href="#services" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
+                  Services
+                </a>
                 <a href="#features" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
                   Features
                 </a>
-                <a href="#how-it-works" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
-                  How It Works
-                </a>
                 <a href="#ag-ui" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
-                  AG UI
+                  RAG Data Retrieval
                 </a>
                 <a href="#demo-form" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
                   Contact
