@@ -172,33 +172,36 @@ export default function WorkflowAnimation() {
             <defs>
               <marker
                 id="arrowhead-active"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
+                markerWidth="3"
+                markerHeight="3"
+                refX="2.5"
+                refY="1.5"
                 orient="auto"
+                markerUnits="strokeWidth"
               >
-                <polygon points="0 0, 10 3, 0 6" fill="#14b8a6" />
+                <polygon points="0 0, 3 1.5, 0 3" fill="#14b8a6" />
               </marker>
               <marker
                 id="arrowhead-completed"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
+                markerWidth="3"
+                markerHeight="3"
+                refX="2.5"
+                refY="1.5"
                 orient="auto"
+                markerUnits="strokeWidth"
               >
-                <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+                <polygon points="0 0, 3 1.5, 0 3" fill="#10b981" />
               </marker>
               <marker
                 id="arrowhead-idle"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
+                markerWidth="3"
+                markerHeight="3"
+                refX="2.5"
+                refY="1.5"
                 orient="auto"
+                markerUnits="strokeWidth"
               >
-                <polygon points="0 0, 10 3, 0 6" fill="#475569" />
+                <polygon points="0 0, 3 1.5, 0 3" fill="#475569" />
               </marker>
             </defs>
 
@@ -207,23 +210,24 @@ export default function WorkflowAnimation() {
               const toNode = workflowNodes[edge.to];
               const status = getEdgeStatus(index);
 
-              // Add offset to start from edge of node
-              const fromX = fromNode.x + 7;
+              // Calculate positions with proper offsets
+              const fromX = fromNode.x + 6;
               const fromY = edge.fromY;
-              const toX = toNode.x - 7;
+              const toX = toNode.x - 6;
               const toY = edge.toY;
 
-              const midX = (fromX + toX) / 2;
-
-              const isCurved = Math.abs(edge.fromY - edge.toY) > 15;
+              const isCurved = Math.abs(fromY - toY) > 15;
 
               let pathD;
               if (isCurved) {
-                // Use cubic bezier for smoother curves
-                const controlOffset = Math.abs(toX - fromX) * 0.4;
-                pathD = `M ${fromX},${fromY} C ${fromX + controlOffset},${fromY} ${toX - controlOffset},${toY} ${toX},${toY}`;
+                // Smooth cubic bezier curve
+                const dx = toX - fromX;
+                const controlX1 = fromX + dx * 0.5;
+                const controlX2 = toX - dx * 0.5;
+                pathD = `M ${fromX} ${fromY} C ${controlX1} ${fromY}, ${controlX2} ${toY}, ${toX} ${toY}`;
               } else {
-                pathD = `M ${fromX},${fromY} L ${toX},${toY}`;
+                // Straight line
+                pathD = `M ${fromX} ${fromY} L ${toX} ${toY}`;
               }
 
               const pathId = `edge-${index}`;
@@ -238,14 +242,15 @@ export default function WorkflowAnimation() {
                     d={pathD}
                     fill="none"
                     stroke={strokeColor}
-                    strokeWidth={status === 'idle' ? '1.5' : '2.5'}
+                    strokeWidth={status === 'idle' ? '0.4' : '0.6'}
                     markerEnd={markerEnd}
                     className={status === 'active' ? 'edge-active' : status === 'completed' ? 'edge-completed' : 'edge-idle'}
                     opacity={status === 'idle' ? '0.3' : '1'}
                     strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
                   />
                   {status === 'active' && (
-                    <circle r="4" fill="#14b8a6" className="flow-particle">
+                    <circle r="0.8" fill="#14b8a6" className="flow-particle">
                       <animateMotion dur="1s" repeatCount="indefinite">
                         <mpath href={`#${pathId}`} />
                       </animateMotion>
