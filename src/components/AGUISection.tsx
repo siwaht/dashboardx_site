@@ -58,7 +58,7 @@ export default function AGUISection() {
             <div className="scroll-reveal bg-light-primary/80 dark:bg-dark-secondary/80 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border-light dark:border-border-dark shadow-elevation-3 transition-all duration-300 relative overflow-hidden mx-2 sm:mx-4 lg:mx-0" style={{ animationDelay: '0.2s' }}>
               <div className="space-y-4 sm:space-y-5 md:space-y-6 relative z-10">
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-blue-start to-brand-blue-mid flex items-center justify-center flex-shrink-0 shadow-elevation-2" aria-label="Eye icon for real-time visualization">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-indigo to-brand-violet flex items-center justify-center flex-shrink-0 shadow-elevation-2" aria-label="Eye icon for real-time visualization">
                     <Eye className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>
@@ -72,7 +72,7 @@ export default function AGUISection() {
                 </div>
 
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-teal-start to-brand-teal-mid flex items-center justify-center flex-shrink-0 shadow-elevation-2" aria-label="Git branch icon for agent decision path">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-cyan to-brand-teal flex items-center justify-center flex-shrink-0 shadow-elevation-2" aria-label="Git branch icon for agent decision path">
                     <GitBranch className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>
@@ -86,7 +86,7 @@ export default function AGUISection() {
                 </div>
 
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-emerald-start to-brand-emerald-mid flex items-center justify-center flex-shrink-0 shadow-elevation-2" aria-label="Shield icon for interactive graph">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-brand-teal to-brand-emerald flex items-center justify-center flex-shrink-0 shadow-elevation-2" aria-label="Shield icon for interactive graph">
                     <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />
                   </div>
                   <div>

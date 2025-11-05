@@ -73,13 +73,13 @@ export default function DemoForm() {
     <section ref={sectionRef} id="demo-form" aria-labelledby="demo-form-heading" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
 
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-4 sm:p-6 md:p-10 lg:p-16 rounded-2xl sm:rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-3 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-4 sm:p-6 md:p-10 lg:p-16 rounded-2xl sm:rounded-3xl border border-brand-slate-200/30 dark:border-brand-slate-700/30 shadow-elevation-3 relative overflow-hidden">
 
           <div className="relative z-10">
             <div className="text-center mb-6 sm:mb-8 md:mb-10">
-              <div className="inline-flex items-center gap-2 sm:gap-3 bg-light-secondary/90 dark:bg-dark-secondary/90 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-brand-emerald-mid/30 mb-6 sm:mb-8 shadow-elevation-2">
-                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-brand-emerald-mid" />
-                <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-mid via-brand-teal-mid to-brand-emerald-mid">
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-light-secondary/90 dark:bg-dark-secondary/90 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-brand-purple/30 mb-6 sm:mb-8 shadow-elevation-2">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-brand-purple" />
+                <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo via-brand-purple to-brand-pink">
                   Start Your AI Transformation
                 </span>
               </div>
@@ -134,7 +134,7 @@ export default function DemoForm() {
                   name="name"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 min-h-[44px]"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 min-h-[44px]"
                   placeholder="John Doe"
                 />
               </div>
@@ -152,7 +152,7 @@ export default function DemoForm() {
                   name="email"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
                   placeholder="john@company.com"
                 />
               </div>
@@ -170,7 +170,7 @@ export default function DemoForm() {
                   name="company"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
                   placeholder="Acme Inc."
                 />
               </div>
@@ -188,7 +188,7 @@ export default function DemoForm() {
                   name="job_title"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
                   placeholder="Product Manager"
                 />
               </div>
@@ -205,7 +205,7 @@ export default function DemoForm() {
                   name="service_interest"
                   required
                   disabled={isSubmitting}
-                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
+                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
                 >
                   <option value="">Select a service</option>
                   <option value="chat-agents">Chat AI Agents</option>

@@ -34,48 +34,48 @@ export default function UseCases() {
       industry: 'Customer Support',
       title: 'Support Automation',
       subtitle: 'Instant ticket resolution',
-      gradient: 'from-brand-blue-start via-brand-blue-mid to-brand-teal-start',
-      borderColor: 'brand-blue-mid',
+      gradient: 'from-brand-indigo via-brand-violet to-brand-purple',
+      borderColor: 'brand-purple',
     },
     {
       icon: ShoppingCart,
       industry: 'E-Commerce',
       title: 'Sales Assistant',
       subtitle: 'Product recommendations',
-      gradient: 'from-brand-teal-mid via-brand-emerald-start to-brand-emerald-mid',
-      borderColor: 'brand-emerald-mid',
+      gradient: 'from-brand-pink via-brand-rose to-brand-orange',
+      borderColor: 'brand-pink',
     },
     {
       icon: Calendar,
       industry: 'Scheduling',
       title: 'Appointment Booking',
       subtitle: 'Automated scheduling',
-      gradient: 'from-brand-amber-start via-brand-coral-start to-brand-coral-mid',
-      borderColor: 'brand-coral-mid',
+      gradient: 'from-brand-blue via-brand-cyan to-brand-teal',
+      borderColor: 'brand-blue',
     },
     {
       icon: HelpCircle,
       industry: 'Knowledge Base',
       title: 'FAQ Automation',
       subtitle: 'Instant answers 24/7',
-      gradient: 'from-brand-teal-start via-brand-teal-mid to-brand-emerald-start',
-      borderColor: 'brand-teal-mid',
+      gradient: 'from-brand-teal via-brand-emerald to-brand-amber',
+      borderColor: 'brand-teal',
     },
     {
       icon: Users,
       industry: 'Lead Generation',
       title: 'Qualification',
       subtitle: 'Smart lead scoring',
-      gradient: 'from-brand-blue-mid via-brand-teal-start to-brand-emerald-start',
-      borderColor: 'brand-blue-mid',
+      gradient: 'from-brand-violet via-brand-purple to-brand-pink',
+      borderColor: 'brand-violet',
     },
     {
       icon: Building2,
       industry: 'Enterprise',
       title: 'Internal Support',
       subtitle: 'Employee assistance',
-      gradient: 'from-brand-emerald-start via-brand-teal-mid to-brand-blue-start',
-      borderColor: 'brand-emerald-mid',
+      gradient: 'from-brand-cyan via-brand-teal to-brand-emerald',
+      borderColor: 'brand-cyan',
     },
   ];
 
@@ -108,7 +108,7 @@ export default function UseCases() {
                 </div>
 
                 <div className="mb-3 md:mb-4">
-                  <span className="inline-block px-3 md:px-4 py-1.5 md:py-2 bg-light-secondary/80 dark:bg-dark-secondary/80 text-text-light-primary dark:text-text-dark-primary text-xs font-bold rounded-full border border-brand-slate-light/40 dark:border-brand-slate/40 shadow-elevation-1">
+                  <span className="inline-block px-3 md:px-4 py-1.5 md:py-2 bg-light-secondary/80 dark:bg-dark-secondary/80 text-text-light-primary dark:text-text-dark-primary text-xs font-bold rounded-full border border-brand-slate-200/40 dark:border-brand-slate-700/40 shadow-elevation-1">
                     {useCase.industry}
                   </span>
                 </div>
