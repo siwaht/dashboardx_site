@@ -11,7 +11,7 @@ export default function Footer({ onOpenPrivacy }: FooterProps) {
     <footer className="bg-gradient-to-b from-light-secondary to-light-primary dark:from-dark-secondary dark:to-dark-primary border-t-2 border-brand-slate-light/30 dark:border-brand-slate/30 transition-all duration-300 relative overflow-hidden">
       <div className="absolute inset-0 bg-mesh-gradient-alt pointer-events-none opacity-20" />
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-brand-teal-mid/10 to-brand-emerald-mid/8 rounded-full blur-3xl" style={{ animation: 'pulse-glow 15s ease-in-out infinite' }} />
-      <div className="container mx-auto px-4 md:px-8 py-16 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 py-16 relative z-10">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <h3 className="font-display text-2xl md:text-3xl font-bold text-gradient hover:scale-110 transition-all duration-500 cursor-pointer">

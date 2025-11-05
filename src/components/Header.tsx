@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 py-3 sm:py-4 md:py-5 lg:py-7 bg-light-primary/95 dark:bg-dark-primary/95 backdrop-blur-xl border-b border-brand-slate-light/20 dark:border-brand-slate/20 transition-all duration-300 shadow-elevation-1">
-      <div className="container mx-auto px-3 sm:px-4 md:px-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <nav className="flex justify-between items-center">
           <a
             href="#"

@@ -83,7 +83,7 @@ export default function UseCases() {
     <section ref={sectionRef} id="use-cases" aria-labelledby="use-cases-heading" className="py-16 md:py-24 bg-light-primary dark:bg-dark-secondary transition-colors relative overflow-hidden">
       <div className="absolute inset-0 bg-mesh-gradient-alt pointer-events-none opacity-10" />
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 id="use-cases-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
             Real-World Applications

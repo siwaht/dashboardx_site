@@ -31,7 +31,7 @@ export default function AGUISection() {
   return (
     <section ref={sectionRef} id="ag-ui" aria-labelledby="ag-ui-heading" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-secondary dark:bg-dark-primary transition-colors relative overflow-hidden">
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-2 sm:px-4">
             <h2 id="ag-ui-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">

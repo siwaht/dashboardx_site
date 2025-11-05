@@ -72,7 +72,7 @@ export default function DemoForm() {
   return (
     <section ref={sectionRef} id="demo-form" aria-labelledby="demo-form-heading" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-4 sm:p-6 md:p-10 lg:p-16 rounded-2xl sm:rounded-3xl border border-brand-slate-200/30 dark:border-brand-slate-700/30 shadow-elevation-3 relative overflow-hidden">
 
           <div className="relative z-10">

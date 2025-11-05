@@ -62,7 +62,7 @@ export default function HowItWorks() {
         <div className="absolute bottom-20 left-10 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl" style={{ animation: 'float-elegant 12s ease-in-out infinite 3s' }}></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 id="services-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight" itemProp="name">
             Our AI Agent Services
