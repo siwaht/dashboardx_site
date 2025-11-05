@@ -207,18 +207,24 @@ export default function WorkflowAnimation() {
               const toNode = workflowNodes[edge.to];
               const status = getEdgeStatus(index);
 
-              const fromX = fromNode.x + 5;
+              // Add offset to start from edge of node
+              const fromX = fromNode.x + 7;
               const fromY = edge.fromY;
-              const toX = toNode.x - 5;
+              const toX = toNode.x - 7;
               const toY = edge.toY;
 
-              const midX = (fromNode.x + toNode.x) / 2;
-              const midY = (edge.fromY + edge.toY) / 2;
+              const midX = (fromX + toX) / 2;
 
-              const isCurved = Math.abs(edge.fromY - edge.toY) > 10;
-              const pathD = isCurved
-                ? `M ${fromX} ${fromY} Q ${midX} ${fromY}, ${midX} ${midY} T ${toX} ${toY}`
-                : `M ${fromX} ${fromY} L ${toX} ${toY}`;
+              const isCurved = Math.abs(edge.fromY - edge.toY) > 15;
+
+              let pathD;
+              if (isCurved) {
+                // Use cubic bezier for smoother curves
+                const controlOffset = Math.abs(toX - fromX) * 0.4;
+                pathD = `M ${fromX},${fromY} C ${fromX + controlOffset},${fromY} ${toX - controlOffset},${toY} ${toX},${toY}`;
+              } else {
+                pathD = `M ${fromX},${fromY} L ${toX},${toY}`;
+              }
 
               const pathId = `edge-${index}`;
 
@@ -232,14 +238,15 @@ export default function WorkflowAnimation() {
                     d={pathD}
                     fill="none"
                     stroke={strokeColor}
-                    strokeWidth={status === 'idle' ? '2' : '3'}
+                    strokeWidth={status === 'idle' ? '1.5' : '2.5'}
                     markerEnd={markerEnd}
                     className={status === 'active' ? 'edge-active' : status === 'completed' ? 'edge-completed' : 'edge-idle'}
                     opacity={status === 'idle' ? '0.3' : '1'}
+                    strokeLinecap="round"
                   />
                   {status === 'active' && (
-                    <circle r="5" fill="#14b8a6" className="flow-particle">
-                      <animateMotion dur="1.2s" repeatCount="indefinite">
+                    <circle r="4" fill="#14b8a6" className="flow-particle">
+                      <animateMotion dur="1s" repeatCount="indefinite">
                         <mpath href={`#${pathId}`} />
                       </animateMotion>
                     </circle>
