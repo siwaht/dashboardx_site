@@ -30,9 +30,9 @@ export default function WorkflowSection() {
 
   return (
     <section ref={sectionRef} id="workflow" aria-labelledby="workflow-heading" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-5 md:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 sm:mb-10 md:mb-12 px-2 sm:px-4">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 px-2 sm:px-3 md:px-4">
             <h2 id="workflow-heading" className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
               AI Agent Workflow Architecture
             </h2>
