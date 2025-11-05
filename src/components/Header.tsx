@@ -13,9 +13,9 @@ export default function Header() {
           <a
             href="#"
             className="font-display text-2xl md:text-3xl font-bold text-gradient transition-all hover:scale-110 inline-block duration-500"
-            aria-label="AgentX home"
+            aria-label="DashboardX home"
           >
-            AgentX
+            DashboardX
           </a>
 
           <ul className="hidden md:flex gap-6 lg:gap-8 items-center">

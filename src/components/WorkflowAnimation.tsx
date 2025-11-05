@@ -1,4 +1,4 @@
-import { Play, Database, Search, FileText, GitBranch, CheckCircle, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { Play, Database, Search, FileText, GitBranch, CheckCircle, Sparkles, Zap } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 
 export default function WorkflowAnimation() {
@@ -184,7 +184,6 @@ export default function WorkflowAnimation() {
               let pathD;
               if (isCurved) {
                 const dx = toX - fromX;
-                const dy = toY - fromY;
                 const controlDist = Math.abs(dx) * 0.6;
 
                 pathD = `M ${fromX},${fromY} C ${fromX + controlDist},${fromY} ${toX - controlDist},${toY} ${toX},${toY}`;
