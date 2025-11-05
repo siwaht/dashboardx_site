@@ -39,7 +39,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="scroll-reveal text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6 md:mb-8 tracking-tight" style={{ animationDelay: '0.1s' }}>
+          <h1 className="scroll-reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6 md:mb-8 tracking-tight" style={{ animationDelay: '0.1s' }}>
             <span className="text-gradient block mb-2">
               Intelligent AI Agents
             </span>
@@ -48,7 +48,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="scroll-reveal text-base sm:text-lg md:text-xl lg:text-2xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed px-4 font-medium" style={{ animationDelay: '0.2s' }}>
+          <p className="scroll-reveal text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed px-4 font-medium" style={{ animationDelay: '0.2s' }}>
             Transform your business with AI voice agents, conversational chat bots, AI avatars, and complete workflow automation. Available 24/7, multilingual, and seamlessly integrated with your systems.
           </p>
 
@@ -69,22 +69,22 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="scroll-reveal grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-10 md:mb-16 px-4" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center gap-2 sm:gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="24/7 Availability">
+          <div className="scroll-reveal grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto mb-10 md:mb-16 px-4" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-5 md:p-6 rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="24/7 Availability">
               <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-brand-blue-mid flex-shrink-0" aria-hidden="true" />
               <div className="text-left">
                 <div className="text-xl sm:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">24/7</div>
                 <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary">Availability</div>
               </div>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="10x Efficiency Boost">
+            <div className="flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-5 md:p-6 rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="10x Efficiency Boost">
               <Bot className="w-6 h-6 sm:w-7 sm:h-7 text-brand-emerald-mid flex-shrink-0" aria-hidden="true" />
               <div className="text-left">
                 <div className="text-xl sm:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">10x</div>
                 <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary">Efficiency</div>
               </div>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="70% Cost Reduction">
+            <div className="flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-5 md:p-6 rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="70% Cost Reduction">
               <TrendingDown className="w-6 h-6 sm:w-7 sm:h-7 text-brand-teal-mid flex-shrink-0" aria-hidden="true" />
               <div className="text-left">
                 <div className="text-xl sm:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">70%</div>

@@ -60,29 +60,29 @@ export default function HowItWorks() {
       <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-mid/3 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-16 px-4">
-          <h2 id="services-heading" className="font-display text-4xl md:text-5xl font-bold mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 id="services-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
             Our AI Agent Services
           </h2>
-          <p className="text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
             Comprehensive AI solutions designed to automate, enhance, and transform every aspect of your business operations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
           {services.map((service, index) => (
             <div key={index} className="scroll-reveal relative">
-              <div className="relative bg-light-secondary/90 dark:bg-dark-primary/90 p-8 md:p-10 rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid dark:hover:border-brand-emerald-mid transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 h-full">
+              <div className="relative bg-light-secondary/90 dark:bg-dark-primary/90 p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid dark:hover:border-brand-emerald-mid transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 h-full">
                 <div className="flex items-center justify-center mb-6">
                   <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-elevation-3 border-4 border-white/30`}>
                     <service.icon className="w-10 h-10 text-white drop-shadow-lg" />
                   </div>
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-text-light-primary dark:text-text-dark-primary text-center">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-text-light-primary dark:text-text-dark-primary text-center">
                   {service.title}
                 </h3>
-                <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-center text-base md:text-lg font-medium">
+                <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-center text-sm sm:text-base md:text-lg font-medium">
                   {service.description}
                 </p>
               </div>

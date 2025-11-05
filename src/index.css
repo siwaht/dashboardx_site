@@ -14,10 +14,31 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   * {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    html {
+      scroll-padding-top: 70px;
+    }
   }
 
   @keyframes float {
@@ -250,6 +271,12 @@
 .scroll-reveal.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .scroll-reveal {
+    transform: translateY(20px);
+  }
 }
 
 .hover-lift {

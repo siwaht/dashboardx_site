@@ -84,20 +84,20 @@ export default function UseCases() {
       <div className="absolute inset-0 bg-mesh-gradient-alt pointer-events-none opacity-10" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center mb-16 px-4">
-          <h2 id="use-cases-heading" className="font-display text-4xl md:text-5xl font-bold mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 id="use-cases-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
             Real-World Applications
           </h2>
-          <p className="text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
             Transform every customer touchpoint with intelligent automation across your business.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto px-4">
           {cases.map((useCase, index) => (
             <div
               key={index}
-              className="scroll-reveal group relative bg-light-primary/95 dark:bg-dark-primary/95 p-6 md:p-8 rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-${useCase.borderColor} dark:hover:border-${useCase.borderColor} transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 aspect-square flex flex-col items-center justify-center text-center"
+              className="scroll-reveal group relative bg-light-primary/95 dark:bg-dark-primary/95 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid dark:hover:border-brand-emerald-mid transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 aspect-square flex flex-col items-center justify-center text-center"
             >
 
               <div className="relative z-10 flex flex-col items-center justify-center">
@@ -111,7 +111,7 @@ export default function UseCases() {
                   </span>
                 </div>
 
-                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-text-light-primary dark:text-text-dark-primary mb-2">
                   {useCase.title}
                 </h3>
 
