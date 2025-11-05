@@ -277,6 +277,17 @@
   .scroll-reveal {
     transform: translateY(20px);
   }
+
+  /* Improve mobile text readability */
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Prevent horizontal overflow */
+  .container {
+    max-width: 100%;
+  }
 }
 
 .hover-lift {

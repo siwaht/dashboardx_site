@@ -165,8 +165,8 @@ export default function WorkflowAnimation() {
 
   return (
     <div ref={sectionRef} className="w-full max-w-7xl mx-auto mt-8 md:mt-12 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-700/50 rounded-2xl shadow-elevation-2 overflow-hidden">
-      <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] p-4 sm:p-6 md:p-8">
-        <div className="relative w-full h-full" style={{ transform: 'scale(1)', transformOrigin: 'center center' }}>
+      <div className="relative w-full h-[240px] xs:h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] p-3 sm:p-4 md:p-6 lg:p-8">
+        <div className="relative w-full h-full" style={{ transform: 'scale(0.95)', transformOrigin: 'center center' }}>
 
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
             {edges.map((edge, index) => {
@@ -235,7 +235,7 @@ export default function WorkflowAnimation() {
               >
                 <div className="flex flex-col items-center">
                   <div
-                    className={`relative bg-slate-800 rounded-lg transition-all duration-300 flex flex-col items-center justify-center min-w-[90px] ${
+                    className={`relative bg-slate-800 rounded-lg transition-all duration-300 flex flex-col items-center justify-center min-w-[70px] sm:min-w-[80px] md:min-w-[90px] ${
                       status === 'active'
                         ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50'
                         : status === 'completed'
@@ -243,37 +243,37 @@ export default function WorkflowAnimation() {
                         : 'border-2 border-slate-600'
                     }`}
                     style={{
-                      padding: '12px 16px'
+                      padding: '8px 10px'
                     }}
                   >
-                    <div className={`mb-1.5 ${
+                    <div className={`mb-1 sm:mb-1.5 ${
                       status === 'active' ? 'text-cyan-400' : status === 'completed' ? 'text-emerald-400' : 'text-slate-400'
                     }`}>
-                      <node.icon className="w-6 h-6" strokeWidth={2.5} />
+                      <node.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" strokeWidth={2.5} />
                     </div>
 
-                    <div className={`text-xs font-bold mb-0.5 ${
+                    <div className={`text-[9px] sm:text-[10px] md:text-xs font-bold mb-0.5 ${
                       status === 'active' ? 'text-cyan-300' : status === 'completed' ? 'text-emerald-300' : 'text-slate-400'
                     }`}>
                       {node.label}
                     </div>
 
-                    <div className="text-[10px] text-slate-500 whitespace-nowrap">
+                    <div className="text-[8px] sm:text-[9px] md:text-[10px] text-slate-500 whitespace-nowrap hidden sm:block">
                       {node.sublabel}
                     </div>
 
                     {status === 'active' && (
                       <>
                         <div className="absolute inset-0 rounded-lg border-2 border-cyan-400 animate-ping opacity-75"></div>
-                        <div className="absolute -top-1.5 -right-1.5 flex items-center gap-1 bg-cyan-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
-                          <Zap className="w-2.5 h-2.5" />
+                        <div className="absolute -top-1 -right-1 sm:-top-1.5 sm:-right-1.5 flex items-center gap-0.5 sm:gap-1 bg-cyan-500 text-white text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded-full">
+                          <Zap className="w-2 h-2 sm:w-2.5 sm:h-2.5" />
                         </div>
                       </>
                     )}
 
                     {status === 'completed' && (
-                      <div className="absolute -top-1.5 -right-1.5 bg-emerald-500 rounded-full p-0.5">
-                        <CheckCircle className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                      <div className="absolute -top-1 -right-1 sm:-top-1.5 sm:-right-1.5 bg-emerald-500 rounded-full p-0.5">
+                        <CheckCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" strokeWidth={3} />
                       </div>
                     )}
                   </div>
