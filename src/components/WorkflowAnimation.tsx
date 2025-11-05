@@ -168,40 +168,37 @@ export default function WorkflowAnimation() {
       <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] p-4 sm:p-6 md:p-8">
         <div className="relative w-full h-full" style={{ transform: 'scale(1)', transformOrigin: 'center center' }}>
 
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
             <defs>
               <marker
                 id="arrowhead-active"
-                markerWidth="3"
-                markerHeight="3"
-                refX="2.5"
-                refY="1.5"
+                markerWidth="8"
+                markerHeight="8"
+                refX="7"
+                refY="4"
                 orient="auto"
-                markerUnits="strokeWidth"
               >
-                <polygon points="0 0, 3 1.5, 0 3" fill="#14b8a6" />
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#14b8a6" />
               </marker>
               <marker
                 id="arrowhead-completed"
-                markerWidth="3"
-                markerHeight="3"
-                refX="2.5"
-                refY="1.5"
+                markerWidth="8"
+                markerHeight="8"
+                refX="7"
+                refY="4"
                 orient="auto"
-                markerUnits="strokeWidth"
               >
-                <polygon points="0 0, 3 1.5, 0 3" fill="#10b981" />
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#10b981" />
               </marker>
               <marker
                 id="arrowhead-idle"
-                markerWidth="3"
-                markerHeight="3"
-                refX="2.5"
-                refY="1.5"
+                markerWidth="8"
+                markerHeight="8"
+                refX="7"
+                refY="4"
                 orient="auto"
-                markerUnits="strokeWidth"
               >
-                <polygon points="0 0, 3 1.5, 0 3" fill="#475569" />
+                <path d="M 0 0 L 8 4 L 0 8 z" fill="#475569" />
               </marker>
             </defs>
 
@@ -210,28 +207,25 @@ export default function WorkflowAnimation() {
               const toNode = workflowNodes[edge.to];
               const status = getEdgeStatus(index);
 
-              // Calculate positions with proper offsets
-              const fromX = fromNode.x + 6;
+              const fromX = fromNode.x + 4.5;
               const fromY = edge.fromY;
-              const toX = toNode.x - 6;
+              const toX = toNode.x - 4.5;
               const toY = edge.toY;
 
-              const isCurved = Math.abs(fromY - toY) > 15;
+              const isCurved = Math.abs(fromY - toY) > 10;
 
               let pathD;
               if (isCurved) {
-                // Smooth cubic bezier curve
                 const dx = toX - fromX;
-                const controlX1 = fromX + dx * 0.5;
-                const controlX2 = toX - dx * 0.5;
-                pathD = `M ${fromX} ${fromY} C ${controlX1} ${fromY}, ${controlX2} ${toY}, ${toX} ${toY}`;
+                const dy = toY - fromY;
+                const controlDist = Math.abs(dx) * 0.6;
+
+                pathD = `M ${fromX},${fromY} C ${fromX + controlDist},${fromY} ${toX - controlDist},${toY} ${toX},${toY}`;
               } else {
-                // Straight line
-                pathD = `M ${fromX} ${fromY} L ${toX} ${toY}`;
+                pathD = `M ${fromX},${fromY} L ${toX},${toY}`;
               }
 
               const pathId = `edge-${index}`;
-
               const strokeColor = status === 'completed' ? '#10b981' : status === 'active' ? '#14b8a6' : '#475569';
               const markerEnd = status === 'completed' ? 'url(#arrowhead-completed)' : status === 'active' ? 'url(#arrowhead-active)' : 'url(#arrowhead-idle)';
 
@@ -242,16 +236,14 @@ export default function WorkflowAnimation() {
                     d={pathD}
                     fill="none"
                     stroke={strokeColor}
-                    strokeWidth={status === 'idle' ? '0.4' : '0.6'}
+                    strokeWidth={status === 'idle' ? '0.3' : '0.5'}
                     markerEnd={markerEnd}
-                    className={status === 'active' ? 'edge-active' : status === 'completed' ? 'edge-completed' : 'edge-idle'}
-                    opacity={status === 'idle' ? '0.3' : '1'}
+                    opacity={status === 'idle' ? '0.3' : '0.9'}
                     strokeLinecap="round"
-                    vectorEffect="non-scaling-stroke"
                   />
                   {status === 'active' && (
-                    <circle r="0.8" fill="#14b8a6" className="flow-particle">
-                      <animateMotion dur="1s" repeatCount="indefinite">
+                    <circle r="0.6" fill="#14b8a6">
+                      <animateMotion dur="1.2s" repeatCount="indefinite">
                         <mpath href={`#${pathId}`} />
                       </animateMotion>
                     </circle>
