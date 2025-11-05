@@ -186,6 +186,8 @@
     background-clip: text;
     animation: gradient-shift 10s ease infinite;
     color: #6366F1;
+    display: inline-block;
+    padding-bottom: 0.1em;
   }
 
   .light .text-gradient {
@@ -196,6 +198,8 @@
     background-clip: text;
     animation: gradient-shift 10s ease infinite;
     color: #4F46E5;
+    display: inline-block;
+    padding-bottom: 0.1em;
   }
 
   .text-gradient-purple {

@@ -45,8 +45,8 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="scroll-reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.2] mb-4 sm:mb-6 md:mb-8 tracking-tight px-4 sm:px-6 md:px-8 overflow-visible" style={{ animationDelay: '0.1s' }}>
-            <span className="text-gradient block mb-1.5 sm:mb-2 overflow-visible">
+          <h1 className="scroll-reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.35] mb-4 sm:mb-6 md:mb-8 tracking-tight px-4 sm:px-6 md:px-8" style={{ animationDelay: '0.1s' }}>
+            <span className="text-gradient inline-block mb-2 sm:mb-3 pb-1">
               Intelligent AI Agents
             </span>
             <span className="text-text-light-primary dark:text-text-dark-primary block">
