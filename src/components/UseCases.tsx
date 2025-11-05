@@ -97,12 +97,14 @@ export default function UseCases() {
           {cases.map((useCase, index) => (
             <div
               key={index}
-              className="scroll-reveal group relative bg-light-primary/95 dark:bg-dark-primary/95 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid dark:hover:border-brand-emerald-mid transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 aspect-square flex flex-col items-center justify-center text-center"
+              className="scroll-reveal group relative bg-gradient-to-br from-light-primary/95 via-light-secondary/60 to-light-primary/95 dark:from-dark-primary/95 dark:via-dark-secondary/60 dark:to-dark-primary/95 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-purple-500/20 dark:border-pink-500/20 hover:border-purple-500/50 dark:hover:border-pink-500/50 transition-all duration-500 shadow-lg shadow-purple-500/10 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-2 hover:scale-105 aspect-square flex flex-col items-center justify-center text-center overflow-hidden"
             >
 
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
               <div className="relative z-10 flex flex-col items-center justify-center">
-                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${useCase.gradient} flex items-center justify-center mb-4 md:mb-6 shadow-elevation-2 transition-all duration-300 border-2 border-white/30`}>
-                  <useCase.icon className="w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-lg" />
+                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${useCase.gradient} flex items-center justify-center mb-4 md:mb-6 shadow-elevation-2 transition-all duration-500 border-2 border-white/30 group-hover:scale-110 group-hover:rotate-6`}>
+                  <useCase.icon className="w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-lg group-hover:scale-110 transition-transform duration-500" />
                 </div>
 
                 <div className="mb-3 md:mb-4">

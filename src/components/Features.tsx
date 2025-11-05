@@ -97,11 +97,11 @@ export default function Features() {
           {primaryFeatures.map((feature, index) => (
             <div
               key={index}
-              className="scroll-reveal relative bg-light-primary/95 dark:bg-dark-primary/95 p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid dark:hover:border-brand-emerald-mid transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 h-full"
+              className="scroll-reveal elegant-card relative bg-gradient-to-br from-light-primary/95 via-light-secondary/50 to-light-primary/95 dark:from-dark-primary/95 dark:via-dark-secondary/50 dark:to-dark-primary/95 p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-purple-500/20 dark:border-pink-500/20 hover:border-purple-500/40 dark:hover:border-pink-500/40 transition-all duration-500 shadow-lg shadow-purple-500/10 hover:shadow-2xl hover:shadow-purple-500/30 h-full group"
             >
               <div className="relative z-10">
-                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-8 shadow-elevation-3 border-2 border-white/20`}>
-                  <feature.icon className="w-10 h-10 text-white drop-shadow-lg" />
+                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-8 shadow-elevation-3 border-2 border-white/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                  <feature.icon className="w-10 h-10 text-white drop-shadow-lg group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-5 text-text-light-primary dark:text-text-dark-primary">
                   {feature.title}

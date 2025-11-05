@@ -220,7 +220,7 @@ export default function DemoForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-ripple w-full bg-gradient-brand text-white py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:-translate-y-1 sm:hover:-translate-y-2 hover:scale-[1.02] sm:hover:scale-105 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 shadow-elevation-4 relative overflow-hidden group border-2 border-white/20"
+                  className="btn-ripple w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 shadow-2xl shadow-purple-500/40 hover:shadow-purple-500/60 relative overflow-hidden group border-2 border-white/30 shimmer-effect"
                 >
                   <span className="relative z-10">
                     {isSubmitting ? (
