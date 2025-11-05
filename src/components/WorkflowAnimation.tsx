@@ -169,39 +169,6 @@ export default function WorkflowAnimation() {
         <div className="relative w-full h-full" style={{ transform: 'scale(1)', transformOrigin: 'center center' }}>
 
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
-            <defs>
-              <marker
-                id="arrowhead-active"
-                markerWidth="8"
-                markerHeight="8"
-                refX="7"
-                refY="4"
-                orient="auto"
-              >
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#14b8a6" />
-              </marker>
-              <marker
-                id="arrowhead-completed"
-                markerWidth="8"
-                markerHeight="8"
-                refX="7"
-                refY="4"
-                orient="auto"
-              >
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#10b981" />
-              </marker>
-              <marker
-                id="arrowhead-idle"
-                markerWidth="8"
-                markerHeight="8"
-                refX="7"
-                refY="4"
-                orient="auto"
-              >
-                <path d="M 0 0 L 8 4 L 0 8 z" fill="#475569" />
-              </marker>
-            </defs>
-
             {edges.map((edge, index) => {
               const fromNode = workflowNodes[edge.from];
               const toNode = workflowNodes[edge.to];
@@ -227,7 +194,6 @@ export default function WorkflowAnimation() {
 
               const pathId = `edge-${index}`;
               const strokeColor = status === 'completed' ? '#10b981' : status === 'active' ? '#14b8a6' : '#475569';
-              const markerEnd = status === 'completed' ? 'url(#arrowhead-completed)' : status === 'active' ? 'url(#arrowhead-active)' : 'url(#arrowhead-idle)';
 
               return (
                 <g key={index}>
@@ -237,7 +203,6 @@ export default function WorkflowAnimation() {
                     fill="none"
                     stroke={strokeColor}
                     strokeWidth={status === 'idle' ? '0.3' : '0.5'}
-                    markerEnd={markerEnd}
                     opacity={status === 'idle' ? '0.3' : '0.9'}
                     strokeLinecap="round"
                   />
