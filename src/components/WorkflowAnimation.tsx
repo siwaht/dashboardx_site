@@ -168,7 +168,7 @@ export default function WorkflowAnimation() {
       <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] p-4 sm:p-6 md:p-8">
         <div className="relative w-full h-full" style={{ transform: 'scale(1)', transformOrigin: 'center center' }}>
 
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" style={{ zIndex: 1 }}>
             <defs>
               <marker
                 id="arrowhead-active"
@@ -207,16 +207,17 @@ export default function WorkflowAnimation() {
               const toNode = workflowNodes[edge.to];
               const status = getEdgeStatus(index);
 
-              const fromX = `${fromNode.x + 5}%`;
-              const fromY = `${edge.fromY}%`;
-              const toX = `${toNode.x - 5}%`;
-              const toY = `${edge.toY}%`;
+              const fromX = fromNode.x + 5;
+              const fromY = edge.fromY;
+              const toX = toNode.x - 5;
+              const toY = edge.toY;
 
-              const midX = `${(fromNode.x + toNode.x) / 2}%`;
+              const midX = (fromNode.x + toNode.x) / 2;
+              const midY = (edge.fromY + edge.toY) / 2;
 
               const isCurved = Math.abs(edge.fromY - edge.toY) > 10;
               const pathD = isCurved
-                ? `M ${fromX} ${fromY} Q ${midX} ${fromY}, ${midX} ${(edge.fromY + edge.toY) / 2}% T ${toX} ${toY}`
+                ? `M ${fromX} ${fromY} Q ${midX} ${fromY}, ${midX} ${midY} T ${toX} ${toY}`
                 : `M ${fromX} ${fromY} L ${toX} ${toY}`;
 
               const pathId = `edge-${index}`;
