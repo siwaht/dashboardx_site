@@ -36,8 +36,8 @@ export default function Hero() {
         <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" style={{ animation: 'float-elegant 12s ease-in-out infinite 4s' }}></div>
       </div>
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto overflow-visible">
           <div className="scroll-reveal inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 backdrop-blur-md px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full border border-purple-500/30 dark:border-pink-500/30 mb-4 sm:mb-6 md:mb-8 shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-pink-500/30 hover:border-pink-500/50 transition-all duration-500 shimmer-effect" aria-label="Next-Generation AI Agent Technology">
             <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-500 dark:text-pink-400 animate-pulse" aria-hidden="true" />
             <span className="text-[10px] sm:text-xs md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400">
@@ -45,8 +45,8 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="scroll-reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.15] mb-4 sm:mb-6 md:mb-8 tracking-tight px-2" style={{ animationDelay: '0.1s' }}>
-            <span className="text-gradient block mb-1.5 sm:mb-2">
+          <h1 className="scroll-reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.2] mb-4 sm:mb-6 md:mb-8 tracking-tight px-4 sm:px-6 md:px-8 overflow-visible" style={{ animationDelay: '0.1s' }}>
+            <span className="text-gradient block mb-1.5 sm:mb-2 overflow-visible">
               Intelligent AI Agents
             </span>
             <span className="text-text-light-primary dark:text-text-dark-primary block">
