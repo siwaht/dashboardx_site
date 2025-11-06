@@ -68,9 +68,6 @@ export default function Footer({ onOpenPrivacy }: FooterProps) {
               >
                 Privacy Policy
               </button>
-              <a href="#" className="text-text-light-secondary dark:text-text-dark-secondary font-bold hover:text-gradient transition-all duration-500 hover:scale-110">
-                Terms of Service
-              </a>
             </div>
           </div>
         </div>
