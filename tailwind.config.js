@@ -18,45 +18,71 @@ export default {
           accent: '#E5E7EB',
         },
         brand: {
-          // Primary fire/heat orange (Firecrawl style)
-          orange: {
-            light: '#FF8C42',
-            DEFAULT: '#FF6B35',
-            dark: '#FF5722',
-            darker: '#E64A19',
+          indigo: {
+            light: '#818CF8',
+            DEFAULT: '#6366F1',
+            dark: '#4F46E5',
+            darker: '#4338CA',
           },
-          // Secondary fire colors
-          red: {
-            light: '#FF6B6B',
-            DEFAULT: '#F44336',
-            dark: '#E53935',
-            darker: '#C62828',
+          violet: {
+            light: '#A78BFA',
+            DEFAULT: '#8B5CF6',
+            dark: '#7C3AED',
+            darker: '#6D28D9',
+          },
+          purple: {
+            light: '#C084FC',
+            DEFAULT: '#A855F7',
+            dark: '#9333EA',
+            darker: '#7E22CE',
+          },
+          pink: {
+            light: '#F472B6',
+            DEFAULT: '#EC4899',
+            dark: '#DB2777',
+            darker: '#BE185D',
+          },
+          rose: {
+            light: '#FB7185',
+            DEFAULT: '#F43F5E',
+            dark: '#E11D48',
+            darker: '#BE123C',
+          },
+          blue: {
+            light: '#60A5FA',
+            DEFAULT: '#3B82F6',
+            dark: '#2563EB',
+            darker: '#1D4ED8',
+          },
+          cyan: {
+            light: '#22D3EE',
+            DEFAULT: '#06B6D4',
+            dark: '#0891B2',
+            darker: '#0E7490',
+          },
+          teal: {
+            light: '#2DD4BF',
+            DEFAULT: '#14B8A6',
+            dark: '#0D9488',
+            darker: '#0F766E',
+          },
+          emerald: {
+            light: '#34D399',
+            DEFAULT: '#10B981',
+            dark: '#059669',
+            darker: '#047857',
           },
           amber: {
-            light: '#FFCA28',
-            DEFAULT: '#FFC107',
-            dark: '#FFB300',
-            darker: '#FFA000',
+            light: '#FCD34D',
+            DEFAULT: '#F59E0B',
+            dark: '#D97706',
+            darker: '#B45309',
           },
-          yellow: {
-            light: '#FFEB3B',
-            DEFAULT: '#FFD54F',
-            dark: '#FFC107',
-            darker: '#FFB300',
-          },
-          // Graphite (dark neutrals)
-          graphite: {
-            light: '#424242',
-            DEFAULT: '#2D2D2D',
-            dark: '#1E1E1E',
-            darker: '#121212',
-          },
-          // Paper (light neutrals)
-          paper: {
-            light: '#FFFFFF',
-            DEFAULT: '#F8F9FA',
-            dark: '#F5F5F5',
-            darker: '#EEEEEE',
+          orange: {
+            light: '#FB923C',
+            DEFAULT: '#F97316',
+            dark: '#EA580C',
+            darker: '#C2410C',
           },
           slate: {
             100: '#F1F5F9',
@@ -98,60 +124,62 @@ export default {
         sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       backgroundImage: {
-        // Primary fire/heat gradients (Firecrawl style)
-        'gradient-brand': 'linear-gradient(135deg, #FF6B35 0%, #FF5722 25%, #F44336 50%, #FFC107 75%, #FFD54F 100%)',
-        'gradient-brand-alt': 'linear-gradient(135deg, #FF8C42 0%, #FF6B35 33%, #FF5722 66%, #F44336 100%)',
-        'gradient-fire': 'linear-gradient(135deg, #FF6B35 0%, #F44336 33%, #E53935 66%, #FFC107 100%)',
-        'gradient-flame': 'linear-gradient(135deg, #FFD54F 0%, #FFC107 25%, #FF6B35 50%, #F44336 75%, #E53935 100%)',
-        'gradient-heat': 'linear-gradient(135deg, #FF5722 0%, #FF6B35 50%, #FF8C42 100%)',
+        // Primary brand gradients
+        'gradient-brand': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 25%, #A855F7 50%, #EC4899 75%, #F43F5E 100%)',
+        'gradient-brand-alt': 'linear-gradient(135deg, #3B82F6 0%, #6366F1 33%, #8B5CF6 66%, #A855F7 100%)',
+        'gradient-purple': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%)',
+        'gradient-pink': 'linear-gradient(135deg, #EC4899 0%, #F472B6 50%, #FCA5A5 100%)',
+        'gradient-blue': 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #93C5FD 100%)',
 
-        // Warm fire gradients
-        'gradient-sunset': 'linear-gradient(135deg, #FF6B35 0%, #FF8C42 50%, #FFCA28 100%)',
-        'gradient-ember': 'linear-gradient(135deg, #E53935 0%, #F44336 50%, #FF5722 100%)',
-        'gradient-amber': 'linear-gradient(135deg, #FFB300 0%, #FFC107 50%, #FFCA28 100%)',
+        // Warm gradients
+        'gradient-sunset': 'linear-gradient(135deg, #F97316 0%, #FB923C 50%, #FDE68A 100%)',
+        'gradient-fire': 'linear-gradient(135deg, #F43F5E 0%, #FB7185 50%, #FBBF24 100%)',
+        'gradient-amber': 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #FCD34D 100%)',
 
-        // Graphite/neutral gradients
-        'gradient-graphite': 'linear-gradient(135deg, #121212 0%, #1E1E1E 50%, #2D2D2D 100%)',
-        'gradient-paper': 'linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #F5F5F5 100%)',
-        'gradient-smoke': 'linear-gradient(135deg, #424242 0%, #2D2D2D 50%, #1E1E1E 100%)',
+        // Cool gradients
+        'gradient-ocean': 'linear-gradient(135deg, #0891B2 0%, #06B6D4 50%, #22D3EE 100%)',
+        'gradient-emerald': 'linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%)',
+        'gradient-sky': 'linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #14B8A6 100%)',
 
-        // Multi-color fire gradients
-        'gradient-inferno': 'linear-gradient(135deg, #FFD54F 0%, #FFC107 20%, #FF6B35 40%, #F44336 60%, #E53935 80%, #C62828 100%)',
-        'gradient-blaze': 'linear-gradient(135deg, #FFEB3B 0%, #FF8C42 33%, #FF5722 66%, #E53935 100%)',
-        'gradient-wildfire': 'linear-gradient(135deg, #FF6B35 0%, #F44336 25%, #FFC107 50%, #FF5722 75%, #E53935 100%)',
+        // Multi-color vibrant gradients
+        'gradient-rainbow': 'linear-gradient(135deg, #6366F1 0%, #8B5CF6 20%, #EC4899 40%, #F59E0B 60%, #10B981 80%, #06B6D4 100%)',
+        'gradient-aurora': 'linear-gradient(135deg, #6366F1 0%, #A855F7 25%, #EC4899 50%, #F97316 75%, #FBBF24 100%)',
+        'gradient-cosmic': 'linear-gradient(135deg, #4F46E5 0%, #7C3AED 33%, #DB2777 66%, #E11D48 100%)',
 
         // Utility gradients
         'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
         'gradient-shimmer': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
 
-        // Mesh backgrounds with fire colors
-        'mesh-gradient': 'radial-gradient(at 0% 0%, #FF6B3520 0px, transparent 50%), radial-gradient(at 100% 0%, #F4433620 0px, transparent 50%), radial-gradient(at 100% 100%, #FFC10720 0px, transparent 50%), radial-gradient(at 0% 100%, #FF572220 0px, transparent 50%)',
-        'mesh-gradient-alt': 'radial-gradient(at 20% 30%, #FF6B3515 0px, transparent 50%), radial-gradient(at 80% 20%, #F4433615 0px, transparent 50%), radial-gradient(at 70% 80%, #FFC10715 0px, transparent 50%), radial-gradient(at 30% 70%, #FF572215 0px, transparent 50%)',
+        // Mesh backgrounds
+        'mesh-gradient': 'radial-gradient(at 0% 0%, #6366F120 0px, transparent 50%), radial-gradient(at 100% 0%, #EC489920 0px, transparent 50%), radial-gradient(at 100% 100%, #8B5CF620 0px, transparent 50%), radial-gradient(at 0% 100%, #3B82F620 0px, transparent 50%)',
+        'mesh-gradient-alt': 'radial-gradient(at 20% 30%, #6366F115 0px, transparent 50%), radial-gradient(at 80% 20%, #EC489915 0px, transparent 50%), radial-gradient(at 70% 80%, #A855F715 0px, transparent 50%), radial-gradient(at 30% 70%, #3B82F615 0px, transparent 50%)',
       },
       boxShadow: {
-        // Glass effects with fire colors
-        'glass': '0 8px 32px 0 rgba(255, 107, 53, 0.15), 0 4px 16px 0 rgba(244, 67, 54, 0.1)',
-        'glass-light': '0 8px 32px 0 rgba(255, 107, 53, 0.08)',
-        'glass-orange': '0 8px 32px 0 rgba(255, 107, 53, 0.15), 0 4px 16px 0 rgba(255, 140, 66, 0.1)',
+        // Glass effects
+        'glass': '0 8px 32px 0 rgba(99, 102, 241, 0.15), 0 4px 16px 0 rgba(139, 92, 246, 0.1)',
+        'glass-light': '0 8px 32px 0 rgba(99, 102, 241, 0.08)',
+        'glass-purple': '0 8px 32px 0 rgba(139, 92, 246, 0.15), 0 4px 16px 0 rgba(168, 85, 247, 0.1)',
 
-        // Fire glow effects
-        'glow-sm': '0 0 15px rgba(255, 107, 53, 0.4)',
-        'glow': '0 0 25px rgba(255, 107, 53, 0.5), 0 0 50px rgba(244, 67, 54, 0.2)',
-        'glow-lg': '0 0 40px rgba(255, 107, 53, 0.6), 0 0 80px rgba(244, 67, 54, 0.3)',
+        // Glow effects - Indigo/Purple
+        'glow-sm': '0 0 15px rgba(99, 102, 241, 0.4)',
+        'glow': '0 0 25px rgba(139, 92, 246, 0.5), 0 0 50px rgba(168, 85, 247, 0.2)',
+        'glow-lg': '0 0 40px rgba(139, 92, 246, 0.6), 0 0 80px rgba(168, 85, 247, 0.3)',
 
-        // Color-specific fire glows
-        'glow-orange': '0 0 30px rgba(255, 107, 53, 0.5), 0 0 60px rgba(255, 140, 66, 0.2)',
-        'glow-red': '0 0 30px rgba(244, 67, 54, 0.5), 0 0 60px rgba(255, 107, 107, 0.2)',
-        'glow-amber': '0 0 30px rgba(255, 193, 7, 0.5), 0 0 60px rgba(255, 202, 40, 0.2)',
-        'glow-yellow': '0 0 30px rgba(255, 213, 79, 0.5), 0 0 60px rgba(255, 235, 59, 0.2)',
+        // Color-specific glows
+        'glow-indigo': '0 0 30px rgba(99, 102, 241, 0.5), 0 0 60px rgba(129, 140, 248, 0.2)',
+        'glow-purple': '0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(168, 85, 247, 0.2)',
+        'glow-pink': '0 0 30px rgba(236, 72, 153, 0.5), 0 0 60px rgba(244, 114, 182, 0.2)',
+        'glow-blue': '0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(96, 165, 250, 0.2)',
+        'glow-emerald': '0 0 30px rgba(16, 185, 129, 0.5), 0 0 60px rgba(52, 211, 153, 0.2)',
+        'glow-orange': '0 0 30px rgba(249, 115, 22, 0.5), 0 0 60px rgba(251, 146, 60, 0.2)',
 
-        // Multi-color fire glows
-        'glow-fire': '0 0 20px rgba(255, 107, 53, 0.4), 0 0 40px rgba(244, 67, 54, 0.3), 0 0 60px rgba(255, 193, 7, 0.2)',
-        'glow-inferno': '0 0 20px rgba(255, 87, 34, 0.5), 0 0 40px rgba(244, 67, 54, 0.3), 0 0 60px rgba(229, 57, 53, 0.2)',
+        // Multi-color glows
+        'glow-rainbow': '0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(236, 72, 153, 0.3), 0 0 60px rgba(168, 85, 247, 0.2)',
+        'glow-cosmic': '0 0 20px rgba(79, 70, 229, 0.5), 0 0 40px rgba(219, 39, 119, 0.3), 0 0 60px rgba(124, 58, 237, 0.2)',
 
         // Inner shadows
-        'inner-glow': 'inset 0 0 20px rgba(255, 107, 53, 0.15)',
-        'inner-glow-sm': 'inset 0 0 10px rgba(255, 107, 53, 0.1)',
+        'inner-glow': 'inset 0 0 20px rgba(139, 92, 246, 0.15)',
+        'inner-glow-sm': 'inset 0 0 10px rgba(99, 102, 241, 0.1)',
 
         // Elevation system
         'elevation-1': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -160,10 +188,10 @@ export default {
         'elevation-4': '0 16px 40px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.15)',
         'elevation-5': '0 24px 60px rgba(0, 0, 0, 0.12), 0 12px 30px rgba(0, 0, 0, 0.18)',
 
-        // Colored elevations with fire theme
-        'elevation-orange': '0 10px 30px rgba(255, 107, 53, 0.15), 0 5px 15px rgba(255, 140, 66, 0.1)',
-        'elevation-red': '0 10px 30px rgba(244, 67, 54, 0.15), 0 5px 15px rgba(255, 107, 107, 0.1)',
-        'elevation-amber': '0 10px 30px rgba(255, 193, 7, 0.15), 0 5px 15px rgba(255, 202, 40, 0.1)',
+        // Colored elevations
+        'elevation-purple': '0 10px 30px rgba(139, 92, 246, 0.15), 0 5px 15px rgba(168, 85, 247, 0.1)',
+        'elevation-pink': '0 10px 30px rgba(236, 72, 153, 0.15), 0 5px 15px rgba(244, 114, 182, 0.1)',
+        'elevation-blue': '0 10px 30px rgba(59, 130, 246, 0.15), 0 5px 15px rgba(96, 165, 250, 0.1)',
       },
       backdropBlur: {
         'glass': '10px',
