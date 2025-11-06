@@ -179,33 +179,33 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 20%, #A855F7 40%, #EC4899 60%, #F43F5E 80%, #F97316 100%);
+    background: linear-gradient(135deg, #FF6B35 0%, #FF5722 20%, #F44336 40%, #FFC107 60%, #FFD54F 80%, #FFEB3B 100%);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradient-shift 10s ease infinite;
-    color: #6366F1;
+    color: #FF6B35;
     display: inline-block;
     padding-bottom: 0.25em;
     line-height: 1.3;
   }
 
   .light .text-gradient {
-    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 20%, #9333EA 40%, #DB2777 60%, #E11D48 80%, #EA580C 100%);
+    background: linear-gradient(135deg, #FF5722 0%, #E64A19 20%, #E53935 40%, #FFB300 60%, #FFC107 80%, #FFCA28 100%);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradient-shift 10s ease infinite;
-    color: #4F46E5;
+    color: #FF5722;
     display: inline-block;
     padding-bottom: 0.25em;
     line-height: 1.3;
   }
 
-  .text-gradient-purple {
-    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%);
+  .text-gradient-fire {
+    background: linear-gradient(135deg, #FF6B35 0%, #F44336 50%, #FFC107 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -213,8 +213,8 @@
     animation: gradient-shift 8s ease infinite;
   }
 
-  .text-gradient-pink {
-    background: linear-gradient(135deg, #EC4899 0%, #F472B6 50%, #FB7185 100%);
+  .text-gradient-ember {
+    background: linear-gradient(135deg, #E53935 0%, #F44336 50%, #FF5722 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -222,8 +222,8 @@
     animation: gradient-shift 8s ease infinite;
   }
 
-  .text-gradient-blue {
-    background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 50%, #93C5FD 100%);
+  .text-gradient-amber {
+    background: linear-gradient(135deg, #FFB300 0%, #FFC107 50%, #FFCA28 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -231,8 +231,8 @@
     animation: gradient-shift 8s ease infinite;
   }
 
-  .text-gradient-warm {
-    background: linear-gradient(135deg, #F59E0B 0%, #F97316 50%, #FB923C 100%);
+  .text-gradient-flame {
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 25%, #FF6B35 50%, #F44336 75%, #E53935 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -240,8 +240,8 @@
     animation: gradient-shift 6s ease infinite;
   }
 
-  .text-gradient-emerald {
-    background: linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%);
+  .text-gradient-heat {
+    background: linear-gradient(135deg, #FF5722 0%, #FF6B35 50%, #FF8C42 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
