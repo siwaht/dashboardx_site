@@ -1,6 +1,6 @@
-import { Sun, Moon, Menu, X } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
-import { useState } from 'react';
+import { Sun, Moon, Menu, X } from "lucide-react";
+import { useTheme } from "./ThemeContext";
+import { useState } from "react";
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
