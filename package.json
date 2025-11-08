@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "tsx watch --env-file=.env server/index.ts",
     "build": "vite build",
+    "start": "NODE_ENV=production tsx server/index.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
@@ -20,6 +21,7 @@
     "postgres": "^3.4.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tsx": "^4.20.6",
     "zod": "^4.1.12"
   },
   "devDependencies": {

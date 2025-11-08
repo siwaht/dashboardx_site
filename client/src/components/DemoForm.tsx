@@ -1,11 +1,10 @@
-import { FormEvent, useState, useRef, useEffect } from 'react';
-import { CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { FormEvent, useState, useRef, useEffect } from "react";
+import { CheckCircle, AlertCircle, Sparkles } from "lucide-react";
 
 export default function DemoForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -13,10 +12,10 @@ export default function DemoForm() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const reveals = entry.target.querySelectorAll('.scroll-reveal');
+            const reveals = entry.target.querySelectorAll(".scroll-reveal");
             reveals.forEach((el, index) => {
               setTimeout(() => {
-                el.classList.add('revealed');
+                el.classList.add("revealed");
               }, index * 100);
             });
           }
@@ -35,46 +34,54 @@ export default function DemoForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
+    setSubmitStatus("idle");
+    setErrorMessage("");
 
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      company: formData.get('company') as string,
-      job_title: formData.get('job_title') as string,
-      service_interest: formData.get('service_interest') as string,
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      jobTitle: formData.get("job_title") as string,
+      serviceInterest: formData.get("service_interest") as string,
     };
 
     try {
-      if (!supabase) {
-        throw new Error('Database connection not available');
+      const response = await fetch("/api/consultation-requests", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "Failed to submit request");
       }
 
-      const { error } = await supabase
-        .from('consultation_requests')
-        .insert([data]);
-
-      if (error) throw error;
-
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       e.currentTarget.reset();
     } catch (error) {
-      console.error('Error submitting demo request:', error);
-      setSubmitStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+      console.error("Error submitting demo request:", error);
+      setSubmitStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "An unexpected error occurred"
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section ref={sectionRef} id="demo-form" aria-labelledby="demo-form-heading" className="py-16 md:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
-
+    <section
+      ref={sectionRef}
+      id="demo-form"
+      aria-labelledby="demo-form-heading"
+      className="py-16 md:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-6 sm:p-8 md:p-12 lg:p-16 rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-3 relative overflow-hidden">
-
           <div className="relative z-10">
             <div className="text-center mb-8 md:mb-10">
               <div className="inline-flex items-center gap-3 bg-light-secondary/90 dark:bg-dark-secondary/90 px-6 py-3 rounded-full border border-brand-emerald-mid/30 mb-8 shadow-elevation-2">
@@ -84,15 +91,21 @@ export default function DemoForm() {
                 </span>
               </div>
 
-              <h2 id="demo-form-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-gradient tracking-tight">
+              <h2
+                id="demo-form-heading"
+                className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-gradient tracking-tight"
+              >
                 Get Your Free Consultation
               </h2>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium px-2">
-                Discover how AI agents can transform your business operations. Schedule a personalized consultation with our team to explore voice agents, chat bots, AI avatars, and workflow automation tailored to your needs.
+                Discover how AI agents can transform your business operations.
+                Schedule a personalized consultation with our team to explore
+                voice agents, chat bots, AI avatars, and workflow automation
+                tailored to your needs.
               </p>
             </div>
 
-            {submitStatus === 'success' && (
+            {submitStatus === "success" && (
               <div className="scroll-reveal mb-6 md:mb-8 p-5 sm:p-6 md:p-8 bg-green-50 dark:bg-green-900/30 border-2 border-green-300 dark:border-green-700 rounded-2xl flex items-start gap-3 sm:gap-4 shadow-elevation-2 animate-fadeInScale">
                 <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
                 <div>
@@ -100,13 +113,15 @@ export default function DemoForm() {
                     Consultation Request Received!
                   </h3>
                   <p className="text-sm text-green-800 dark:text-green-200">
-                    Thank you for your interest. Our AI solutions team will contact you within 24 hours to discuss your needs and schedule a personalized consultation.
+                    Thank you for your interest. Our AI solutions team will
+                    contact you within 24 hours to discuss your needs and
+                    schedule a personalized consultation.
                   </p>
                 </div>
               </div>
             )}
 
-            {submitStatus === 'error' && (
+            {submitStatus === "error" && (
               <div className="scroll-reveal mb-6 md:mb-8 p-5 sm:p-6 md:p-8 bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-700 rounded-2xl flex items-start gap-3 sm:gap-4 shadow-elevation-2 animate-fadeInScale">
                 <AlertCircle className="w-8 h-8 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
                 <div>
@@ -114,13 +129,16 @@ export default function DemoForm() {
                     Submission Failed
                   </h3>
                   <p className="text-sm text-red-800 dark:text-red-200">
-                    {errorMessage || 'Please try again or contact us directly.'}
+                    {errorMessage || "Please try again or contact us directly."}
                   </p>
                 </div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+            <form
+              onSubmit={handleSubmit}
+              className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6"
+            >
               <div className="scroll-reveal flex flex-col group">
                 <label
                   htmlFor="name"
@@ -139,7 +157,10 @@ export default function DemoForm() {
                 />
               </div>
 
-              <div className="scroll-reveal flex flex-col group" style={{ animationDelay: '0.1s' }}>
+              <div
+                className="scroll-reveal flex flex-col group"
+                style={{ animationDelay: "0.1s" }}
+              >
                 <label
                   htmlFor="email"
                   className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 group-focus-within:text-gradient transition-all duration-300"
@@ -157,7 +178,10 @@ export default function DemoForm() {
                 />
               </div>
 
-              <div className="scroll-reveal flex flex-col group" style={{ animationDelay: '0.2s' }}>
+              <div
+                className="scroll-reveal flex flex-col group"
+                style={{ animationDelay: "0.2s" }}
+              >
                 <label
                   htmlFor="company"
                   className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 group-focus-within:text-gradient transition-all duration-300"
@@ -175,7 +199,10 @@ export default function DemoForm() {
                 />
               </div>
 
-              <div className="scroll-reveal flex flex-col group" style={{ animationDelay: '0.3s' }}>
+              <div
+                className="scroll-reveal flex flex-col group"
+                style={{ animationDelay: "0.3s" }}
+              >
                 <label
                   htmlFor="job-title"
                   className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 group-focus-within:text-gradient transition-all duration-300"
@@ -193,7 +220,10 @@ export default function DemoForm() {
                 />
               </div>
 
-              <div className="scroll-reveal md:col-span-2" style={{ animationDelay: '0.4s' }}>
+              <div
+                className="scroll-reveal md:col-span-2"
+                style={{ animationDelay: "0.4s" }}
+              >
                 <label
                   htmlFor="service-interest"
                   className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 block"
@@ -211,12 +241,15 @@ export default function DemoForm() {
                   <option value="chat-agents">Chat AI Agents</option>
                   <option value="voice-agents">Voice Calling AI Agents</option>
                   <option value="ai-avatars">AI Avatars</option>
-                  <option value="rag-retrieval">RAG Data Retrieval</option>
+                  <option value="workflow-automation">Workflow Automation</option>
                   <option value="all-services">All Services</option>
                 </select>
               </div>
 
-              <div className="scroll-reveal md:col-span-2" style={{ animationDelay: '0.5s' }}>
+              <div
+                className="scroll-reveal md:col-span-2"
+                style={{ animationDelay: "0.5s" }}
+              >
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -225,14 +258,30 @@ export default function DemoForm() {
                   <span className="relative z-10">
                     {isSubmitting ? (
                       <span className="flex items-center justify-center gap-2">
-                        <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        <svg
+                          className="animate-spin h-5 w-5"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
                         </svg>
                         Submitting...
                       </span>
                     ) : (
-                      'Request Consultation'
+                      "Request Consultation"
                     )}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
