@@ -32,24 +32,24 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-5xl mx-auto">
-          <div className="scroll-reveal inline-flex items-center gap-2 bg-light-primary/90 dark:bg-dark-secondary/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-brand-teal-mid/30 dark:border-brand-emerald-mid/30 mb-6 sm:mb-8 shadow-elevation-2 hover:border-brand-emerald-mid/50 transition-all duration-300" aria-label="Next-Generation AI Agent Technology">
+          <div className="scroll-reveal inline-flex items-center gap-2 bg-light-primary/90 dark:bg-dark-secondary/90 backdrop-blur-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-brand-teal-mid/30 dark:border-brand-emerald-mid/30 mb-6 sm:mb-8 shadow-elevation-2 hover:border-brand-emerald-mid/50 transition-all duration-300" aria-label="AI Consulting & Strategy Excellence">
             <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-brand-emerald-mid" aria-hidden="true" />
             <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-mid via-brand-teal-mid to-brand-emerald-mid">
-              Next-Generation AI Agent Technology
+              AI Consulting & Strategy Excellence
             </span>
           </div>
 
           <h1 className="scroll-reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6 md:mb-8 tracking-tight" style={{ animationDelay: '0.1s' }}>
             <span className="text-gradient block mb-2">
-              Intelligent AI Agents
+              Strategic AI Solutions
             </span>
             <span className="text-text-light-primary dark:text-text-dark-primary block">
-              for Every Business Need
+              That Drive Real Business Value
             </span>
           </h1>
 
           <p className="scroll-reveal text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed px-4 font-medium" style={{ animationDelay: '0.2s' }}>
-            Transform your business with AI voice agents, conversational chat bots, AI avatars, and complete workflow automation. Available 24/7, multilingual, and seamlessly integrated with your systems.
+            From opportunity discovery to responsible AI implementation — we help you unlock AI's full potential with expert consulting in strategy, agentic monetization, and governance frameworks tailored to your business.
           </p>
 
           <div className="scroll-reveal flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 md:mb-16 px-4" style={{ animationDelay: '0.3s' }}>
