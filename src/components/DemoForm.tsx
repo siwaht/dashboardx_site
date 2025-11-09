@@ -73,7 +73,7 @@ export default function DemoForm() {
     <section ref={sectionRef} id="demo-form" aria-labelledby="demo-form-heading" className="py-16 md:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-6 sm:p-8 md:p-12 lg:p-16 rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-3 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-light-primary/98 dark:bg-dark-primary/98 backdrop-blur-xl p-6 sm:p-8 md:p-12 lg:p-16 rounded-3xl border border-brand-slate-light/40 dark:border-brand-slate/40 shadow-soft-lg relative overflow-hidden">
 
           <div className="relative z-10">
             <div className="text-center mb-8 md:mb-10">
@@ -84,7 +84,7 @@ export default function DemoForm() {
                 </span>
               </div>
 
-              <h2 id="demo-form-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-gradient tracking-tight">
+              <h2 id="demo-form-heading" className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 md:mb-7 text-gradient tracking-tight">
                 Get Your Free Consultation
               </h2>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium px-2">
@@ -134,7 +134,7 @@ export default function DemoForm() {
                   name="name"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-secondary/50 dark:bg-dark-secondary/50 backdrop-blur-sm border-2 border-brand-slate-light/40 dark:border-brand-slate/40 text-text-light-primary dark:text-text-dark-primary px-5 sm:px-6 py-4 sm:py-5 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/30 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-soft hover:shadow-soft-lg hover:border-brand-teal-mid/60"
                   placeholder="John Doe"
                 />
               </div>
@@ -152,7 +152,7 @@ export default function DemoForm() {
                   name="email"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-secondary/50 dark:bg-dark-secondary/50 backdrop-blur-sm border-2 border-brand-slate-light/40 dark:border-brand-slate/40 text-text-light-primary dark:text-text-dark-primary px-5 sm:px-6 py-4 sm:py-5 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/30 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-soft hover:shadow-soft-lg hover:border-brand-teal-mid/60"
                   placeholder="john@company.com"
                 />
               </div>
@@ -170,7 +170,7 @@ export default function DemoForm() {
                   name="company"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-secondary/50 dark:bg-dark-secondary/50 backdrop-blur-sm border-2 border-brand-slate-light/40 dark:border-brand-slate/40 text-text-light-primary dark:text-text-dark-primary px-5 sm:px-6 py-4 sm:py-5 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/30 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-soft hover:shadow-soft-lg hover:border-brand-teal-mid/60"
                   placeholder="Acme Inc."
                 />
               </div>
@@ -188,7 +188,7 @@ export default function DemoForm() {
                   name="job_title"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-secondary/50 dark:bg-dark-secondary/50 backdrop-blur-sm border-2 border-brand-slate-light/40 dark:border-brand-slate/40 text-text-light-primary dark:text-text-dark-primary px-5 sm:px-6 py-4 sm:py-5 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/30 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-soft hover:shadow-soft-lg hover:border-brand-teal-mid/60"
                   placeholder="Product Manager"
                 />
               </div>
@@ -205,7 +205,7 @@ export default function DemoForm() {
                   name="service_interest"
                   required
                   disabled={isSubmitting}
-                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
+                  className="w-full bg-light-secondary/50 dark:bg-dark-secondary/50 backdrop-blur-sm border-2 border-brand-slate-light/40 dark:border-brand-slate/40 text-text-light-primary dark:text-text-dark-primary px-5 sm:px-6 py-4 sm:py-5 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/30 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-soft hover:shadow-soft-lg hover:border-brand-teal-mid/60 mb-5 md:mb-6"
                 >
                   <option value="">Select a service</option>
                   <option value="chat-agents">Chat AI Agents</option>
@@ -220,7 +220,7 @@ export default function DemoForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-ripple w-full bg-gradient-brand text-white py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:-translate-y-1 sm:hover:-translate-y-2 hover:scale-[1.02] sm:hover:scale-105 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 shadow-elevation-4 relative overflow-hidden group border-2 border-white/20"
+                  className="btn-ripple w-full bg-gradient-elegant text-white py-5 sm:py-6 rounded-xl font-bold text-lg sm:text-xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 ease-bounce-soft disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 shadow-soft-lg hover:shadow-glow relative overflow-hidden group border border-white/20"
                 >
                   <span className="relative z-10">
                     {isSubmitting ? (

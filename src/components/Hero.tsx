@@ -40,10 +40,10 @@ export default function Hero() {
           </div>
 
           <h1 className="scroll-reveal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6 md:mb-8 tracking-tight" style={{ animationDelay: '0.1s' }}>
-            <span className="text-gradient block mb-2">
+            <span className="text-gradient block mb-3 font-display font-extrabold">
               Intelligent AI Agents
             </span>
-            <span className="text-text-light-primary dark:text-text-dark-primary block">
+            <span className="text-text-light-primary dark:text-text-dark-primary block font-semibold">
               for Every Business Need
             </span>
           </h1>
@@ -55,14 +55,15 @@ export default function Hero() {
           <div className="scroll-reveal flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 md:mb-16 px-4" style={{ animationDelay: '0.3s' }}>
             <a
               href="#demo-form"
-              className="inline-block bg-gradient-brand text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:-translate-y-1 hover:shadow-elevation-4 transition-all duration-300 min-h-[52px] sm:min-h-[60px] flex items-center justify-center shadow-elevation-3"
+              className="group inline-block bg-gradient-elegant text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:-translate-y-2 hover:shadow-soft-lg transition-all duration-500 ease-bounce-soft min-h-[52px] sm:min-h-[60px] flex items-center justify-center shadow-soft relative overflow-hidden"
               aria-label="Get started with AI agents"
             >
-              Get Started
+              <span className="relative z-10">Get Started</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
             </a>
             <a
               href="#services"
-              className="inline-block bg-light-primary/80 dark:bg-dark-tertiary/80 backdrop-blur-sm text-text-light-primary dark:text-text-dark-primary border-2 border-border-light dark:border-border-dark px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:-translate-y-1 hover:shadow-elevation-3 hover:border-brand-teal-mid transition-all duration-300 min-h-[52px] sm:min-h-[60px] flex items-center justify-center"
+              className="group inline-block bg-light-primary/90 dark:bg-dark-tertiary/90 backdrop-blur-md text-text-light-primary dark:text-text-dark-primary border-2 border-border-light/50 dark:border-border-dark/50 px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:-translate-y-2 hover:shadow-soft hover:border-brand-teal-mid/80 dark:hover:border-brand-emerald-mid/80 transition-all duration-500 ease-bounce-soft min-h-[52px] sm:min-h-[60px] flex items-center justify-center hover:bg-light-primary dark:hover:bg-dark-tertiary"
               aria-label="View our AI agent services"
             >
               View Services
@@ -70,25 +71,25 @@ export default function Hero() {
           </div>
 
           <div className="scroll-reveal grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto mb-10 md:mb-16 px-4" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-5 md:p-6 rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="24/7 Availability">
-              <Clock className="w-6 h-6 sm:w-7 sm:h-7 text-brand-blue-mid flex-shrink-0" aria-hidden="true" />
+            <div className="group flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 backdrop-blur-sm p-6 md:p-7 rounded-2xl border border-brand-slate-light/40 dark:border-brand-slate/40 shadow-soft hover:shadow-soft-lg hover:border-brand-blue-mid/60 transition-all duration-500 ease-elegant hover:-translate-y-1" aria-label="24/7 Availability">
+              <Clock className="w-7 h-7 sm:w-8 sm:h-8 text-brand-blue-mid flex-shrink-0 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <div className="text-left">
-                <div className="text-xl sm:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">24/7</div>
-                <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary">Availability</div>
+                <div className="text-2xl sm:text-3xl font-bold text-text-light-primary dark:text-text-dark-primary">24/7</div>
+                <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary font-medium">Availability</div>
               </div>
             </div>
-            <div className="flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-5 md:p-6 rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="10x Efficiency Boost">
-              <Bot className="w-6 h-6 sm:w-7 sm:h-7 text-brand-emerald-mid flex-shrink-0" aria-hidden="true" />
+            <div className="group flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 backdrop-blur-sm p-6 md:p-7 rounded-2xl border border-brand-slate-light/40 dark:border-brand-slate/40 shadow-soft hover:shadow-soft-lg hover:border-brand-emerald-mid/60 transition-all duration-500 ease-elegant hover:-translate-y-1" aria-label="10x Efficiency Boost">
+              <Bot className="w-7 h-7 sm:w-8 sm:h-8 text-brand-emerald-mid flex-shrink-0 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <div className="text-left">
-                <div className="text-xl sm:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">10x</div>
-                <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary">Efficiency</div>
+                <div className="text-2xl sm:text-3xl font-bold text-text-light-primary dark:text-text-dark-primary">10x</div>
+                <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary font-medium">Efficiency</div>
               </div>
             </div>
-            <div className="flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 p-5 md:p-6 rounded-2xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-1 transition-all duration-300" aria-label="70% Cost Reduction">
-              <TrendingDown className="w-6 h-6 sm:w-7 sm:h-7 text-brand-teal-mid flex-shrink-0" aria-hidden="true" />
+            <div className="group flex items-center justify-center sm:justify-start gap-3 bg-light-primary/95 dark:bg-dark-secondary/95 backdrop-blur-sm p-6 md:p-7 rounded-2xl border border-brand-slate-light/40 dark:border-brand-slate/40 shadow-soft hover:shadow-soft-lg hover:border-brand-teal-mid/60 transition-all duration-500 ease-elegant hover:-translate-y-1" aria-label="70% Cost Reduction">
+              <TrendingDown className="w-7 h-7 sm:w-8 sm:h-8 text-brand-teal-mid flex-shrink-0 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <div className="text-left">
-                <div className="text-xl sm:text-2xl font-bold text-text-light-primary dark:text-text-dark-primary">70%</div>
-                <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary">Cost Reduction</div>
+                <div className="text-2xl sm:text-3xl font-bold text-text-light-primary dark:text-text-dark-primary">70%</div>
+                <div className="text-xs sm:text-sm text-text-light-secondary dark:text-text-dark-secondary font-medium">Cost Reduction</div>
               </div>
             </div>
           </div>
