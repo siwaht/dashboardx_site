@@ -8,6 +8,13 @@ The platform is built as a modern single-page application with a React frontend 
 
 ## Recent Changes
 
+**November 9, 2025 - Production Deployment Fixed:**
+- Removed `tsconfig-paths/register` from start script (incompatible with Node.js ESM)
+- Added `.js` extensions to all local imports in server code (required for ESM)
+- Fixed production static file path in `server/vite.ts` (changed from `../dist/public` to `../public`)
+- Simplified start script to `NODE_ENV=production node dist/server/index.js`
+- Verified production build compiles successfully and server starts without errors
+
 **November 9, 2025 - Loading Issues Fixed:**
 - Fixed Tailwind CSS configuration to point to correct source paths (`./client/src/**` instead of `./src/**`)
 - Resolved "No utility classes were detected" warning that prevented proper styling compilation

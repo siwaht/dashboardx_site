@@ -1,5 +1,5 @@
 import type { Express } from "express";
-import { storage } from "./storage";
+import { storage } from "./storage.js";
 import { insertDemoRequestSchema, insertConsultationRequestSchema } from "../shared/schema.js";
 
 export function registerRoutes(app: Express) {
