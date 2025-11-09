@@ -1,4 +1,4 @@
-import type { InsertDemoRequest, DemoRequest, InsertConsultationRequest, ConsultationRequest } from "@shared/schema";
+import type { InsertDemoRequest, DemoRequest, InsertConsultationRequest, ConsultationRequest } from "../shared/schema.js";
 
 export interface IStorage {
   createDemoRequest(data: InsertDemoRequest): Promise<DemoRequest>;

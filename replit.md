@@ -6,6 +6,24 @@ AgentX is a marketing website for an AI consulting and agent services platform. 
 
 The platform is built as a modern single-page application with a React frontend and Express backend, designed to capture leads through demo and consultation request forms.
 
+## Recent Changes
+
+**November 9, 2025 - Deployment Configuration Fixed:**
+- Added missing `start` script to package.json for production deployment
+- Downgraded from Express v5 to v4 to resolve path-to-regexp wildcard routing incompatibility
+- Fixed server crash loop by removing `throw err` from Express error handler (prevents Node process termination)
+- Configured tsx watch with ignore patterns for Vite temporary files (prevents continuous restart loops)
+- Updated server-side imports to use relative paths (`../shared/schema.js`) instead of `@shared` alias for tsx compatibility
+- Successfully configured workflow to run development server with stable operation
+
+**November 8, 2025 - Bolt to Replit Migration:**
+- Migrated from Bolt frontend-only to Replit fullstack template with client/server/shared directory structure
+- Set up Express.js v4 backend with Vite middleware for development hot module replacement
+- Implemented RESTful API endpoints: `/api/demo-requests` and `/api/consultation-requests`
+- Created Drizzle ORM schemas with Zod validation for PostgreSQL readiness
+- Configured tsx for TypeScript server execution with watch mode
+- Updated all component imports and directory structure for new architecture
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
