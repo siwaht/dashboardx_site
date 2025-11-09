@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes.js";
-import { setupVite, log } from "./vite.js";
+import { setupVite, serveStatic, log } from "./vite.js";
 
 const app = express();
 app.use(express.json());
@@ -38,7 +38,13 @@ app.use((req, res, next) => {
 
 (async () => {
   registerRoutes(app);
-  await setupVite(app, app);
+
+  // Use Vite dev server in development, serve static files in production
+  if (process.env.NODE_ENV === "production") {
+    serveStatic(app);
+  } else {
+    await setupVite(app, app);
+  }
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
