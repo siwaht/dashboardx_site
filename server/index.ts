@@ -1,4 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
+import { createServer } from "http";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
@@ -38,7 +39,12 @@ app.use((req, res, next) => {
 
 (async () => {
   registerRoutes(app);
-  const server = await setupVite(app, true);
+
+  if (process.env.NODE_ENV === "production") {
+    serveStatic(app);
+  } else {
+    await setupVite(app);
+  }
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -48,6 +54,7 @@ app.use((req, res, next) => {
   });
 
   const PORT = 5000;
+  const server = createServer(app);
   server.listen(PORT, "0.0.0.0", () => {
     log(`Server running on port ${PORT}`);
   });

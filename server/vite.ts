@@ -1,4 +1,5 @@
 import type { Express } from "express";
+import express from "express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -17,7 +18,7 @@ export function log(message: string) {
   console.log(`${formattedTime} [express] ${message}`);
 }
 
-export async function setupVite(app: Express, server: any) {
+export async function setupVite(app: Express) {
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: "custom",
@@ -37,8 +38,6 @@ export async function setupVite(app: Express, server: any) {
       next(e);
     }
   });
-
-  return server;
 }
 
 export function serveStatic(app: Express) {
