@@ -1,4 +1,4 @@
-import { Globe, Brain, Plug, Lock, BarChart3, Sparkles, Clock, MessageCircle } from 'lucide-react';
+import { Target, Compass, Users, Lock, BarChart3, Sparkles, Clock, Brain } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function Features() {
@@ -30,23 +30,23 @@ export default function Features() {
 
   const primaryFeatures = [
     {
-      icon: MessageCircle,
-      title: 'Natural Conversations',
-      description: 'Advanced NLP enables human-like dialogue with context awareness, sentiment analysis, and multi-turn conversations.',
+      icon: Target,
+      title: 'Strategic Assessment',
+      description: 'Deep-dive analysis of your data landscape, technology stack, and business objectives to identify high-impact AI opportunities.',
       gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-start',
       glowColor: 'emerald',
     },
     {
-      icon: Globe,
-      title: 'Multilingual Support',
-      description: 'Communicate with customers in 100+ languages with real-time translation and cultural adaptation.',
+      icon: Compass,
+      title: 'Custom AI Roadmaps',
+      description: 'Tailored implementation plans that align with your strategic goals, budget, and organizational readiness.',
       gradient: 'from-brand-teal-mid via-brand-blue-mid to-brand-coral-start',
       glowColor: 'blue',
     },
     {
-      icon: Plug,
-      title: 'Seamless Integration',
-      description: 'Connect with your CRM, helpdesk, calendar, and business tools. Deploy in hours, not months.',
+      icon: Users,
+      title: 'Expert Guidance',
+      description: 'Work with seasoned AI consultants who understand both technology and business transformation.',
       gradient: 'from-brand-emerald-mid via-brand-teal-end to-brand-amber-start',
       glowColor: 'emerald',
     },
@@ -55,28 +55,28 @@ export default function Features() {
   const additionalFeatures = [
     {
       icon: Lock,
-      title: 'Enterprise Security',
-      description: 'SOC 2 compliant with end-to-end encryption.',
+      title: 'Governance First',
+      description: 'Build responsible AI from the ground up.',
     },
     {
       icon: Clock,
-      title: '24/7 Availability',
-      description: 'Never miss a customer interaction again.',
+      title: 'Rapid Value Delivery',
+      description: 'See ROI within months, not years.',
     },
     {
       icon: Brain,
-      title: 'Continuous Learning',
-      description: 'AI improves from every interaction.',
+      title: 'Knowledge Transfer',
+      description: 'Empower your team with AI expertise.',
     },
     {
       icon: BarChart3,
-      title: 'Advanced Analytics',
-      description: 'Track performance and optimize operations.',
+      title: 'Measurable Outcomes',
+      description: 'Track success with clear KPIs and metrics.',
     },
     {
       icon: Sparkles,
-      title: 'Custom Personalities',
-      description: 'Align agents with your brand voice.',
+      title: 'Industry Expertise',
+      description: 'Leverage proven frameworks and best practices.',
     },
   ];
 
@@ -86,10 +86,10 @@ export default function Features() {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 id="features-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-            Powerful Capabilities
+            Why Choose Our Consulting
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-            Enterprise-grade AI agents with advanced features designed for real-world business needs.
+            Comprehensive AI consulting services designed to deliver measurable business impact and sustainable competitive advantage.
           </p>
         </div>
 
