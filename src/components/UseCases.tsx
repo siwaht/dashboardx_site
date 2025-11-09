@@ -1,4 +1,4 @@
-import { DollarSign, ShoppingCart, Stethoscope, Factory, Building2, Landmark } from 'lucide-react';
+import { Headphones, ShoppingCart, Calendar, HelpCircle, Users, Building2 } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function UseCases() {
@@ -30,50 +30,50 @@ export default function UseCases() {
 
   const cases = [
     {
-      icon: Landmark,
-      industry: 'Financial Services',
-      title: 'AI Risk & Compliance',
-      subtitle: 'Automated monitoring & fraud detection',
+      icon: Headphones,
+      industry: 'Customer Support',
+      title: 'Support Automation',
+      subtitle: 'Instant ticket resolution',
       gradient: 'from-brand-blue-start via-brand-blue-mid to-brand-teal-start',
       borderColor: 'brand-blue-mid',
     },
     {
       icon: ShoppingCart,
-      industry: 'Retail & E-Commerce',
-      title: 'Customer Intelligence',
-      subtitle: 'Personalization & demand forecasting',
+      industry: 'E-Commerce',
+      title: 'Sales Assistant',
+      subtitle: 'Product recommendations',
       gradient: 'from-brand-teal-mid via-brand-emerald-start to-brand-emerald-mid',
       borderColor: 'brand-emerald-mid',
     },
     {
-      icon: Stethoscope,
-      industry: 'Healthcare',
-      title: 'Clinical AI Strategy',
-      subtitle: 'Diagnostics & patient engagement',
+      icon: Calendar,
+      industry: 'Scheduling',
+      title: 'Appointment Booking',
+      subtitle: 'Automated scheduling',
       gradient: 'from-brand-amber-start via-brand-coral-start to-brand-coral-mid',
       borderColor: 'brand-coral-mid',
     },
     {
-      icon: Factory,
-      industry: 'Manufacturing',
-      title: 'Operational AI',
-      subtitle: 'Predictive maintenance & optimization',
+      icon: HelpCircle,
+      industry: 'Knowledge Base',
+      title: 'FAQ Automation',
+      subtitle: 'Instant answers 24/7',
       gradient: 'from-brand-teal-start via-brand-teal-mid to-brand-emerald-start',
       borderColor: 'brand-teal-mid',
     },
     {
-      icon: DollarSign,
-      industry: 'Professional Services',
-      title: 'Knowledge AI',
-      subtitle: 'Document intelligence & automation',
+      icon: Users,
+      industry: 'Lead Generation',
+      title: 'Qualification',
+      subtitle: 'Smart lead scoring',
       gradient: 'from-brand-blue-mid via-brand-teal-start to-brand-emerald-start',
       borderColor: 'brand-blue-mid',
     },
     {
       icon: Building2,
       industry: 'Enterprise',
-      title: 'Enterprise AI Strategy',
-      subtitle: 'Cross-functional AI transformation',
+      title: 'Internal Support',
+      subtitle: 'Employee assistance',
       gradient: 'from-brand-emerald-start via-brand-teal-mid to-brand-blue-start',
       borderColor: 'brand-emerald-mid',
     },
@@ -86,10 +86,10 @@ export default function UseCases() {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 id="use-cases-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-            Industry Expertise
+            Real-World Applications
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-            Proven AI strategies tailored to your industry's unique challenges and opportunities.
+            Transform every customer touchpoint with intelligent automation across your business.
           </p>
         </div>
 

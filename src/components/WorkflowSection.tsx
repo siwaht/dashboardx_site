@@ -34,10 +34,10 @@ export default function WorkflowSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 md:mb-12 px-4">
             <h2 id="workflow-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-              Our Consulting Process
+              AI Agent Workflow Architecture
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-              A proven methodology that takes you from strategic planning to successful AI implementation. We work alongside your team at every stage to ensure sustainable, measurable results.
+              Watch how our specialized AI agents collaborate seamlessly to process your queries. Data flows from multiple sources through intelligent agents to a central orchestrator that synthesizes accurate, verified responses.
             </p>
           </div>
 
@@ -46,19 +46,19 @@ export default function WorkflowSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-10 md:mt-12 px-4">
             <div className="scroll-reveal bg-light-secondary/50 dark:bg-dark-secondary/50 p-5 md:p-6 rounded-xl border border-border-light dark:border-border-dark">
               <h3 className="text-xl font-bold mb-3 text-text-light-primary dark:text-text-dark-primary">
-                Discovery & Assessment
+                Intelligent Agent Coordination
               </h3>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                We analyze your current state, data landscape, and business objectives to identify the highest-value AI opportunities aligned with your strategic goals.
+                Each specialized agent handles specific data sources and tasks, coordinated by a central orchestrator that ensures optimal query execution and result synthesis.
               </p>
             </div>
 
             <div className="scroll-reveal bg-light-secondary/50 dark:bg-dark-secondary/50 p-5 md:p-6 rounded-xl border border-border-light dark:border-border-dark" style={{ animationDelay: '0.1s' }}>
               <h3 className="text-xl font-bold mb-3 text-text-light-primary dark:text-text-dark-primary">
-                Strategy & Implementation
+                Multi-Source Integration
               </h3>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                From roadmap creation to hands-on execution, we guide you through governance frameworks, talent development, and technology integration for lasting impact.
+                Connect databases, documents, APIs, and knowledge bases. Our agents intelligently route queries to the right sources and combine insights for comprehensive answers.
               </p>
             </div>
           </div>

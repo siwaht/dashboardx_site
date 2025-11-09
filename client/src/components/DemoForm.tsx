@@ -88,7 +88,7 @@ export default function DemoForm() {
                 Get Your Free Consultation
               </h2>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium px-2">
-                Discover how strategic AI consulting can unlock new opportunities for your business. Schedule a personalized consultation with our experts to explore AI strategy, governance, monetization, and implementation roadmaps tailored to your industry.
+                Discover how AI agents can transform your business operations. Schedule a personalized consultation with our team to explore voice agents, chat bots, AI avatars, and workflow automation tailored to your needs.
               </p>
             </div>
 
@@ -100,7 +100,7 @@ export default function DemoForm() {
                     Consultation Request Received!
                   </h3>
                   <p className="text-sm text-green-800 dark:text-green-200">
-                    Thank you for your interest. Our AI consulting team will contact you within 24 hours to discuss your strategic needs and schedule a personalized consultation.
+                    Thank you for your interest. Our AI solutions team will contact you within 24 hours to discuss your needs and schedule a personalized consultation.
                   </p>
                 </div>
               </div>
