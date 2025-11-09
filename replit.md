@@ -8,6 +8,13 @@ The platform is built as a modern single-page application with a React frontend 
 
 ## Recent Changes
 
+**November 9, 2025 - Loading Issues Fixed:**
+- Fixed Tailwind CSS configuration to point to correct source paths (`./client/src/**` instead of `./src/**`)
+- Resolved "No utility classes were detected" warning that prevented proper styling compilation
+- Removed duplicate index.html at project root (server correctly uses `client/index.html`)
+- Verified preview loads successfully with working Vite HMR websocket connection
+- Application now fully operational with stable development server
+
 **November 9, 2025 - Deployment Configuration Fixed:**
 - Added missing `start` script to package.json for production deployment
 - Downgraded from Express v5 to v4 to resolve path-to-regexp wildcard routing incompatibility
