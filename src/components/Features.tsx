@@ -1,4 +1,4 @@
-import { Globe, Brain, Plug, Lock, BarChart3, Sparkles, Clock, MessageCircle } from 'lucide-react';
+import { Globe, Brain, Plug, Lock, BarChart3, Sparkles, Clock, MessageSquare, Database, Phone, Video } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function Features() {
@@ -30,16 +30,16 @@ export default function Features() {
 
   const primaryFeatures = [
     {
-      icon: MessageCircle,
-      title: 'Natural Conversations',
-      description: 'Advanced NLP enables human-like dialogue with context awareness, sentiment analysis, and multi-turn conversations.',
+      icon: MessageSquare,
+      title: 'Multi-Channel AI Agents',
+      description: 'Deploy intelligent agents across chat, voice, and video channels. Unified platform for all customer touchpoints.',
       gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-start',
       glowColor: 'emerald',
     },
     {
-      icon: Globe,
-      title: 'Multilingual Support',
-      description: 'Communicate with customers in 100+ languages with real-time translation and cultural adaptation.',
+      icon: Database,
+      title: 'Knowledge-Grounded Responses',
+      description: 'RAG technology connects AI to your knowledge base, ensuring accurate answers powered by your actual business data and documents.',
       gradient: 'from-brand-teal-mid via-brand-blue-mid to-brand-coral-start',
       glowColor: 'blue',
     },
@@ -54,29 +54,39 @@ export default function Features() {
 
   const additionalFeatures = [
     {
+      icon: Phone,
+      title: 'Voice Intelligence',
+      description: 'AI-powered calling agents for appointments, surveys, and phone support with natural speech.',
+    },
+    {
+      icon: Video,
+      title: 'Lifelike AI Avatars',
+      description: 'Digital representatives with realistic expressions for personalized video interactions.',
+    },
+    {
+      icon: Globe,
+      title: 'Multilingual Support',
+      description: 'Communicate in 100+ languages with real-time translation and cultural adaptation.',
+    },
+    {
       icon: Lock,
       title: 'Enterprise Security',
-      description: 'SOC 2 compliant with end-to-end encryption.',
+      description: 'SOC 2 compliant with end-to-end encryption and data protection.',
     },
     {
       icon: Clock,
       title: '24/7 Availability',
-      description: 'Never miss a customer interaction again.',
-    },
-    {
-      icon: Brain,
-      title: 'Continuous Learning',
-      description: 'AI improves from every interaction.',
+      description: 'Never miss a customer interaction with always-on AI agents.',
     },
     {
       icon: BarChart3,
       title: 'Advanced Analytics',
-      description: 'Track performance and optimize operations.',
+      description: 'Track performance, measure ROI, and optimize operations with detailed insights.',
     },
     {
       icon: Sparkles,
-      title: 'Custom Personalities',
-      description: 'Align agents with your brand voice.',
+      title: 'Custom Brand Personalities',
+      description: 'Configure agent tone, style, and behavior to perfectly align with your brand voice.',
     },
   ];
 
