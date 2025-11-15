@@ -36,7 +36,7 @@ export default function Footer({ onOpenPrivacy }: FooterProps) {
 
               <div className="flex gap-3">
                 <a
-                  href="https://www.linkedin.com/company/dashboardx"
+                  href="https://www.linkedin.com/company/dashboardxx"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-xl bg-gradient-to-br from-light-primary/90 to-light-secondary/90 dark:from-dark-tertiary/90 dark:to-dark-secondary/90 backdrop-blur-md border-2 border-brand-slate-light/30 dark:border-brand-slate/30 flex items-center justify-center hover:border-brand-teal-mid hover:scale-125 hover:bg-gradient-to-br hover:from-brand-teal-mid/20 hover:to-brand-emerald-mid/20 transition-all duration-500 group shadow-elevation-1 hover:shadow-glow-emerald hover:rotate-12"
