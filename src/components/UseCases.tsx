@@ -1,4 +1,4 @@
-import { Headphones, ShoppingCart, Calendar, HelpCircle, Users, Building2 } from 'lucide-react';
+import { MessageSquare, Phone, Video, Database, Headphones, Calendar, ShoppingBag, FileQuestion } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function UseCases() {
@@ -30,51 +30,67 @@ export default function UseCases() {
 
   const cases = [
     {
-      icon: Headphones,
-      industry: 'Customer Support',
-      title: 'Support Automation',
-      subtitle: 'Instant ticket resolution',
+      icon: MessageSquare,
+      industry: 'Chat Agents',
+      title: '24/7 Customer Support',
+      subtitle: 'Instant ticket resolution & inquiries',
       gradient: 'from-brand-blue-start via-brand-blue-mid to-brand-teal-start',
       borderColor: 'brand-blue-mid',
     },
     {
-      icon: ShoppingCart,
-      industry: 'E-Commerce',
-      title: 'Sales Assistant',
-      subtitle: 'Product recommendations',
+      icon: Headphones,
+      industry: 'Chat Agents',
+      title: 'Lead Qualification',
+      subtitle: 'Intelligent prospect screening',
+      gradient: 'from-brand-blue-mid via-brand-teal-start to-brand-teal-mid',
+      borderColor: 'brand-teal-mid',
+    },
+    {
+      icon: Phone,
+      industry: 'Voice Calling Agents',
+      title: 'Appointment Scheduling',
+      subtitle: 'Automated booking & reminders',
       gradient: 'from-brand-teal-mid via-brand-emerald-start to-brand-emerald-mid',
       borderColor: 'brand-emerald-mid',
     },
     {
       icon: Calendar,
-      industry: 'Scheduling',
-      title: 'Appointment Booking',
-      subtitle: 'Automated scheduling',
+      industry: 'Voice Calling Agents',
+      title: 'Surveys & Feedback',
+      subtitle: 'Outbound calls for data collection',
+      gradient: 'from-brand-emerald-start via-brand-teal-mid to-brand-blue-start',
+      borderColor: 'brand-teal-mid',
+    },
+    {
+      icon: Video,
+      industry: 'AI Avatars',
+      title: 'Product Demonstrations',
+      subtitle: 'Interactive video presentations',
       gradient: 'from-brand-amber-start via-brand-coral-start to-brand-coral-mid',
       borderColor: 'brand-coral-mid',
     },
     {
-      icon: HelpCircle,
-      industry: 'Knowledge Base',
-      title: 'FAQ Automation',
-      subtitle: 'Instant answers 24/7',
+      icon: ShoppingBag,
+      industry: 'AI Avatars',
+      title: 'Virtual Sales Assistant',
+      subtitle: 'Personalized shopping experience',
+      gradient: 'from-brand-coral-start via-brand-amber-start to-brand-emerald-start',
+      borderColor: 'brand-coral-mid',
+    },
+    {
+      icon: Database,
+      industry: 'RAG Data Retrieval',
+      title: 'Knowledge Base Access',
+      subtitle: 'Accurate answers from your data',
       gradient: 'from-brand-teal-start via-brand-teal-mid to-brand-emerald-start',
       borderColor: 'brand-teal-mid',
     },
     {
-      icon: Users,
-      industry: 'Lead Generation',
-      title: 'Qualification',
-      subtitle: 'Smart lead scoring',
-      gradient: 'from-brand-blue-mid via-brand-teal-start to-brand-emerald-start',
-      borderColor: 'brand-blue-mid',
-    },
-    {
-      icon: Building2,
-      industry: 'Enterprise',
-      title: 'Internal Support',
-      subtitle: 'Employee assistance',
-      gradient: 'from-brand-emerald-start via-brand-teal-mid to-brand-blue-start',
+      icon: FileQuestion,
+      industry: 'RAG Data Retrieval',
+      title: 'Technical Documentation',
+      subtitle: 'Instant access to complex info',
+      gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-mid',
       borderColor: 'brand-emerald-mid',
     },
   ];
@@ -86,14 +102,14 @@ export default function UseCases() {
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
           <h2 id="use-cases-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-            Real-World Applications
+            Service Applications
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-            Transform every customer touchpoint with intelligent automation across your business.
+            See how our Chat Agents, Voice Calling Agents, AI Avatars, and RAG Data Retrieval power real business solutions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 max-w-7xl mx-auto px-4">
           {cases.map((useCase, index) => (
             <div
               key={index}

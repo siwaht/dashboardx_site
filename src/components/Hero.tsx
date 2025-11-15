@@ -49,7 +49,7 @@ export default function Hero() {
           </h1>
 
           <p className="scroll-reveal text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed px-4 font-medium" style={{ animationDelay: '0.2s' }}>
-            Transform your business with AI voice agents, conversational chat bots, AI avatars, and complete workflow automation. Available 24/7, multilingual, and seamlessly integrated with your systems.
+            Transform your business with intelligent chat agents, AI voice calling, lifelike avatars, and knowledge-grounded responses. Available 24/7, powered by your data, and seamlessly integrated.
           </p>
 
           <div className="scroll-reveal flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 md:mb-16 px-4" style={{ animationDelay: '0.3s' }}>
