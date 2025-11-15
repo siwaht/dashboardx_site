@@ -22,8 +22,8 @@ export default function AnimatedVisual() {
   }, []);
 
   return (
-    <div className="w-full max-w-5xl mx-auto mt-8 md:mt-12 bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl relative shadow-elevation-2 overflow-auto">
-      <div className="w-[95%] mx-auto relative z-10 py-4 sm:py-6">
+    <div className="w-full max-w-5xl mx-auto mt-6 sm:mt-8 md:mt-12 bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-xl sm:rounded-2xl relative shadow-elevation-2 overflow-auto">
+      <div className="w-[95%] sm:w-[93%] mx-auto relative z-10 py-3 sm:py-4 md:py-6">
         <div className="bg-slate-800/90 backdrop-blur-sm text-slate-100 px-3 sm:px-6 py-2.5 sm:py-4 rounded-xl text-left border border-slate-700 shadow-elevation-2 font-mono text-xs sm:text-sm">
           <span className="text-teal-400">&gt;</span> {typedText}
           <span className="inline-block w-2 h-3.5 sm:h-4 bg-teal-400 ml-1 animate-pulse"></span>

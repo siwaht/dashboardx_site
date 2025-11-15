@@ -33,38 +33,41 @@ export default function HowItWorks() {
       icon: MessageSquare,
       title: 'Chat Agents',
       description: 'Intelligent conversational bots that handle customer inquiries, support tickets, and lead qualification 24/7 with natural language understanding.',
-      gradient: 'from-brand-blue-start via-brand-blue-mid to-brand-teal-start',
+      gradient: 'from-brand-indigo via-brand-blue to-brand-cyan',
     },
     {
       icon: Phone,
       title: 'Voice Calling Agents',
       description: 'AI-powered voice agents that make and receive calls, schedule appointments, conduct surveys, and provide phone support with human-like conversation.',
-      gradient: 'from-brand-teal-start via-brand-teal-mid to-brand-emerald-start',
+      gradient: 'from-brand-violet via-brand-purple to-brand-pink',
     },
     {
       icon: User,
       title: 'AI Avatars',
       description: 'Lifelike digital representatives that provide personalized video interactions, product demonstrations, and virtual assistance with realistic expressions.',
-      gradient: 'from-brand-emerald-mid via-brand-teal-end to-brand-amber-start',
+      gradient: 'from-brand-pink via-brand-rose to-brand-orange',
     },
     {
       icon: Workflow,
       title: 'RAG Data Retrieval',
       description: 'Retrieval-Augmented Generation technology that connects your AI agents to your knowledge base, enabling accurate responses powered by your actual business data and documents.',
-      gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-mid',
+      gradient: 'from-brand-cyan via-brand-teal to-brand-emerald',
     },
   ];
 
   return (
-    <section ref={sectionRef} id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-light-primary dark:bg-dark-secondary transition-colors relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-emerald-mid/3 to-transparent pointer-events-none" />
+    <section ref={sectionRef} id="services" aria-labelledby="services-heading" itemScope itemType="https://schema.org/Service" className="py-16 md:py-24 bg-gradient-to-b from-light-primary via-light-secondary to-light-primary dark:from-dark-secondary dark:via-dark-primary dark:to-dark-secondary transition-colors relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" style={{ animation: 'float-elegant 15s ease-in-out infinite' }}></div>
+        <div className="absolute bottom-20 left-10 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl" style={{ animation: 'float-elegant 12s ease-in-out infinite 3s' }}></div>
+      </div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 px-4">
-          <h2 id="services-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
+          <h2 id="services-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight" itemProp="name">
             Our AI Agent Services
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed" itemProp="description">
             Comprehensive AI solutions designed to automate, enhance, and transform every aspect of your business operations.
           </p>
         </div>
@@ -72,7 +75,7 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
           {services.map((service, index) => (
             <div key={index} className="scroll-reveal relative">
-              <div className="relative bg-light-secondary/90 dark:bg-dark-primary/90 p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid dark:hover:border-brand-emerald-mid transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-3 hover:-translate-y-1 h-full">
+              <div className="relative bg-light-secondary/90 dark:bg-dark-primary/90 p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-brand-slate-200/30 dark:border-brand-slate-700/30 hover:border-brand-purple dark:hover:border-brand-pink transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-purple hover:-translate-y-1 h-full">
                 <div className="flex items-center justify-center mb-6">
                   <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-elevation-3 border-4 border-white/30`}>
                     <service.icon className="w-10 h-10 text-white drop-shadow-lg" />

@@ -16,12 +16,13 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-light-primary dark:bg-dark-primary text-text-light-primary dark:text-text-dark-primary transition-colors">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gradient-brand text-white px-4 py-2 rounded-lg z-50">
-          Skip to main content
-        </a>
+      <div className="min-h-screen bg-light-primary dark:bg-dark-primary text-text-light-primary dark:text-text-dark-primary transition-colors" itemScope itemType="https://schema.org/WebSite">
+        <meta itemProp="name" content="DashboardX - AI Agent Platform" />
+        <meta itemProp="description" content="Enterprise AI agent platform with voice, chat, avatars, and RAG-powered automation" />
+        <meta itemProp="url" content="https://dashboardx.com" />
+
         <Header />
-        <main id="main-content" role="main">
+        <main id="main-content" role="main" itemScope itemType="https://schema.org/WebPageElement">
           <Hero />
           <HowItWorks />
           <AGUISection />

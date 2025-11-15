@@ -6,31 +6,31 @@ interface PrivacyPolicyProps {
 
 export default function PrivacyPolicy({ onClose }: PrivacyPolicyProps) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200" onClick={onClose}>
       <div
-        className="bg-light-primary dark:bg-dark-primary border-2 border-brand-slate-light/30 dark:border-brand-slate/30 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[85vh] overflow-hidden flex flex-col animate-in zoom-in-95 duration-300"
+        className="bg-light-primary dark:bg-dark-primary border-2 border-brand-slate-light/30 dark:border-brand-slate/30 rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-4xl max-h-[95vh] sm:max-h-[90vh] md:max-h-[85vh] overflow-hidden flex flex-col animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between p-6 border-b-2 border-brand-slate-light/30 dark:border-brand-slate/30 bg-gradient-to-r from-light-secondary to-light-primary dark:from-dark-secondary dark:to-dark-primary">
-          <h1 className="font-display text-2xl md:text-3xl font-bold text-gradient">
+        <div className="flex items-center justify-between p-4 sm:p-5 md:p-6 border-b-2 border-brand-slate-light/30 dark:border-brand-slate/30 bg-gradient-to-r from-light-secondary to-light-primary dark:from-dark-secondary dark:to-dark-primary sticky top-0 z-10">
+          <h1 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-gradient">
             Privacy Policy
           </h1>
           <button
             onClick={onClose}
-            className="w-10 h-10 rounded-xl bg-light-secondary/50 dark:bg-dark-tertiary/50 hover:bg-gradient-to-br hover:from-brand-teal-mid/20 hover:to-brand-emerald-mid/20 border-2 border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-90 group"
+            className="w-10 h-10 min-w-[40px] min-h-[40px] sm:w-11 sm:h-11 sm:min-w-[44px] sm:min-h-[44px] rounded-xl bg-light-secondary/50 dark:bg-dark-tertiary/50 hover:bg-gradient-to-br hover:from-brand-teal-mid/20 hover:to-brand-emerald-mid/20 border-2 border-brand-slate-light/30 dark:border-brand-slate/30 hover:border-brand-teal-mid flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-90 group flex-shrink-0"
             aria-label="Close"
           >
             <X className="w-5 h-5 text-text-light-secondary dark:text-text-dark-secondary group-hover:text-brand-teal-mid transition-colors" />
           </button>
         </div>
 
-        <div className="overflow-y-auto p-6 md:p-8 space-y-6 text-text-light-secondary dark:text-text-dark-secondary">
+        <div className="overflow-y-auto p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5 md:space-y-6 text-text-light-secondary dark:text-text-dark-secondary">
           <p className="text-sm">
             <strong>Last Updated:</strong> {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
 
           <section>
-            <h2 className="font-display text-xl font-bold text-text-light-primary dark:text-text-dark-primary mb-3">
+            <h2 className="font-display text-lg sm:text-xl font-bold text-text-light-primary dark:text-text-dark-primary mb-2 sm:mb-3">
               1. Introduction
             </h2>
             <p className="mb-3">

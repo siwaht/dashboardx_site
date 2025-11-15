@@ -70,24 +70,24 @@ export default function DemoForm() {
   };
 
   return (
-    <section ref={sectionRef} id="demo-form" aria-labelledby="demo-form-heading" className="py-16 md:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
+    <section ref={sectionRef} id="demo-form" aria-labelledby="demo-form-heading" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-light-primary dark:bg-dark-primary transition-colors relative overflow-hidden">
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-6 sm:p-8 md:p-12 lg:p-16 rounded-3xl border border-brand-slate-light/30 dark:border-brand-slate/30 shadow-elevation-3 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto bg-light-primary/95 dark:bg-dark-primary/95 p-4 sm:p-6 md:p-10 lg:p-16 rounded-2xl sm:rounded-3xl border border-brand-slate-200/30 dark:border-brand-slate-700/30 shadow-elevation-3 relative overflow-hidden">
 
           <div className="relative z-10">
-            <div className="text-center mb-8 md:mb-10">
-              <div className="inline-flex items-center gap-3 bg-light-secondary/90 dark:bg-dark-secondary/90 px-6 py-3 rounded-full border border-brand-emerald-mid/30 mb-8 shadow-elevation-2">
-                <Sparkles className="w-5 h-5 text-brand-emerald-mid" />
-                <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-mid via-brand-teal-mid to-brand-emerald-mid">
+            <div className="text-center mb-6 sm:mb-8 md:mb-10">
+              <div className="inline-flex items-center gap-2 sm:gap-3 bg-light-secondary/90 dark:bg-dark-secondary/90 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-brand-purple/30 mb-6 sm:mb-8 shadow-elevation-2">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-brand-purple" />
+                <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo via-brand-purple to-brand-pink">
                   Start Your AI Transformation
                 </span>
               </div>
 
-              <h2 id="demo-form-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-gradient tracking-tight">
+              <h2 id="demo-form-heading" className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-gradient tracking-tight px-2">
                 Get Your Free Consultation
               </h2>
-              <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium px-2">
+              <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto font-medium px-2 sm:px-4">
                 Discover how AI agents can transform your business operations. Schedule a personalized consultation with our team to explore voice agents, chat bots, AI avatars, and workflow automation tailored to your needs.
               </p>
             </div>
@@ -120,11 +120,11 @@ export default function DemoForm() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
               <div className="scroll-reveal flex flex-col group">
                 <label
                   htmlFor="name"
-                  className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 group-focus-within:text-gradient transition-all duration-300"
+                  className="text-xs sm:text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-2 sm:mb-3 group-focus-within:text-gradient transition-all duration-300"
                 >
                   Full Name
                 </label>
@@ -134,7 +134,7 @@ export default function DemoForm() {
                   name="name"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 min-h-[44px]"
                   placeholder="John Doe"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function DemoForm() {
               <div className="scroll-reveal flex flex-col group" style={{ animationDelay: '0.1s' }}>
                 <label
                   htmlFor="email"
-                  className="text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-3 group-focus-within:text-gradient transition-all duration-300"
+                  className="text-xs sm:text-sm font-bold text-text-light-secondary dark:text-text-dark-secondary mb-2 sm:mb-3 group-focus-within:text-gradient transition-all duration-300"
                 >
                   Work Email
                 </label>
@@ -152,7 +152,7 @@ export default function DemoForm() {
                   name="email"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
                   placeholder="john@company.com"
                 />
               </div>
@@ -170,7 +170,7 @@ export default function DemoForm() {
                   name="company"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
                   placeholder="Acme Inc."
                 />
               </div>
@@ -188,7 +188,7 @@ export default function DemoForm() {
                   name="job_title"
                   required
                   disabled={isSubmitting}
-                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
+                  className="bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1"
                   placeholder="Product Manager"
                 />
               </div>
@@ -205,7 +205,7 @@ export default function DemoForm() {
                   name="service_interest"
                   required
                   disabled={isSubmitting}
-                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-light/30 dark:border-brand-slate/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-teal-mid focus:ring-2 focus:ring-brand-emerald-mid/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
+                  className="w-full bg-light-primary/95 dark:bg-dark-primary/95 border border-brand-slate-200/30 dark:border-brand-slate-700/30 text-text-light-primary dark:text-text-dark-primary px-4 sm:px-5 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-medium focus:outline-none focus:border-brand-purple focus:ring-2 focus:ring-brand-purple/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-elevation-1 mb-5 md:mb-6"
                 >
                   <option value="">Select a service</option>
                   <option value="chat-agents">Chat AI Agents</option>
@@ -220,7 +220,7 @@ export default function DemoForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-ripple w-full bg-gradient-brand text-white py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:-translate-y-1 sm:hover:-translate-y-2 hover:scale-[1.02] sm:hover:scale-105 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 shadow-elevation-4 relative overflow-hidden group border-2 border-white/20"
+                  className="btn-ripple w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white py-4 sm:py-5 rounded-xl font-bold text-lg sm:text-xl hover:-translate-y-2 hover:scale-105 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100 shadow-2xl shadow-purple-500/40 hover:shadow-purple-500/60 relative overflow-hidden group border-2 border-white/30 shimmer-effect"
                 >
                   <span className="relative z-10">
                     {isSubmitting ? (
