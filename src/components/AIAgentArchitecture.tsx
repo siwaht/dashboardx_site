@@ -1,4 +1,4 @@
-import { Brain, Database, HardDrive, Search, Code2, CheckCircle, ArrowRight, Sparkles, Zap, Activity, Loader2 } from 'lucide-react';
+import { Brain, Database, HardDrive, Search, Code2, CheckCircle, ArrowRight, Sparkles, Zap, Activity, Loader2, Bot, Shield } from 'lucide-react';
 import { useEffect, useState, useRef, useCallback } from 'react';
 
 export default function AIAgentArchitecture() {
@@ -45,84 +45,103 @@ export default function AIAgentArchitecture() {
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0]);
-      setActiveNode(4);
-      setCurrentStageLabel('LLM processing query...');
-      setProcessingNodes([4]);
+      setActiveNode(1);
+      setCurrentStageLabel('AI Agent orchestrating...');
+      setProcessingNodes([1]);
     }, 1200));
 
     animationTimers.current.push(setTimeout(() => {
       setActiveEdges([1]);
-      setCurrentStageLabel('Checking short-term memory...');
+      setCurrentStageLabel('LLM processing query...');
     }, 1800));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1]);
-      setActiveNode(1);
-      setProcessingNodes([1]);
+      setActiveNode(2);
+      setProcessingNodes([2]);
     }, 2100));
 
     animationTimers.current.push(setTimeout(() => {
-      setCompletedNodes([0, 1]);
-      setProcessingNodes([4]);
-      setActiveNode(4);
+      setCompletedNodes([0, 1, 2]);
+      setProcessingNodes([1]);
+      setActiveNode(1);
       setActiveEdges([2]);
-      setCurrentStageLabel('Retrieving from long-term memory...');
+      setCurrentStageLabel('Checking short-term memory...');
     }, 2700));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2]);
-      setActiveNode(2);
-      setProcessingNodes([2]);
+      setActiveNode(3);
+      setProcessingNodes([3]);
     }, 3000));
 
     animationTimers.current.push(setTimeout(() => {
-      setCompletedNodes([0, 1, 2]);
-      setProcessingNodes([4]);
-      setActiveNode(4);
+      setCompletedNodes([0, 1, 2, 3]);
+      setProcessingNodes([1]);
+      setActiveNode(1);
       setActiveEdges([3]);
-      setCurrentStageLabel('Performing RAG retrieval...');
+      setCurrentStageLabel('Retrieving from long-term memory...');
     }, 3600));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2, 3]);
-      setActiveNode(3);
-      setProcessingNodes([3]);
+      setActiveNode(4);
+      setProcessingNodes([4]);
     }, 3900));
 
     animationTimers.current.push(setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3]);
-      setProcessingNodes([4]);
-      setActiveNode(4);
-      setCurrentStageLabel('LLM synthesizing response...');
+      setCompletedNodes([0, 1, 2, 3, 4]);
+      setProcessingNodes([1]);
+      setActiveNode(1);
+      setActiveEdges([4]);
+      setCurrentStageLabel('Performing RAG retrieval...');
     }, 4500));
 
     animationTimers.current.push(setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3, 4]);
-      setProcessingNodes([]);
-      setActiveEdges([4, 5]);
-      setCurrentStageLabel('Generating outputs...');
-    }, 5400));
-
-    animationTimers.current.push(setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4, 5]);
+      setCompletedEdges([0, 1, 2, 3, 4]);
       setActiveNode(5);
       setProcessingNodes([5]);
-    }, 5800));
+    }, 4800));
+
+    animationTimers.current.push(setTimeout(() => {
+      setCompletedNodes([0, 1, 2, 3, 4, 5]);
+      setProcessingNodes([1]);
+      setActiveNode(1);
+      setCurrentStageLabel('Applying guardrails...');
+    }, 5400));
 
     animationTimers.current.push(setTimeout(() => {
       setActiveNode(6);
       setProcessingNodes([6]);
+    }, 5700));
+
+    animationTimers.current.push(setTimeout(() => {
+      setCompletedNodes([0, 1, 2, 3, 4, 5, 6]);
+      setProcessingNodes([1]);
+      setActiveEdges([5, 6]);
+      setCurrentStageLabel('Generating outputs...');
+    }, 6200));
+
+    animationTimers.current.push(setTimeout(() => {
+      setCompletedEdges([0, 1, 2, 3, 4, 5, 6]);
+      setActiveNode(7);
+      setProcessingNodes([7]);
+    }, 6600));
+
+    animationTimers.current.push(setTimeout(() => {
+      setActiveNode(8);
+      setProcessingNodes([8]);
       setTimeout(() => {
-        setCompletedNodes([0, 1, 2, 3, 4, 5, 6]);
+        setCompletedNodes([0, 1, 2, 3, 4, 5, 6, 7, 8]);
         setProcessingNodes([]);
         setCurrentStageLabel('Response complete!');
       }, 300);
-    }, 6200));
+    }, 7000));
 
     animationTimers.current.push(setTimeout(() => {
       setCurrentStageLabel('');
       setActiveNode(-1);
-    }, 6800));
+    }, 7600));
   }, [stopAnimation, resetAnimation]);
 
   const startAnimationLoop = useCallback(() => {
@@ -133,7 +152,7 @@ export default function AIAgentArchitecture() {
     const loop = () => {
       if (!isAnimatingRef.current) return;
       startAnimation();
-      animationTimers.current.push(setTimeout(loop, 7500));
+      animationTimers.current.push(setTimeout(loop, 8300));
     };
 
     loop();
@@ -169,68 +188,95 @@ export default function AIAgentArchitecture() {
       icon: ArrowRight,
       label: 'Input',
       sublabel: 'User Query',
-      x: 12,
+      x: 8,
       y: 50,
-      color: 'from-slate-600 to-slate-700'
+      color: 'from-slate-500 to-slate-600',
+      rounded: true
     },
     {
-      icon: HardDrive,
-      label: 'Short-Term',
-      sublabel: 'Memory Cache',
-      x: 35,
-      y: 20,
-      color: 'from-blue-500 to-blue-600'
-    },
-    {
-      icon: Database,
-      label: 'Long-Term',
-      sublabel: 'Memory Store',
-      x: 35,
-      y: 80,
-      color: 'from-indigo-500 to-indigo-600'
-    },
-    {
-      icon: Search,
-      label: 'RAG',
-      sublabel: 'Knowledge Base',
+      icon: Bot,
+      label: 'AI Agent',
+      sublabel: 'Orchestration',
       x: 50,
-      y: 12,
-      color: 'from-emerald-500 to-teal-600'
+      y: 50,
+      color: 'from-cyan-500 to-blue-600',
+      central: true,
+      rounded: false
     },
     {
       icon: Brain,
       label: 'LLM',
       sublabel: 'Core Processing',
+      x: 33,
+      y: 18,
+      color: 'from-violet-400 to-fuchsia-500',
+      rounded: true
+    },
+    {
+      icon: HardDrive,
+      label: 'Short-Term',
+      sublabel: 'Memory Cache',
+      x: 67,
+      y: 18,
+      color: 'from-blue-400 to-blue-500',
+      rounded: true
+    },
+    {
+      icon: Database,
+      label: 'Long-Term',
+      sublabel: 'Memory Store',
+      x: 33,
+      y: 82,
+      color: 'from-indigo-400 to-indigo-500',
+      rounded: true
+    },
+    {
+      icon: Search,
+      label: 'RAG',
+      sublabel: 'Knowledge Base',
+      x: 67,
+      y: 82,
+      color: 'from-emerald-400 to-teal-500',
+      rounded: true
+    },
+    {
+      icon: Shield,
+      label: 'Guardrails',
+      sublabel: 'Safety & Policy',
       x: 50,
       y: 50,
-      color: 'from-violet-500 to-purple-600',
-      large: true
+      color: 'from-amber-400 to-orange-500',
+      outer: true,
+      rounded: false
     },
     {
       icon: Code2,
       label: 'Structured',
       sublabel: 'JSON Output',
-      x: 77,
-      y: 32,
-      color: 'from-cyan-500 to-blue-600'
+      x: 87,
+      y: 35,
+      color: 'from-cyan-400 to-sky-500',
+      rounded: true
     },
     {
       icon: Sparkles,
       label: 'Multimodal',
       sublabel: 'Rich Media',
-      x: 77,
-      y: 68,
-      color: 'from-pink-500 to-rose-600'
+      x: 87,
+      y: 65,
+      color: 'from-pink-400 to-rose-500',
+      rounded: true
     }
   ];
 
   const edges = [
-    { from: 0, to: 4 },
-    { from: 4, to: 1 },
-    { from: 4, to: 2 },
-    { from: 4, to: 3 },
-    { from: 4, to: 5 },
-    { from: 4, to: 6 }
+    { from: 0, to: 1 },
+    { from: 1, to: 2 },
+    { from: 1, to: 3 },
+    { from: 1, to: 4 },
+    { from: 1, to: 5 },
+    { from: 1, to: 7 },
+    { from: 1, to: 8 }
   ];
 
   const getNodeStatus = (index: number) => {
@@ -347,7 +393,46 @@ export default function AIAgentArchitecture() {
 
           {architectureNodes.map((node, index) => {
             const status = getNodeStatus(index);
-            const isLarge = node.large;
+            const isCentral = node.central;
+            const isOuter = node.outer;
+            const isRounded = node.rounded !== false;
+
+            if (isOuter) {
+              return (
+                <div
+                  key={index}
+                  className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+                  style={{
+                    left: `${node.x}%`,
+                    top: `${node.y}%`,
+                    zIndex: 5
+                  }}
+                >
+                  <div
+                    className={`relative border-2 border-dashed transition-all duration-500 flex flex-col items-center justify-center ${
+                      status === 'active'
+                        ? 'border-amber-400 shadow-lg shadow-amber-400/30'
+                        : status === 'processing'
+                        ? 'border-amber-400 shadow-lg shadow-amber-400/30'
+                        : status === 'completed'
+                        ? 'border-emerald-500 shadow-lg shadow-emerald-500/20'
+                        : 'border-slate-600/50'
+                    }`}
+                    style={{
+                      width: '240px',
+                      height: '180px',
+                      borderRadius: '12px'
+                    }}
+                  >
+                    {status === 'active' && (
+                      <div className="absolute top-2 right-2">
+                        <Shield className="w-4 h-4 text-amber-400 animate-pulse" strokeWidth={2} />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            }
 
             return (
               <div
@@ -356,13 +441,15 @@ export default function AIAgentArchitecture() {
                 style={{
                   left: `${node.x}%`,
                   top: `${node.y}%`,
-                  zIndex: isLarge ? 20 : 10
+                  zIndex: isCentral ? 20 : 10
                 }}
               >
                 <div className="flex flex-col items-center">
                   <div
-                    className={`relative bg-slate-800 rounded-lg transition-all duration-500 flex flex-col items-center justify-center ${
-                      isLarge ? 'w-[85px] xs:w-[95px] sm:w-[110px] md:w-[120px]' : 'w-[68px] xs:w-[75px] sm:w-[88px] md:w-[98px]'
+                    className={`relative bg-slate-800 transition-all duration-500 flex flex-col items-center justify-center ${
+                      isRounded ? 'rounded-2xl' : 'rounded-lg'
+                    } ${
+                      isCentral ? 'w-[110px] xs:w-[120px] sm:w-[140px] md:w-[155px]' : 'w-[68px] xs:w-[75px] sm:w-[88px] md:w-[98px]'
                     } ${
                       status === 'active'
                         ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 scale-105 sm:scale-110'
@@ -373,7 +460,7 @@ export default function AIAgentArchitecture() {
                         : 'border-2 border-slate-600'
                     }`}
                     style={{
-                      padding: isLarge ? '10px 12px' : '7px 9px',
+                      padding: isCentral ? '14px 16px' : '7px 9px',
                     }}
                   >
                     {status === 'active' && (
@@ -389,9 +476,9 @@ export default function AIAgentArchitecture() {
                       status === 'active' || status === 'processing' ? 'text-cyan-400 animate-pulse' : status === 'completed' ? 'text-emerald-400' : 'text-slate-400'
                     }`}>
                       {status === 'processing' ? (
-                        <Loader2 className={`${isLarge ? 'w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8' : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'} animate-spin`} strokeWidth={2.5} />
+                        <Loader2 className={`${isCentral ? 'w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9' : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'} animate-spin`} strokeWidth={2.5} />
                       ) : (
-                        <node.icon className={`${isLarge ? 'w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8' : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'}`} strokeWidth={2.5} />
+                        <node.icon className={`${isCentral ? 'w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9' : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'}`} strokeWidth={2.5} />
                       )}
                     </div>
 
@@ -407,8 +494,8 @@ export default function AIAgentArchitecture() {
 
                     {(status === 'active' || status === 'processing') && (
                       <>
-                        <div className="absolute inset-0 rounded-lg border-2 border-cyan-400 animate-ping opacity-75"></div>
-                        <div className="absolute -inset-1 rounded-lg border border-cyan-400/30 animate-pulse"></div>
+                        <div className={`absolute inset-0 ${isRounded ? 'rounded-2xl' : 'rounded-lg'} border-2 border-cyan-400 animate-ping opacity-75`}></div>
+                        <div className={`absolute -inset-1 ${isRounded ? 'rounded-2xl' : 'rounded-lg'} border border-cyan-400/30 animate-pulse`}></div>
                         <div className="absolute -top-1.5 -right-1.5 flex items-center gap-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-[8px] xs:text-[9px] sm:text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-lg animate-pulse">
                           <Zap className="w-2.5 h-2.5" />
                         </div>
