@@ -35,31 +35,31 @@ export default function AIAgentArchitecture() {
       setActiveNode(0);
       setCurrentStageLabel('Receiving user input...');
       setProcessingNodes([0]);
-    }, 300));
+    }, 200));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0]);
       setProcessingNodes([]);
       setActiveEdges([0]);
-    }, 1000));
+    }, 700));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0]);
       setActiveNode(4);
       setCurrentStageLabel('LLM processing query...');
       setProcessingNodes([4]);
-    }, 1600));
+    }, 1200));
 
     animationTimers.current.push(setTimeout(() => {
       setActiveEdges([1]);
       setCurrentStageLabel('Checking short-term memory...');
-    }, 2400));
+    }, 1800));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1]);
       setActiveNode(1);
       setProcessingNodes([1]);
-    }, 2800));
+    }, 2100));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1]);
@@ -67,13 +67,13 @@ export default function AIAgentArchitecture() {
       setActiveNode(4);
       setActiveEdges([2]);
       setCurrentStageLabel('Retrieving from long-term memory...');
-    }, 3600));
+    }, 2700));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2]);
       setActiveNode(2);
       setProcessingNodes([2]);
-    }, 4000));
+    }, 3000));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2]);
@@ -81,33 +81,33 @@ export default function AIAgentArchitecture() {
       setActiveNode(4);
       setActiveEdges([3]);
       setCurrentStageLabel('Performing RAG retrieval...');
-    }, 4800));
+    }, 3600));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2, 3]);
       setActiveNode(3);
       setProcessingNodes([3]);
-    }, 5200));
+    }, 3900));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3]);
       setProcessingNodes([4]);
       setActiveNode(4);
       setCurrentStageLabel('LLM synthesizing response...');
-    }, 6000));
+    }, 4500));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4]);
       setProcessingNodes([]);
       setActiveEdges([4, 5]);
       setCurrentStageLabel('Generating outputs...');
-    }, 7200));
+    }, 5400));
 
     animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2, 3, 4, 5]);
       setActiveNode(5);
       setProcessingNodes([5]);
-    }, 7800));
+    }, 5800));
 
     animationTimers.current.push(setTimeout(() => {
       setActiveNode(6);
@@ -116,13 +116,13 @@ export default function AIAgentArchitecture() {
         setCompletedNodes([0, 1, 2, 3, 4, 5, 6]);
         setProcessingNodes([]);
         setCurrentStageLabel('Response complete!');
-      }, 400);
-    }, 8200));
+      }, 300);
+    }, 6200));
 
     animationTimers.current.push(setTimeout(() => {
       setCurrentStageLabel('');
       setActiveNode(-1);
-    }, 9400));
+    }, 7000));
   }, [stopAnimation, resetAnimation]);
 
   const startAnimationLoop = useCallback(() => {
@@ -133,7 +133,7 @@ export default function AIAgentArchitecture() {
     const loop = () => {
       if (!isAnimatingRef.current) return;
       startAnimation();
-      animationTimers.current.push(setTimeout(loop, 10500));
+      animationTimers.current.push(setTimeout(loop, 7800));
     };
 
     loop();
@@ -169,7 +169,7 @@ export default function AIAgentArchitecture() {
       icon: ArrowRight,
       label: 'Input',
       sublabel: 'User Query',
-      x: 10,
+      x: 12,
       y: 50,
       color: 'from-slate-600 to-slate-700'
     },
@@ -177,16 +177,16 @@ export default function AIAgentArchitecture() {
       icon: HardDrive,
       label: 'Short-Term',
       sublabel: 'Memory Cache',
-      x: 32,
-      y: 25,
+      x: 35,
+      y: 20,
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Database,
       label: 'Long-Term',
       sublabel: 'Memory Store',
-      x: 32,
-      y: 75,
+      x: 35,
+      y: 80,
       color: 'from-indigo-500 to-indigo-600'
     },
     {
@@ -194,7 +194,7 @@ export default function AIAgentArchitecture() {
       label: 'RAG',
       sublabel: 'Knowledge Base',
       x: 50,
-      y: 15,
+      y: 12,
       color: 'from-emerald-500 to-teal-600'
     },
     {
@@ -210,16 +210,16 @@ export default function AIAgentArchitecture() {
       icon: Code2,
       label: 'Structured',
       sublabel: 'JSON Output',
-      x: 75,
-      y: 35,
+      x: 77,
+      y: 32,
       color: 'from-cyan-500 to-blue-600'
     },
     {
       icon: Sparkles,
       label: 'Multimodal',
       sublabel: 'Rich Media',
-      x: 75,
-      y: 65,
+      x: 77,
+      y: 68,
       color: 'from-pink-500 to-rose-600'
     }
   ];
@@ -256,7 +256,7 @@ export default function AIAgentArchitecture() {
           </div>
         </div>
       )}
-      <div className="relative w-full h-[300px] xs:h-[340px] sm:h-[360px] md:h-[400px] lg:h-[440px] p-4 sm:p-5 md:p-6 lg:p-8">
+      <div className="relative w-full h-[280px] xs:h-[320px] sm:h-[360px] md:h-[400px] lg:h-[440px] p-3 sm:p-5 md:p-6 lg:p-8">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute inset-0" style={{
             backgroundImage: 'linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px)',
@@ -362,10 +362,10 @@ export default function AIAgentArchitecture() {
                 <div className="flex flex-col items-center">
                   <div
                     className={`relative bg-slate-800 rounded-lg transition-all duration-500 flex flex-col items-center justify-center ${
-                      isLarge ? 'min-w-[90px] xs:min-w-[100px] sm:min-w-[115px] md:min-w-[125px]' : 'min-w-[70px] xs:min-w-[77px] sm:min-w-[90px] md:min-w-[100px]'
+                      isLarge ? 'w-[85px] xs:w-[95px] sm:w-[110px] md:w-[120px]' : 'w-[68px] xs:w-[75px] sm:w-[88px] md:w-[98px]'
                     } ${
                       status === 'active'
-                        ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 scale-110'
+                        ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 scale-105 sm:scale-110'
                         : status === 'processing'
                         ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50'
                         : status === 'completed'
@@ -373,7 +373,7 @@ export default function AIAgentArchitecture() {
                         : 'border-2 border-slate-600'
                     }`}
                     style={{
-                      padding: isLarge ? '12px 14px' : '8px 10px',
+                      padding: isLarge ? '10px 12px' : '7px 9px',
                     }}
                   >
                     {status === 'active' && (
@@ -385,23 +385,23 @@ export default function AIAgentArchitecture() {
                       </>
                     )}
 
-                    <div className={`mb-1.5 sm:mb-2 transition-all duration-300 ${
+                    <div className={`mb-1 sm:mb-1.5 transition-all duration-300 ${
                       status === 'active' || status === 'processing' ? 'text-cyan-400 animate-pulse' : status === 'completed' ? 'text-emerald-400' : 'text-slate-400'
                     }`}>
                       {status === 'processing' ? (
-                        <Loader2 className={`${isLarge ? 'w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9' : 'w-5 h-5 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7'} animate-spin`} strokeWidth={2.5} />
+                        <Loader2 className={`${isLarge ? 'w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8' : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'} animate-spin`} strokeWidth={2.5} />
                       ) : (
-                        <node.icon className={`${isLarge ? 'w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9' : 'w-5 h-5 xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7'}`} strokeWidth={2.5} />
+                        <node.icon className={`${isLarge ? 'w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8' : 'w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6'}`} strokeWidth={2.5} />
                       )}
                     </div>
 
-                    <div className={`text-[10px] xs:text-[11px] sm:text-xs md:text-sm font-bold mb-0.5 text-center leading-tight ${
+                    <div className={`text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold mb-0.5 text-center leading-tight px-1 ${
                       status === 'active' || status === 'processing' ? 'text-cyan-300' : status === 'completed' ? 'text-emerald-300' : 'text-slate-400'
                     }`}>
                       {node.label}
                     </div>
 
-                    <div className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] text-slate-500 whitespace-nowrap text-center leading-tight">
+                    <div className="text-[7px] xs:text-[8px] sm:text-[9px] md:text-[10px] text-slate-500 whitespace-nowrap text-center leading-tight px-0.5">
                       {node.sublabel}
                     </div>
 
