@@ -1,4 +1,4 @@
-import { MessageSquare, Phone, Video, Database, Headphones, Calendar, ShoppingBag, FileQuestion } from 'lucide-react';
+import { MessageSquare, Phone, Video, Database, Headphones, Calendar, ShoppingBag, FileQuestion, Settings, Cog, Film, TrendingUp } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function UseCases() {
@@ -49,7 +49,7 @@ export default function UseCases() {
       icon: Phone,
       industry: 'Voice Calling Agents',
       title: 'Appointment Scheduling',
-      subtitle: 'Automated booking & reminders',
+      subtitle: 'Inbound & outbound automated booking',
       gradient: 'from-brand-teal-mid via-brand-emerald-start to-brand-emerald-mid',
       borderColor: 'brand-emerald-mid',
     },
@@ -65,7 +65,7 @@ export default function UseCases() {
       icon: Video,
       industry: 'AI Avatars',
       title: 'Product Demonstrations',
-      subtitle: 'Interactive video presentations',
+      subtitle: 'Lifelike video interactions',
       gradient: 'from-brand-amber-start via-brand-coral-start to-brand-coral-mid',
       borderColor: 'brand-coral-mid',
     },
@@ -78,10 +78,26 @@ export default function UseCases() {
       borderColor: 'brand-coral-mid',
     },
     {
+      icon: Settings,
+      industry: 'Custom AI Agents',
+      title: 'Enterprise Workflow Automation',
+      subtitle: 'Complex proprietary system integration',
+      gradient: 'from-brand-coral-mid via-brand-amber-mid to-brand-teal-start',
+      borderColor: 'brand-coral-mid',
+    },
+    {
+      icon: Cog,
+      industry: 'Custom AI Agents',
+      title: 'Specialized Process Handling',
+      subtitle: 'Tailor-made for unique business needs',
+      gradient: 'from-brand-amber-start via-brand-coral-start to-brand-emerald-mid',
+      borderColor: 'brand-amber-start',
+    },
+    {
       icon: Database,
       industry: 'RAG Data Retrieval',
       title: 'Knowledge Base Access',
-      subtitle: 'Accurate answers from your data',
+      subtitle: 'Data-powered accurate responses',
       gradient: 'from-brand-teal-start via-brand-teal-mid to-brand-emerald-start',
       borderColor: 'brand-teal-mid',
     },
@@ -92,6 +108,22 @@ export default function UseCases() {
       subtitle: 'Instant access to complex info',
       gradient: 'from-brand-blue-start via-brand-teal-mid to-brand-emerald-mid',
       borderColor: 'brand-emerald-mid',
+    },
+    {
+      icon: Film,
+      industry: 'AI Generated Video Ads',
+      title: 'Scaled Marketing Campaigns',
+      subtitle: 'Rapid A/B testing & personalization',
+      gradient: 'from-brand-coral-start via-brand-amber-mid to-brand-emerald-start',
+      borderColor: 'brand-coral-start',
+    },
+    {
+      icon: TrendingUp,
+      industry: 'AI Generated Video Ads',
+      title: 'High-ROI Video Ads',
+      subtitle: 'Fast time-to-market, proven conversions',
+      gradient: 'from-brand-amber-mid via-brand-coral-mid to-brand-teal-mid',
+      borderColor: 'brand-amber-mid',
     },
   ];
 
@@ -105,7 +137,7 @@ export default function UseCases() {
             Service Applications
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-            See how our Chat Agents, Voice Calling Agents, AI Avatars, and RAG Data Retrieval power real business solutions.
+            From customer support to enterprise automation and marketing—see how our six AI services power real business solutions across every department.
           </p>
         </div>
 

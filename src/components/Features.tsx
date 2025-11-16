@@ -1,4 +1,4 @@
-import { Globe, Brain, Plug, Lock, BarChart3, Sparkles, Clock, MessageSquare, Database, Phone, Video } from 'lucide-react';
+import { Globe, Brain, Plug, Lock, BarChart3, Sparkles, Clock, MessageSquare, Database, Phone, Video, Settings, Film } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function Features() {
@@ -56,12 +56,22 @@ export default function Features() {
     {
       icon: Phone,
       title: 'Voice Intelligence',
-      description: 'AI-powered calling agents for appointments, surveys, and phone support with natural speech.',
+      description: 'AI-powered calling agents for inbound and outbound calls with natural speech.',
     },
     {
       icon: Video,
       title: 'Lifelike AI Avatars',
       description: 'Digital representatives with realistic expressions for personalized video interactions.',
+    },
+    {
+      icon: Settings,
+      title: 'Custom AI Solutions',
+      description: 'Enterprise-grade agents tailored for complex processes and proprietary systems.',
+    },
+    {
+      icon: Film,
+      title: 'AI Video Generation',
+      description: 'Rapid creation of high-quality, personalized video ads for marketing campaigns.',
     },
     {
       icon: Globe,
