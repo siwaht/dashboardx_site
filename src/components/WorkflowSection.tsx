@@ -34,10 +34,10 @@ export default function WorkflowSection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 md:mb-12 px-4">
             <h2 id="workflow-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-              AI Agent Workflow Architecture
+              AI Agent Architecture
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-              Watch how our specialized AI agents collaborate seamlessly to process your queries. Data flows from multiple sources through intelligent agents to a central orchestrator that synthesizes accurate, verified responses.
+              Watch how a modern AI agent leverages LLM processing, memory systems, RAG retrieval, and multimodal capabilities to deliver intelligent, context-aware responses powered by your data.
             </p>
           </div>
 
@@ -46,19 +46,19 @@ export default function WorkflowSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-10 md:mt-12 px-4">
             <div className="scroll-reveal bg-light-secondary/50 dark:bg-dark-secondary/50 p-5 md:p-6 rounded-xl border border-border-light dark:border-border-dark">
               <h3 className="text-xl font-bold mb-3 text-text-light-primary dark:text-text-dark-primary">
-                Intelligent Agent Coordination
+                Multimodal Processing
               </h3>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                Each specialized agent handles specific data sources and tasks, coordinated by a central orchestrator that ensures optimal query execution and result synthesis.
+                Process text, images, voice, and retrieve data from your knowledge base simultaneously. Our agents handle multiple input types and combine them intelligently for comprehensive understanding.
               </p>
             </div>
 
             <div className="scroll-reveal bg-light-secondary/50 dark:bg-dark-secondary/50 p-5 md:p-6 rounded-xl border border-border-light dark:border-border-dark" style={{ animationDelay: '0.1s' }}>
               <h3 className="text-xl font-bold mb-3 text-text-light-primary dark:text-text-dark-primary">
-                Multi-Source Integration
+                Context-Aware Intelligence
               </h3>
               <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                Connect databases, documents, APIs, and knowledge bases. Our agents intelligently route queries to the right sources and combine insights for comprehensive answers.
+                Memory systems maintain conversation history while the LLM core processes information with full context awareness, ensuring responses are accurate, relevant, and personalized to your needs.
               </p>
             </div>
           </div>

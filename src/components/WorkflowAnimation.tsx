@@ -1,4 +1,4 @@
-import { Play, Database, Search, FileText, GitBranch, CheckCircle, Sparkles, Zap, ArrowRight } from 'lucide-react';
+import { Brain, Database, MessageSquare, FileText, Image as ImageIcon, Mic, Video, CheckCircle, Sparkles, Zap, Layers, BookOpen } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 
 export default function WorkflowAnimation() {
@@ -30,125 +30,162 @@ export default function WorkflowAnimation() {
   }, [hasAnimated]);
 
   const startAnimation = () => {
+    // Input arrives
     setTimeout(() => setActiveNode(0), 300);
 
+    // Input processed, multiple sources activated
     setTimeout(() => {
       setCompletedNodes([0]);
-      setActiveEdges([0]);
+      setActiveEdges([0, 1, 2, 3]);
     }, 1200);
 
+    // Multimodal inputs and RAG activate
     setTimeout(() => {
-      setCompletedEdges([0]);
+      setCompletedEdges([0, 1, 2, 3]);
       setActiveNode(1);
+      setTimeout(() => setActiveNode(2), 100);
+      setTimeout(() => setActiveNode(3), 200);
+      setTimeout(() => setActiveNode(4), 300);
     }, 1800);
 
-    setTimeout(() => {
-      setCompletedNodes([0, 1]);
-      setActiveEdges([1, 2]);
-    }, 2700);
-
-    setTimeout(() => {
-      setCompletedEdges([0, 1, 2]);
-      setActiveNode(2);
-      setTimeout(() => setActiveNode(3), 100);
-    }, 3300);
-
-    setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3]);
-      setActiveEdges([3, 4]);
-    }, 4200);
-
-    setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4]);
-      setActiveNode(4);
-    }, 4800);
-
+    // All sources complete, memory and context activate
     setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4]);
-      setActiveEdges([5]);
-    }, 5700);
+      setActiveEdges([4, 5, 6, 7]);
+    }, 3000);
 
+    // Memory and context complete
     setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4, 5]);
+      setCompletedEdges([0, 1, 2, 3, 4, 5, 6, 7]);
       setActiveNode(5);
-    }, 6300);
+      setTimeout(() => setActiveNode(6), 100);
+    }, 3600);
 
-    setTimeout(() => {
-      setCompletedNodes([0, 1, 2, 3, 4, 5]);
-      setActiveEdges([6]);
-    }, 7200);
-
-    setTimeout(() => {
-      setCompletedEdges([0, 1, 2, 3, 4, 5, 6]);
-      setActiveNode(6);
-    }, 7800);
-
+    // Data flows to LLM
     setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4, 5, 6]);
+      setActiveEdges([8, 9]);
+    }, 4500);
+
+    // LLM processing
+    setTimeout(() => {
+      setCompletedEdges([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+      setActiveNode(7);
+    }, 5100);
+
+    // LLM to output
+    setTimeout(() => {
+      setCompletedNodes([0, 1, 2, 3, 4, 5, 6, 7]);
+      setActiveEdges([10]);
+    }, 6300);
+
+    // Output complete
+    setTimeout(() => {
+      setCompletedEdges([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+      setActiveNode(8);
+    }, 6900);
+
+    // Animation complete
+    setTimeout(() => {
+      setCompletedNodes([0, 1, 2, 3, 4, 5, 6, 7, 8]);
       setActiveNode(-1);
-    }, 8700);
+    }, 7800);
   };
 
   const workflowNodes = [
     {
-      icon: Play,
-      label: 'Start',
-      sublabel: 'User Query',
-      x: 8,
-      y: 50
-    },
-    {
-      icon: GitBranch,
-      label: 'Router',
-      sublabel: 'Analyze & Route',
-      x: 23,
-      y: 50
-    },
-    {
-      icon: Database,
-      label: 'SQL Agent',
-      sublabel: 'Query DB',
-      x: 40,
-      y: 20
+      icon: MessageSquare,
+      label: 'User Input',
+      sublabel: 'Query Received',
+      x: 10,
+      y: 50,
+      color: 'blue'
     },
     {
       icon: FileText,
-      label: 'Doc Agent',
-      sublabel: 'Search Docs',
-      x: 40,
-      y: 80
+      label: 'Text Input',
+      sublabel: 'Documents',
+      x: 28,
+      y: 15,
+      color: 'cyan'
     },
     {
-      icon: Search,
-      label: 'Validator',
-      sublabel: 'Cross-Check',
-      x: 57,
-      y: 50
+      icon: ImageIcon,
+      label: 'Image Input',
+      sublabel: 'Vision Data',
+      x: 28,
+      y: 40,
+      color: 'purple'
     },
     {
-      icon: Sparkles,
-      label: 'Synthesizer',
-      sublabel: 'Generate Result',
-      x: 74,
-      y: 50
+      icon: Mic,
+      label: 'Voice Input',
+      sublabel: 'Audio Data',
+      x: 28,
+      y: 65,
+      color: 'pink'
+    },
+    {
+      icon: Database,
+      label: 'RAG Retrieval',
+      sublabel: 'Knowledge Base',
+      x: 28,
+      y: 90,
+      color: 'emerald'
+    },
+    {
+      icon: Layers,
+      label: 'Memory',
+      sublabel: 'Context Store',
+      x: 47,
+      y: 30,
+      color: 'orange'
+    },
+    {
+      icon: BookOpen,
+      label: 'Context',
+      sublabel: 'History & State',
+      x: 47,
+      y: 70,
+      color: 'amber'
+    },
+    {
+      icon: Brain,
+      label: 'LLM Core',
+      sublabel: 'AI Processing',
+      x: 68,
+      y: 50,
+      color: 'violet'
     },
     {
       icon: CheckCircle,
-      label: 'Output',
-      sublabel: 'Return Answer',
-      x: 91,
-      y: 50
+      label: 'Response',
+      sublabel: 'Output Generated',
+      x: 90,
+      y: 50,
+      color: 'emerald'
     }
   ];
 
   const edges = [
-    { from: 0, to: 1, fromY: 50, toY: 50 },
-    { from: 1, to: 2, fromY: 50, toY: 20 },
-    { from: 1, to: 3, fromY: 50, toY: 80 },
-    { from: 2, to: 4, fromY: 20, toY: 50 },
-    { from: 3, to: 4, fromY: 80, toY: 50 },
-    { from: 4, to: 5, fromY: 50, toY: 50 },
-    { from: 5, to: 6, fromY: 50, toY: 50 }
+    // Input to multimodal sources
+    { from: 0, to: 1, fromY: 50, toY: 15 },   // 0
+    { from: 0, to: 2, fromY: 50, toY: 40 },   // 1
+    { from: 0, to: 3, fromY: 50, toY: 65 },   // 2
+    { from: 0, to: 4, fromY: 50, toY: 90 },   // 3
+
+    // Multimodal to memory/context
+    { from: 1, to: 5, fromY: 15, toY: 30 },   // 4
+    { from: 2, to: 5, fromY: 40, toY: 30 },   // 5
+    { from: 3, to: 6, fromY: 65, toY: 70 },   // 6
+    { from: 4, to: 6, fromY: 90, toY: 70 },   // 7
+
+    // Memory/context to LLM
+    { from: 5, to: 7, fromY: 30, toY: 50 },   // 8
+    { from: 6, to: 7, fromY: 70, toY: 50 },   // 9
+
+    // LLM to output
+    { from: 7, to: 8, fromY: 50, toY: 50 }    // 10
   ];
 
   const getNodeStatus = (index: number) => {
@@ -163,12 +200,97 @@ export default function WorkflowAnimation() {
     return 'idle';
   };
 
-  return (
-    <div ref={sectionRef} className="w-full max-w-7xl mx-auto mt-8 md:mt-12 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-700/50 rounded-2xl shadow-elevation-2 overflow-hidden">
-      <div className="relative w-full h-[280px] sm:h-[320px] md:h-[360px] p-4 sm:p-6 md:p-8">
-        <div className="relative w-full h-full" style={{ transform: 'scale(1)', transformOrigin: 'center center' }}>
+  const getNodeColorClasses = (color: string, status: string) => {
+    const colors: Record<string, { border: string; shadow: string; icon: string; text: string }> = {
+      blue: {
+        border: 'border-brand-blue-mid',
+        shadow: 'shadow-brand-blue-mid/50',
+        icon: 'text-brand-blue-mid',
+        text: 'text-brand-blue-mid'
+      },
+      cyan: {
+        border: 'border-brand-teal-mid',
+        shadow: 'shadow-brand-teal-mid/50',
+        icon: 'text-brand-teal-mid',
+        text: 'text-brand-teal-mid'
+      },
+      purple: {
+        border: 'border-purple-500',
+        shadow: 'shadow-purple-500/50',
+        icon: 'text-purple-400',
+        text: 'text-purple-400'
+      },
+      pink: {
+        border: 'border-pink-500',
+        shadow: 'shadow-pink-500/50',
+        icon: 'text-pink-400',
+        text: 'text-pink-400'
+      },
+      emerald: {
+        border: 'border-brand-emerald-mid',
+        shadow: 'shadow-brand-emerald-mid/50',
+        icon: 'text-brand-emerald-mid',
+        text: 'text-brand-emerald-mid'
+      },
+      orange: {
+        border: 'border-orange-500',
+        shadow: 'shadow-orange-500/50',
+        icon: 'text-orange-400',
+        text: 'text-orange-400'
+      },
+      amber: {
+        border: 'border-brand-amber-mid',
+        shadow: 'shadow-brand-amber-mid/50',
+        icon: 'text-brand-amber-mid',
+        text: 'text-brand-amber-mid'
+      },
+      violet: {
+        border: 'border-violet-500',
+        shadow: 'shadow-violet-500/50',
+        icon: 'text-violet-400',
+        text: 'text-violet-400'
+      }
+    };
 
+    if (status === 'completed') {
+      return {
+        border: 'border-brand-emerald-mid',
+        shadow: 'shadow-lg shadow-brand-emerald-mid/30',
+        icon: 'text-brand-emerald-mid',
+        text: 'text-brand-emerald-mid'
+      };
+    }
+
+    if (status === 'active') {
+      return {
+        border: colors[color].border,
+        shadow: `shadow-lg ${colors[color].shadow}`,
+        icon: colors[color].icon,
+        text: colors[color].text
+      };
+    }
+
+    return {
+      border: 'border-slate-600',
+      shadow: '',
+      icon: 'text-slate-400',
+      text: 'text-slate-400'
+    };
+  };
+
+  return (
+    <div ref={sectionRef} className="w-full max-w-7xl mx-auto mt-8 md:mt-12 bg-gradient-to-br from-light-primary/95 to-light-secondary/95 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-brand-slate-light/30 dark:border-slate-700/50 rounded-2xl shadow-elevation-3 overflow-hidden backdrop-blur-sm">
+      <div className="relative w-full h-[400px] sm:h-[450px] md:h-[500px] p-4 sm:p-6 md:p-8">
+        <div className="relative w-full h-full">
+
+          {/* SVG Edges */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
+            <defs>
+              <linearGradient id="gradient-active" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#14b8a6" />
+                <stop offset="100%" stopColor="#10b981" />
+              </linearGradient>
+            </defs>
             {edges.map((edge, index) => {
               const fromNode = workflowNodes[edge.from];
               const toNode = workflowNodes[edge.to];
@@ -184,16 +306,14 @@ export default function WorkflowAnimation() {
               let pathD;
               if (isCurved) {
                 const dx = toX - fromX;
-                const dy = toY - fromY;
                 const controlDist = Math.abs(dx) * 0.6;
-
                 pathD = `M ${fromX},${fromY} C ${fromX + controlDist},${fromY} ${toX - controlDist},${toY} ${toX},${toY}`;
               } else {
                 pathD = `M ${fromX},${fromY} L ${toX},${toY}`;
               }
 
               const pathId = `edge-${index}`;
-              const strokeColor = status === 'completed' ? '#10b981' : status === 'active' ? '#14b8a6' : '#475569';
+              const strokeColor = status === 'completed' ? '#10b981' : status === 'active' ? '#14b8a6' : '#94a3b8';
 
               return (
                 <g key={index}>
@@ -202,12 +322,12 @@ export default function WorkflowAnimation() {
                     d={pathD}
                     fill="none"
                     stroke={strokeColor}
-                    strokeWidth={status === 'idle' ? '0.3' : '0.5'}
+                    strokeWidth={status === 'idle' ? '0.3' : '0.6'}
                     opacity={status === 'idle' ? '0.3' : '0.9'}
                     strokeLinecap="round"
                   />
                   {status === 'active' && (
-                    <circle r="0.6" fill="#14b8a6">
+                    <circle r="0.8" fill="#14b8a6" className="flow-particle">
                       <animateMotion dur="1.2s" repeatCount="indefinite">
                         <mpath href={`#${pathId}`} />
                       </animateMotion>
@@ -218,9 +338,11 @@ export default function WorkflowAnimation() {
             })}
           </svg>
 
+          {/* Nodes */}
           {workflowNodes.map((node, index) => {
             const status = getNodeStatus(index);
             const isVisible = activeNode >= index || completedNodes.includes(index);
+            const colorClasses = getNodeColorClasses(node.color, status);
 
             return (
               <div
@@ -236,45 +358,35 @@ export default function WorkflowAnimation() {
               >
                 <div className="flex flex-col items-center">
                   <div
-                    className={`relative bg-slate-800 rounded-lg transition-all duration-300 flex flex-col items-center justify-center min-w-[90px] ${
-                      status === 'active'
-                        ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50'
-                        : status === 'completed'
-                        ? 'border-2 border-emerald-500 shadow-lg shadow-emerald-500/30'
-                        : 'border-2 border-slate-600'
-                    }`}
+                    className={`relative bg-light-primary/90 dark:bg-slate-800 rounded-xl transition-all duration-300 flex flex-col items-center justify-center min-w-[85px] border-2 ${colorClasses.border} ${colorClasses.shadow}`}
                     style={{
-                      padding: '12px 16px'
+                      padding: '10px 14px'
                     }}
                   >
-                    <div className={`mb-1.5 ${
-                      status === 'active' ? 'text-cyan-400' : status === 'completed' ? 'text-emerald-400' : 'text-slate-400'
-                    }`}>
-                      <node.icon className="w-6 h-6" strokeWidth={2.5} />
+                    <div className={`mb-1.5 ${colorClasses.icon}`}>
+                      <node.icon className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />
                     </div>
 
-                    <div className={`text-xs font-bold mb-0.5 ${
-                      status === 'active' ? 'text-cyan-300' : status === 'completed' ? 'text-emerald-300' : 'text-slate-400'
-                    }`}>
+                    <div className={`text-[10px] sm:text-xs font-bold mb-0.5 ${colorClasses.text}`}>
                       {node.label}
                     </div>
 
-                    <div className="text-[10px] text-slate-500 whitespace-nowrap">
+                    <div className="text-[9px] text-text-light-secondary dark:text-slate-500 whitespace-nowrap">
                       {node.sublabel}
                     </div>
 
                     {status === 'active' && (
                       <>
-                        <div className="absolute inset-0 rounded-lg border-2 border-cyan-400 animate-ping opacity-75"></div>
-                        <div className="absolute -top-1.5 -right-1.5 flex items-center gap-1 bg-cyan-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">
+                        <div className={`absolute inset-0 rounded-xl border-2 ${colorClasses.border} animate-ping opacity-75`}></div>
+                        <div className={`absolute -top-1.5 -right-1.5 flex items-center gap-1 ${colorClasses.border} ${colorClasses.icon} bg-light-primary dark:bg-slate-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full border`}>
                           <Zap className="w-2.5 h-2.5" />
                         </div>
                       </>
                     )}
 
                     {status === 'completed' && (
-                      <div className="absolute -top-1.5 -right-1.5 bg-emerald-500 rounded-full p-0.5">
-                        <CheckCircle className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                      <div className="absolute -top-1.5 -right-1.5 bg-brand-emerald-mid rounded-full p-0.5">
+                        <CheckCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" strokeWidth={3} />
                       </div>
                     )}
                   </div>
@@ -286,16 +398,8 @@ export default function WorkflowAnimation() {
       </div>
 
       <style>{`
-        .edge-active {
-          filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.8));
-        }
-
-        .edge-completed {
-          filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.6));
-        }
-
         .flow-particle {
-          filter: drop-shadow(0 0 6px rgba(20, 184, 166, 1));
+          filter: drop-shadow(0 0 8px rgba(20, 184, 166, 1));
         }
       `}</style>
     </div>
