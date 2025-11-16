@@ -1,4 +1,4 @@
-import { Headphones, ShoppingCart, Calendar, HelpCircle, Users, Building2 } from 'lucide-react';
+import { Headphones, ShoppingCart, Calendar, HelpCircle, Users, Building2, Settings, TrendingUp } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function UseCases() {
@@ -77,6 +77,22 @@ export default function UseCases() {
       gradient: 'from-brand-cyan via-brand-teal to-brand-emerald',
       borderColor: 'brand-cyan',
     },
+    {
+      icon: Settings,
+      industry: 'Enterprise Custom',
+      title: 'Workflow Integration',
+      subtitle: 'Proprietary system automation',
+      gradient: 'from-brand-amber via-brand-orange to-brand-rose',
+      borderColor: 'brand-orange',
+    },
+    {
+      icon: TrendingUp,
+      industry: 'Marketing',
+      title: 'Video Ad Campaigns',
+      subtitle: 'Rapid A/B testing and personalization',
+      gradient: 'from-brand-emerald via-brand-teal to-brand-cyan',
+      borderColor: 'brand-teal',
+    },
   ];
 
   return (
@@ -93,7 +109,7 @@ export default function UseCases() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 max-w-7xl mx-auto px-4">
           {cases.map((useCase, index) => (
             <div
               key={index}

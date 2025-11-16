@@ -38,10 +38,10 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-5xl mx-auto overflow-visible">
-          <div className="scroll-reveal inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 backdrop-blur-md px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full border border-purple-500/30 dark:border-pink-500/30 mb-4 sm:mb-6 md:mb-8 shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-pink-500/30 hover:border-pink-500/50 transition-all duration-500 shimmer-effect" aria-label="Next-Generation AI Agent Technology">
+          <div className="scroll-reveal inline-flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 backdrop-blur-md px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 rounded-full border border-purple-500/30 dark:border-pink-500/30 mb-4 sm:mb-6 md:mb-8 shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-pink-500/30 hover:border-pink-500/50 transition-all duration-500 shimmer-effect" aria-label="Comprehensive AI Solutions for Business Transformation">
             <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-purple-500 dark:text-pink-400 animate-pulse" aria-hidden="true" />
             <span className="text-[10px] sm:text-xs md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 dark:from-purple-400 dark:via-pink-400 dark:to-blue-400">
-              Next-Generation AI Agent Technology
+              Comprehensive AI Solutions for Business Transformation
             </span>
           </div>
 
@@ -56,7 +56,7 @@ export default function Hero() {
           </h1>
 
           <p className="scroll-reveal text-sm sm:text-base md:text-lg lg:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12 leading-relaxed px-3 sm:px-4 font-medium" style={{ animationDelay: '0.2s' }}>
-            Transform your business with AI voice agents, conversational chat bots, AI avatars, and complete workflow automation. Available 24/7, multilingual, and seamlessly integrated with your systems.
+            Comprehensive AI solutions designed to automate, enhance, and transform every aspect of your business operations. From voice agents and chat bots to custom enterprise solutions and AI-powered marketing—personalized for your needs, available 24/7.
           </p>
 
           <div className="scroll-reveal flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 md:mb-16 px-4" style={{ animationDelay: '0.3s' }}>
