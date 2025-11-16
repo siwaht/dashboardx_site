@@ -190,7 +190,8 @@ export default function AIAgentArchitecture() {
       sublabel: 'User Query',
       x: 8,
       y: 50,
-      color: 'from-slate-500 to-slate-600',
+      color: 'from-slate-400 to-slate-500',
+      bgColor: 'bg-gradient-to-br from-slate-700/80 to-slate-800/80',
       rounded: true
     },
     {
@@ -199,7 +200,8 @@ export default function AIAgentArchitecture() {
       sublabel: 'Orchestration',
       x: 50,
       y: 50,
-      color: 'from-cyan-500 to-blue-600',
+      color: 'from-cyan-400 to-blue-500',
+      bgColor: 'bg-gradient-to-br from-cyan-900/50 to-blue-900/50',
       central: true,
       rounded: false
     },
@@ -210,6 +212,7 @@ export default function AIAgentArchitecture() {
       x: 33,
       y: 18,
       color: 'from-violet-400 to-fuchsia-500',
+      bgColor: 'bg-gradient-to-br from-violet-900/40 to-fuchsia-900/40',
       rounded: true
     },
     {
@@ -218,7 +221,8 @@ export default function AIAgentArchitecture() {
       sublabel: 'Memory Cache',
       x: 67,
       y: 18,
-      color: 'from-blue-400 to-blue-500',
+      color: 'from-blue-400 to-sky-500',
+      bgColor: 'bg-gradient-to-br from-blue-900/40 to-sky-900/40',
       rounded: true
     },
     {
@@ -227,7 +231,8 @@ export default function AIAgentArchitecture() {
       sublabel: 'Memory Store',
       x: 33,
       y: 82,
-      color: 'from-indigo-400 to-indigo-500',
+      color: 'from-indigo-400 to-purple-500',
+      bgColor: 'bg-gradient-to-br from-indigo-900/40 to-purple-900/40',
       rounded: true
     },
     {
@@ -237,6 +242,7 @@ export default function AIAgentArchitecture() {
       x: 67,
       y: 82,
       color: 'from-emerald-400 to-teal-500',
+      bgColor: 'bg-gradient-to-br from-emerald-900/40 to-teal-900/40',
       rounded: true
     },
     {
@@ -244,10 +250,10 @@ export default function AIAgentArchitecture() {
       label: 'Guardrails',
       sublabel: 'Safety & Policy',
       x: 50,
-      y: 50,
+      y: 17,
       color: 'from-amber-400 to-orange-500',
-      outer: true,
-      rounded: false
+      bgColor: 'bg-gradient-to-br from-amber-900/40 to-orange-900/40',
+      rounded: true
     },
     {
       icon: Code2,
@@ -256,6 +262,7 @@ export default function AIAgentArchitecture() {
       x: 87,
       y: 35,
       color: 'from-cyan-400 to-sky-500',
+      bgColor: 'bg-gradient-to-br from-cyan-900/40 to-sky-900/40',
       rounded: true
     },
     {
@@ -265,6 +272,7 @@ export default function AIAgentArchitecture() {
       x: 87,
       y: 65,
       color: 'from-pink-400 to-rose-500',
+      bgColor: 'bg-gradient-to-br from-pink-900/40 to-rose-900/40',
       rounded: true
     }
   ];
@@ -275,6 +283,7 @@ export default function AIAgentArchitecture() {
     { from: 1, to: 3 },
     { from: 1, to: 4 },
     { from: 1, to: 5 },
+    { from: 1, to: 6 },
     { from: 1, to: 7 },
     { from: 1, to: 8 }
   ];
@@ -394,45 +403,8 @@ export default function AIAgentArchitecture() {
           {architectureNodes.map((node, index) => {
             const status = getNodeStatus(index);
             const isCentral = node.central;
-            const isOuter = node.outer;
             const isRounded = node.rounded !== false;
-
-            if (isOuter) {
-              return (
-                <div
-                  key={index}
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
-                  style={{
-                    left: `${node.x}%`,
-                    top: `${node.y}%`,
-                    zIndex: 5
-                  }}
-                >
-                  <div
-                    className={`relative border-2 border-dashed transition-all duration-500 flex flex-col items-center justify-center ${
-                      status === 'active'
-                        ? 'border-amber-400 shadow-lg shadow-amber-400/30'
-                        : status === 'processing'
-                        ? 'border-amber-400 shadow-lg shadow-amber-400/30'
-                        : status === 'completed'
-                        ? 'border-emerald-500 shadow-lg shadow-emerald-500/20'
-                        : 'border-slate-600/50'
-                    }`}
-                    style={{
-                      width: '240px',
-                      height: '180px',
-                      borderRadius: '12px'
-                    }}
-                  >
-                    {status === 'active' && (
-                      <div className="absolute top-2 right-2">
-                        <Shield className="w-4 h-4 text-amber-400 animate-pulse" strokeWidth={2} />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            }
+            const bgGradient = node.bgColor || 'bg-slate-800';
 
             return (
               <div
@@ -446,7 +418,7 @@ export default function AIAgentArchitecture() {
               >
                 <div className="flex flex-col items-center">
                   <div
-                    className={`relative bg-slate-800 transition-all duration-500 flex flex-col items-center justify-center ${
+                    className={`relative ${bgGradient} backdrop-blur-sm transition-all duration-500 flex flex-col items-center justify-center ${
                       isRounded ? 'rounded-2xl' : 'rounded-lg'
                     } ${
                       isCentral ? 'w-[110px] xs:w-[120px] sm:w-[140px] md:w-[155px]' : 'w-[68px] xs:w-[75px] sm:w-[88px] md:w-[98px]'
@@ -457,7 +429,7 @@ export default function AIAgentArchitecture() {
                         ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50'
                         : status === 'completed'
                         ? 'border-2 border-emerald-500 shadow-lg shadow-emerald-500/30'
-                        : 'border-2 border-slate-600'
+                        : 'border-2 border-slate-600/50'
                     }`}
                     style={{
                       padding: isCentral ? '14px 16px' : '7px 9px',
