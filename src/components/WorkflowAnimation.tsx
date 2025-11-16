@@ -9,7 +9,7 @@ export default function WorkflowAnimation() {
   const [processingNodes, setProcessingNodes] = useState<number[]>([]);
   const [nodeProgress, setNodeProgress] = useState<Record<number, number>>({});
   const [currentStageLabel, setCurrentStageLabel] = useState('');
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const animationTimers = useRef<NodeJS.Timeout[]>([]);
 
@@ -17,13 +17,15 @@ export default function WorkflowAnimation() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            startAnimation();
+          if (entry.isIntersecting && !isAnimating) {
+            setIsAnimating(true);
+            startAnimationLoop();
+          } else if (!entry.isIntersecting && isAnimating) {
+            stopAnimation();
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -32,9 +34,34 @@ export default function WorkflowAnimation() {
 
     return () => {
       observer.disconnect();
-      animationTimers.current.forEach(timer => clearTimeout(timer));
+      stopAnimation();
     };
-  }, [hasAnimated]);
+  }, [isAnimating]);
+
+  const stopAnimation = () => {
+    animationTimers.current.forEach(timer => clearTimeout(timer));
+    animationTimers.current = [];
+    setIsAnimating(false);
+  };
+
+  const startAnimationLoop = () => {
+    startAnimation();
+    // Loop the animation every 11 seconds
+    const loopTimer = setTimeout(() => {
+      resetAnimation();
+      startAnimationLoop();
+    }, 11000);
+    animationTimers.current.push(loopTimer);
+  };
+
+  const resetAnimation = () => {
+    setActiveNode(-1);
+    setCompletedNodes([]);
+    setActiveEdges([]);
+    setCompletedEdges([]);
+    setProcessingNodes([]);
+    setCurrentStageLabel('');
+  };
 
   const startAnimation = () => {
     animationTimers.current = [];
@@ -325,14 +352,12 @@ export default function WorkflowAnimation() {
 
           {workflowNodes.map((node, index) => {
             const status = getNodeStatus(index);
-            const isVisible = activeNode >= index || completedNodes.includes(index);
+            const isVisible = true; // Always show all nodes in n8n style
 
             return (
               <div
                 key={index}
-                className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
-                  isVisible ? 'opacity-100' : 'opacity-20'
-                }`}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
                 style={{
                   left: `${node.x}%`,
                   top: `${node.y}%`,
