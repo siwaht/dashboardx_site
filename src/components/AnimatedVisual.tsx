@@ -1,12 +1,26 @@
 import { BarChart3, PieChart, MapPin, TrendingUp, DollarSign } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 
 export default function AnimatedVisual() {
   const [typedText, setTypedText] = useState('');
   const [showResults, setShowResults] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
   const fullText = 'Show me sales trends for Project Alpha in Q4...';
+  const isAnimatingRef = useRef(false);
+  const timersRef = useRef<NodeJS.Timeout[]>([]);
 
-  useEffect(() => {
+  const clearAllTimers = useCallback(() => {
+    timersRef.current.forEach(timer => clearTimeout(timer));
+    timersRef.current = [];
+  }, []);
+
+  const startAnimation = useCallback(() => {
+    if (isAnimatingRef.current) return;
+
+    isAnimatingRef.current = true;
+    setTypedText('');
+    setShowResults(false);
+
     let currentIndex = 0;
     const typingInterval = setInterval(() => {
       if (currentIndex <= fullText.length) {
@@ -14,12 +28,35 @@ export default function AnimatedVisual() {
         currentIndex++;
       } else {
         clearInterval(typingInterval);
-        setTimeout(() => setShowResults(true), 500);
+        const showTimer = setTimeout(() => {
+          setShowResults(true);
+          setAnimationKey(prev => prev + 1);
+        }, 500);
+        timersRef.current.push(showTimer);
       }
     }, 50);
 
-    return () => clearInterval(typingInterval);
-  }, []);
+    const resetTimer = setTimeout(() => {
+      isAnimatingRef.current = false;
+      startAnimation();
+    }, 6500);
+
+    timersRef.current.push(resetTimer);
+
+    return () => {
+      clearInterval(typingInterval);
+      clearAllTimers();
+    };
+  }, [fullText, clearAllTimers]);
+
+  useEffect(() => {
+    startAnimation();
+
+    return () => {
+      clearAllTimers();
+      isAnimatingRef.current = false;
+    };
+  }, [startAnimation, clearAllTimers]);
 
   return (
     <div className="w-full max-w-5xl mx-auto mt-6 sm:mt-8 md:mt-12 bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-xl sm:rounded-2xl relative shadow-elevation-2 overflow-auto">
@@ -30,7 +67,7 @@ export default function AnimatedVisual() {
         </div>
 
         {showResults && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 mt-3 sm:mt-4 md:mt-6 pb-4">
+          <div key={animationKey} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 mt-3 sm:mt-4 md:mt-6 pb-4">
             <div
               className="bg-slate-800/70 backdrop-blur-sm border border-slate-700 rounded-xl p-3 md:p-4 flex flex-col animate-fade-in-up h-[140px] sm:h-[160px]"
               style={{ animationDelay: '0.1s', animationFillMode: 'both' }}

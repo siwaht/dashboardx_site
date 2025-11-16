@@ -122,7 +122,7 @@ export default function AIAgentArchitecture() {
     animationTimers.current.push(setTimeout(() => {
       setCurrentStageLabel('');
       setActiveNode(-1);
-    }, 7000));
+    }, 6800));
   }, [stopAnimation, resetAnimation]);
 
   const startAnimationLoop = useCallback(() => {
@@ -133,7 +133,7 @@ export default function AIAgentArchitecture() {
     const loop = () => {
       if (!isAnimatingRef.current) return;
       startAnimation();
-      animationTimers.current.push(setTimeout(loop, 7800));
+      animationTimers.current.push(setTimeout(loop, 7500));
     };
 
     loop();
