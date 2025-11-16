@@ -1,4 +1,4 @@
-import { Play, Database, Search, FileText, GitBranch, CheckCircle, Sparkles, Zap } from 'lucide-react';
+import { Play, Database, Search, FileText, GitBranch, CheckCircle, Sparkles, Zap, Loader2, Activity } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 
 export default function WorkflowAnimation() {
@@ -6,8 +6,12 @@ export default function WorkflowAnimation() {
   const [completedNodes, setCompletedNodes] = useState<number[]>([]);
   const [activeEdges, setActiveEdges] = useState<number[]>([]);
   const [completedEdges, setCompletedEdges] = useState<number[]>([]);
+  const [processingNodes, setProcessingNodes] = useState<number[]>([]);
+  const [nodeProgress, setNodeProgress] = useState<Record<number, number>>({});
+  const [currentStageLabel, setCurrentStageLabel] = useState('');
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const animationTimers = useRef<NodeJS.Timeout[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,67 +30,100 @@ export default function WorkflowAnimation() {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      animationTimers.current.forEach(timer => clearTimeout(timer));
+    };
   }, [hasAnimated]);
 
   const startAnimation = () => {
-    setTimeout(() => setActiveNode(0), 300);
+    animationTimers.current = [];
 
-    setTimeout(() => {
+    // Start node
+    animationTimers.current.push(setTimeout(() => {
+      setActiveNode(0);
+      setCurrentStageLabel('Receiving user query...');
+      setProcessingNodes([0]);
+    }, 300));
+
+    animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0]);
+      setProcessingNodes([]);
       setActiveEdges([0]);
-    }, 1200);
+    }, 1200));
 
-    setTimeout(() => {
+    // Router node
+    animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0]);
       setActiveNode(1);
-    }, 1800);
+      setCurrentStageLabel('Analyzing query and routing...');
+      setProcessingNodes([1]);
+    }, 1800));
 
-    setTimeout(() => {
+    animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1]);
+      setProcessingNodes([]);
       setActiveEdges([1, 2]);
-    }, 2700);
+      setCurrentStageLabel('Dispatching to specialized agents...');
+    }, 2700));
 
-    setTimeout(() => {
+    // Parallel agent processing
+    animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2]);
       setActiveNode(2);
+      setProcessingNodes([2, 3]);
+      setCurrentStageLabel('Agents working in parallel...');
       setTimeout(() => setActiveNode(3), 100);
-    }, 3300);
+    }, 3300));
 
-    setTimeout(() => {
+    // Validator receives data from both agents
+    animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3]);
+      setProcessingNodes([]);
       setActiveEdges([3, 4]);
-    }, 4200);
+    }, 4500));
 
-    setTimeout(() => {
+    animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2, 3, 4]);
       setActiveNode(4);
-    }, 4800);
+      setCurrentStageLabel('Cross-checking and validating data...');
+      setProcessingNodes([4]);
+    }, 5100));
 
-    setTimeout(() => {
+    // Synthesizer
+    animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4]);
+      setProcessingNodes([]);
       setActiveEdges([5]);
-    }, 5700);
+    }, 6200));
 
-    setTimeout(() => {
+    animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2, 3, 4, 5]);
       setActiveNode(5);
-    }, 6300);
+      setCurrentStageLabel('Synthesizing final response...');
+      setProcessingNodes([5]);
+    }, 6800));
 
-    setTimeout(() => {
+    // Output
+    animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4, 5]);
+      setProcessingNodes([]);
       setActiveEdges([6]);
-    }, 7200);
+    }, 7900));
 
-    setTimeout(() => {
+    animationTimers.current.push(setTimeout(() => {
       setCompletedEdges([0, 1, 2, 3, 4, 5, 6]);
       setActiveNode(6);
-    }, 7800);
+      setCurrentStageLabel('Delivering result!');
+      setProcessingNodes([6]);
+    }, 8500));
 
-    setTimeout(() => {
+    animationTimers.current.push(setTimeout(() => {
       setCompletedNodes([0, 1, 2, 3, 4, 5, 6]);
+      setProcessingNodes([]);
       setActiveNode(-1);
-    }, 8700);
+      setCurrentStageLabel('');
+    }, 9600));
   };
 
   const workflowNodes = [
@@ -154,6 +191,7 @@ export default function WorkflowAnimation() {
   const getNodeStatus = (index: number) => {
     if (completedNodes.includes(index)) return 'completed';
     if (activeNode === index) return 'active';
+    if (processingNodes.includes(index)) return 'processing';
     return 'idle';
   };
 
@@ -165,10 +203,42 @@ export default function WorkflowAnimation() {
 
   return (
     <div ref={sectionRef} className="w-full max-w-7xl mx-auto mt-8 md:mt-12 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-700/50 rounded-xl sm:rounded-2xl shadow-elevation-2 overflow-hidden">
+      {currentStageLabel && (
+        <div className="px-4 sm:px-6 pt-4 sm:pt-5 md:pt-6">
+          <div className="flex items-center justify-center gap-2 text-cyan-400 animate-pulse">
+            <Activity className="w-4 h-4" />
+            <span className="text-xs sm:text-sm font-medium">{currentStageLabel}</span>
+          </div>
+        </div>
+      )}
       <div className="relative w-full h-[300px] xs:h-[340px] sm:h-[360px] md:h-[400px] lg:h-[440px] p-4 sm:p-5 md:p-6 lg:p-8">
+        {/* Animated background grid */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px)',
+            backgroundSize: '20px 20px',
+            animation: 'grid-flow 20s linear infinite'
+          }}></div>
+        </div>
         <div className="relative w-full h-full">
 
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" style={{ zIndex: 1 }}>
+            <defs>
+              <linearGradient id="activeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
+                <stop offset="50%" stopColor="#14b8a6" stopOpacity="1" />
+                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.3" />
+                <animate attributeName="x1" values="0%;100%;0%" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="x2" values="100%;200%;100%" dur="2s" repeatCount="indefinite" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
             {edges.map((edge, index) => {
               const fromNode = workflowNodes[edge.from];
               const toNode = workflowNodes[edge.to];
@@ -193,21 +263,57 @@ export default function WorkflowAnimation() {
 
               const pathId = `edge-${index}`;
               const strokeColor = status === 'completed' ? '#10b981' : status === 'active' ? '#14b8a6' : '#475569';
+              const strokeWidth = status === 'active' ? '0.9' : status === 'completed' ? '0.7' : '0.4';
 
               return (
                 <g key={index}>
+                  {/* Background glow for active edges */}
+                  {status === 'active' && (
+                    <path
+                      d={pathD}
+                      fill="none"
+                      stroke="#14b8a6"
+                      strokeWidth="2"
+                      opacity="0.3"
+                      strokeLinecap="round"
+                      filter="url(#glow)"
+                    />
+                  )}
+                  {/* Main edge path */}
                   <path
                     id={pathId}
                     d={pathD}
                     fill="none"
-                    stroke={strokeColor}
-                    strokeWidth={status === 'idle' ? '0.4' : '0.7'}
+                    stroke={status === 'active' ? 'url(#activeGradient)' : strokeColor}
+                    strokeWidth={strokeWidth}
                     opacity={status === 'idle' ? '0.4' : '1'}
                     strokeLinecap="round"
+                    className={status === 'active' ? 'animate-pulse-subtle' : ''}
                   />
+                  {/* Multiple data packets for active edges */}
                   {status === 'active' && (
-                    <circle r="0.6" fill="#14b8a6">
-                      <animateMotion dur="1.2s" repeatCount="indefinite">
+                    <>
+                      <circle r="0.8" fill="#06b6d4" opacity="0.8">
+                        <animateMotion dur="1.5s" repeatCount="indefinite">
+                          <mpath href={`#${pathId}`} />
+                        </animateMotion>
+                      </circle>
+                      <circle r="0.6" fill="#14b8a6" opacity="0.9">
+                        <animateMotion dur="1.5s" begin="0.5s" repeatCount="indefinite">
+                          <mpath href={`#${pathId}`} />
+                        </animateMotion>
+                      </circle>
+                      <circle r="0.7" fill="#22d3ee" opacity="0.7">
+                        <animateMotion dur="1.5s" begin="1s" repeatCount="indefinite">
+                          <mpath href={`#${pathId}`} />
+                        </animateMotion>
+                      </circle>
+                    </>
+                  )}
+                  {/* Single particle for completed edges */}
+                  {status === 'completed' && (
+                    <circle r="0.5" fill="#10b981" opacity="0.6">
+                      <animateMotion dur="3s" repeatCount="indefinite">
                         <mpath href={`#${pathId}`} />
                       </animateMotion>
                     </circle>
@@ -235,8 +341,10 @@ export default function WorkflowAnimation() {
               >
                 <div className="flex flex-col items-center">
                   <div
-                    className={`relative bg-slate-800 rounded-md sm:rounded-lg transition-all duration-300 flex flex-col items-center justify-center min-w-[65px] xs:min-w-[72px] sm:min-w-[85px] md:min-w-[95px] ${
+                    className={`relative bg-slate-800 rounded-md sm:rounded-lg transition-all duration-500 flex flex-col items-center justify-center min-w-[65px] xs:min-w-[72px] sm:min-w-[85px] md:min-w-[95px] ${
                       status === 'active'
+                        ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50 scale-110'
+                        : status === 'processing'
                         ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/50'
                         : status === 'completed'
                         ? 'border-2 border-emerald-500 shadow-lg shadow-emerald-500/30'
@@ -246,14 +354,28 @@ export default function WorkflowAnimation() {
                       padding: '6px 8px',
                     }}
                   >
-                    <div className={`mb-1 sm:mb-1.5 ${
-                      status === 'active' ? 'text-cyan-400' : status === 'completed' ? 'text-emerald-400' : 'text-slate-400'
+                    {/* Particle effects around active nodes */}
+                    {status === 'active' && (
+                      <>
+                        <div className="absolute -top-2 -left-2 w-1 h-1 bg-cyan-400 rounded-full animate-float-particle"></div>
+                        <div className="absolute -top-1 -right-2 w-1.5 h-1.5 bg-blue-400 rounded-full animate-float-particle" style={{ animationDelay: '0.3s' }}></div>
+                        <div className="absolute -bottom-2 -left-1 w-1 h-1 bg-teal-400 rounded-full animate-float-particle" style={{ animationDelay: '0.6s' }}></div>
+                        <div className="absolute -bottom-1 -right-1 w-1 h-1 bg-cyan-300 rounded-full animate-float-particle" style={{ animationDelay: '0.9s' }}></div>
+                      </>
+                    )}
+
+                    <div className={`mb-1 sm:mb-1.5 transition-all duration-300 ${
+                      status === 'active' || status === 'processing' ? 'text-cyan-400 animate-pulse' : status === 'completed' ? 'text-emerald-400' : 'text-slate-400'
                     }`}>
-                      <node.icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" strokeWidth={2.5} />
+                      {status === 'processing' ? (
+                        <Loader2 className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-spin" strokeWidth={2.5} />
+                      ) : (
+                        <node.icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-6 md:h-6" strokeWidth={2.5} />
+                      )}
                     </div>
 
                     <div className={`text-[10px] xs:text-[10px] sm:text-[11px] md:text-xs font-bold mb-0.5 text-center leading-tight ${
-                      status === 'active' ? 'text-cyan-300' : status === 'completed' ? 'text-emerald-300' : 'text-slate-400'
+                      status === 'active' || status === 'processing' ? 'text-cyan-300' : status === 'completed' ? 'text-emerald-300' : 'text-slate-400'
                     }`}>
                       {node.label}
                     </div>
@@ -262,19 +384,23 @@ export default function WorkflowAnimation() {
                       {node.sublabel}
                     </div>
 
-                    {status === 'active' && (
+                    {(status === 'active' || status === 'processing') && (
                       <>
                         <div className="absolute inset-0 rounded-md sm:rounded-lg border-2 border-cyan-400 animate-ping opacity-75"></div>
-                        <div className="absolute -top-1 -right-1 xs:-top-1.5 xs:-right-1.5 flex items-center gap-0.5 xs:gap-1 bg-cyan-500 text-white text-[7px] xs:text-[8px] sm:text-[9px] font-bold px-1 xs:px-1.5 py-0.5 rounded-full shadow-lg">
+                        <div className="absolute -inset-1 rounded-md sm:rounded-lg border border-cyan-400/30 animate-pulse"></div>
+                        <div className="absolute -top-1 -right-1 xs:-top-1.5 xs:-right-1.5 flex items-center gap-0.5 xs:gap-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-[7px] xs:text-[8px] sm:text-[9px] font-bold px-1 xs:px-1.5 py-0.5 rounded-full shadow-lg animate-pulse">
                           <Zap className="w-2 h-2 xs:w-2.5 xs:h-2.5" />
                         </div>
                       </>
                     )}
 
                     {status === 'completed' && (
-                      <div className="absolute -top-1 -right-1 xs:-top-1.5 xs:-right-1.5 bg-emerald-500 rounded-full p-0.5 shadow-lg">
-                        <CheckCircle className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-3.5 sm:h-3.5 text-white" strokeWidth={3} />
-                      </div>
+                      <>
+                        <div className="absolute -top-1 -right-1 xs:-top-1.5 xs:-right-1.5 bg-emerald-500 rounded-full p-0.5 shadow-lg animate-bounce-once">
+                          <CheckCircle className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-3.5 sm:h-3.5 text-white" strokeWidth={3} />
+                        </div>
+                        <div className="absolute inset-0 rounded-md sm:rounded-lg border border-emerald-400/20"></div>
+                      </>
                     )}
                   </div>
                 </div>
@@ -285,8 +411,48 @@ export default function WorkflowAnimation() {
       </div>
 
       <style>{`
+        @keyframes grid-flow {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(20px, 20px); }
+        }
+
+        @keyframes float-particle {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0;
+          }
+          50% {
+            transform: translate(var(--float-x, 10px), var(--float-y, -10px)) scale(1.5);
+            opacity: 1;
+          }
+        }
+
+        @keyframes bounce-once {
+          0%, 100% { transform: scale(1); }
+          25% { transform: scale(1.2); }
+          50% { transform: scale(0.9); }
+          75% { transform: scale(1.1); }
+        }
+
+        @keyframes pulse-subtle {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+
+        .animate-float-particle {
+          animation: float-particle 2s ease-in-out infinite;
+        }
+
+        .animate-bounce-once {
+          animation: bounce-once 0.6s ease-out;
+        }
+
+        .animate-pulse-subtle {
+          animation: pulse-subtle 2s ease-in-out infinite;
+        }
+
         .edge-active {
-          filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.8));
+          filter: drop-shadow(0 0 8px rgba(20, 184, 166, 0.9));
         }
 
         .edge-completed {
@@ -294,7 +460,7 @@ export default function WorkflowAnimation() {
         }
 
         .flow-particle {
-          filter: drop-shadow(0 0 6px rgba(20, 184, 166, 1));
+          filter: drop-shadow(0 0 8px rgba(6, 182, 212, 1));
         }
       `}</style>
     </div>
