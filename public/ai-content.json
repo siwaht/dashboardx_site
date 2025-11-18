@@ -2,41 +2,59 @@
   "site": {
     "name": "DashboardX",
     "description": "Enterprise AI Agent Platform",
-    "purpose": "Provide intelligent AI agents for business automation including voice agents, chat bots, AI avatars, and workflow automation",
+    "purpose": "Comprehensive AI solutions designed to automate, enhance, and transform every aspect of your business operations, including personalized customer experiences and marketing automation",
     "url": "https://dashboardx.com",
     "type": "SaaS Platform",
-    "industry": "Artificial Intelligence, Business Automation, Enterprise Software"
+    "industry": "Artificial Intelligence, Business Automation, Enterprise Software, Marketing Technology"
   },
   "services": [
     {
       "name": "Chat Agents",
-      "description": "Intelligent conversational bots that handle customer inquiries, support tickets, and lead qualification 24/7 with natural language understanding",
-      "features": ["24/7 availability", "Natural language processing", "Multi-channel support", "Lead qualification", "Support ticket handling"],
-      "use_cases": ["Customer support", "Sales assistance", "Lead generation", "FAQ automation"]
+      "description": "Intelligent conversational bots that handle customer inquiries, support tickets, and lead qualification 24/7, featuring natural language understanding",
+      "features": ["24/7 availability", "Natural language processing", "Multi-channel support", "Lead qualification", "Support ticket handling", "Instant responses"],
+      "use_cases": ["Customer support", "Sales assistance", "Lead generation", "FAQ automation"],
+      "target_audience": ["Customer service teams", "Sales departments", "E-commerce businesses"],
+      "key_benefits": ["Never miss a customer inquiry", "Qualify leads automatically", "Reduce response time to seconds"]
     },
     {
       "name": "Voice Calling Agents",
-      "description": "AI-powered voice agents that make and receive calls, schedule appointments, conduct surveys, and provide phone support with human-like conversation",
-      "features": ["Inbound and outbound calling", "Appointment scheduling", "Survey conducting", "Phone support", "Human-like conversation"],
-      "use_cases": ["Customer support calls", "Appointment booking", "Survey collection", "Sales outreach"]
+      "description": "AI-powered voice agents that make and receive calls, used for scheduling appointments, conducting surveys, and providing phone support with human-like conversation",
+      "features": ["Inbound and outbound calling", "Appointment scheduling", "Survey conducting", "Phone support", "Human-like conversation", "Call routing"],
+      "use_cases": ["Customer support calls", "Appointment booking", "Survey collection", "Sales outreach"],
+      "target_audience": ["Healthcare providers", "Service businesses", "Call centers"],
+      "key_benefits": ["Handle unlimited simultaneous calls", "Schedule appointments automatically", "Reduce call center costs by 70%"]
     },
     {
       "name": "AI Avatars",
       "description": "Lifelike digital representatives that provide personalized video interactions, product demonstrations, and virtual assistance with realistic expressions",
-      "features": ["Video interactions", "Product demonstrations", "Realistic expressions", "Personalization", "Virtual assistance"],
-      "use_cases": ["Product demos", "Training videos", "Customer onboarding", "Virtual representatives"]
+      "features": ["Video interactions", "Product demonstrations", "Realistic expressions", "Personalization", "Virtual assistance", "Multi-language support"],
+      "use_cases": ["Product demos", "Training videos", "Customer onboarding", "Virtual representatives"],
+      "target_audience": ["SaaS companies", "E-learning platforms", "Retail businesses"],
+      "key_benefits": ["Create engaging video content at scale", "Personalize customer interactions", "Reduce video production costs"]
+    },
+    {
+      "name": "Custom AI Agents",
+      "description": "Tailor-made AI solutions built from the ground up to handle unique and complex business processes or integrate with proprietary systems. Offers maximum flexibility and functional alignment",
+      "features": ["Custom workflow design", "Proprietary system integration", "Complex process automation", "Legacy system compatibility", "Bespoke AI model training", "Dedicated development team"],
+      "use_cases": ["Enterprise workflow automation", "Proprietary system integration", "Complex multi-step processes", "Industry-specific compliance automation"],
+      "target_audience": ["Enterprise clients", "Businesses with specialized needs", "Companies with legacy systems"],
+      "key_benefits": ["Handle unique business requirements", "Seamlessly integrate with existing infrastructure", "Maximum flexibility and control"]
     },
     {
       "name": "RAG Data Retrieval",
-      "description": "Retrieval-Augmented Generation technology that connects AI agents to your knowledge base, enabling accurate responses powered by actual business data and documents",
-      "features": ["Knowledge base integration", "Real-time data retrieval", "Source attribution", "Contextual responses", "Document analysis"],
-      "use_cases": ["Knowledge management", "Document search", "Data analysis", "Contextual Q&A"]
+      "description": "Retrieval-Augmented Generation (RAG) technology that connects agents to your knowledge base, enabling accurate responses powered by your actual business data and documents",
+      "features": ["Knowledge base integration", "Real-time data retrieval", "Source attribution", "Contextual responses", "Document analysis", "Vector search"],
+      "use_cases": ["Knowledge management", "Document search", "Data analysis", "Contextual Q&A"],
+      "target_audience": ["Knowledge-intensive businesses", "Professional services", "Technical support teams"],
+      "key_benefits": ["Responses backed by your actual data", "Transparent source attribution", "Always up-to-date information"]
     },
     {
-      "name": "Workflow Automation",
-      "description": "End-to-end process automation that connects your tools and streamlines operations with intelligent orchestration",
-      "features": ["Process automation", "Tool integration", "Intelligent orchestration", "Data flow management", "Task automation"],
-      "use_cases": ["Business process automation", "Data pipeline management", "Task orchestration", "System integration"]
+      "name": "AI Generated Video Ads",
+      "description": "Rapid creation of high-quality, personalized video advertisements using AI. Perfect for A/B testing, scaled marketing campaigns, and achieving fast time-to-market for new products",
+      "features": ["Rapid video generation", "Personalization at scale", "A/B testing support", "Multi-format output", "Brand customization", "Template library"],
+      "use_cases": ["Product launch campaigns", "A/B testing video ads", "Personalized marketing", "Social media advertising", "E-commerce product videos"],
+      "target_audience": ["Marketing teams", "E-commerce businesses", "Digital agencies", "Product managers"],
+      "key_benefits": ["Launch campaigns 10x faster", "Test multiple ad variations easily", "Reduce video production costs by 80%", "Improve conversion rates with personalization"]
     }
   ],
   "benefits": {

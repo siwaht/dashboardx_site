@@ -35,10 +35,10 @@ export default function AGUISection() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 px-2 sm:px-4">
             <h2 id="ag-ui-heading" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-text-light-primary dark:text-text-dark-primary tracking-tight">
-              RAG Data Retrieval
+              RAG Data Retrieval Technology
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-text-light-secondary dark:text-text-dark-secondary max-w-3xl mx-auto leading-relaxed">
-              Our advanced Retrieval-Augmented Generation system provides intelligent data access with real-time visualization of your AI's knowledge retrieval process.
+              Our advanced Retrieval-Augmented Generation (RAG) system connects agents to your knowledge base, enabling accurate responses powered by your actual business data with real-time visualization and source attribution.
             </p>
           </div>
 
@@ -48,10 +48,10 @@ export default function AGUISection() {
                 Smart Knowledge Access
               </h3>
               <p className="text-sm sm:text-base text-text-light-secondary dark:text-text-dark-secondary mb-4 sm:mb-6 leading-relaxed">
-                Our RAG system connects your AI agents to your knowledge base, databases, documents, and APIs, enabling them to provide accurate, contextual responses using your actual business data.
+                Our RAG (Retrieval-Augmented Generation) system connects your AI agents to your knowledge base, databases, documents, and APIs, enabling them to provide accurate, contextual responses using your actual business data—not generic training data.
               </p>
               <p className="text-sm sm:text-base text-text-light-secondary dark:text-text-dark-secondary leading-relaxed">
-                See which data sources were queried, how information is retrieved and synthesized, and track the complete decision path—ensuring accuracy and compliance.
+                See which data sources were queried, how information is retrieved and synthesized, and track the complete decision path with transparent source attribution—ensuring data-powered accuracy and compliance.
               </p>
             </div>
 

@@ -1,4 +1,4 @@
-import { MessageSquare, Phone, User, Workflow } from 'lucide-react';
+import { MessageSquare, Phone, User, Workflow, Settings, Video } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 export default function HowItWorks() {
@@ -32,26 +32,44 @@ export default function HowItWorks() {
     {
       icon: MessageSquare,
       title: 'Chat Agents',
-      description: 'Intelligent conversational bots that handle customer inquiries, support tickets, and lead qualification 24/7 with natural language understanding.',
+      description: 'Intelligent conversational bots that handle customer inquiries, support tickets, and lead qualification 24/7, featuring natural language understanding.',
       gradient: 'from-brand-indigo via-brand-blue to-brand-cyan',
+      category: 'Agent Core',
     },
     {
       icon: Phone,
       title: 'Voice Calling Agents',
-      description: 'AI-powered voice agents that make and receive calls, schedule appointments, conduct surveys, and provide phone support with human-like conversation.',
+      description: 'AI-powered voice agents that make and receive calls, used for scheduling appointments, conducting surveys, and providing phone support with human-like conversation.',
       gradient: 'from-brand-violet via-brand-purple to-brand-pink',
+      category: 'Agent Core',
     },
     {
       icon: User,
       title: 'AI Avatars',
       description: 'Lifelike digital representatives that provide personalized video interactions, product demonstrations, and virtual assistance with realistic expressions.',
       gradient: 'from-brand-pink via-brand-rose to-brand-orange',
+      category: 'Agent Core',
+    },
+    {
+      icon: Settings,
+      title: 'Custom AI Agents',
+      description: 'Tailor-made AI solutions built from the ground up to handle unique and complex business processes or integrate with proprietary systems. Offers maximum flexibility and functional alignment.',
+      gradient: 'from-brand-amber via-brand-orange to-brand-rose',
+      category: 'Specialized',
     },
     {
       icon: Workflow,
       title: 'RAG Data Retrieval',
-      description: 'Retrieval-Augmented Generation technology that connects your AI agents to your knowledge base, enabling accurate responses powered by your actual business data and documents.',
+      description: 'Retrieval-Augmented Generation (RAG) technology that connects agents to your knowledge base, enabling accurate responses powered by your actual business data and documents.',
       gradient: 'from-brand-cyan via-brand-teal to-brand-emerald',
+      category: 'Data/Tech',
+    },
+    {
+      icon: Video,
+      title: 'AI Generated Video Ads',
+      description: 'Rapid creation of high-quality, personalized video advertisements using AI. Perfect for A/B testing, scaled marketing campaigns, and achieving fast time-to-market for new products.',
+      gradient: 'from-brand-emerald via-brand-teal to-brand-cyan',
+      category: 'Marketing',
     },
   ];
 
@@ -72,20 +90,20 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto px-4">
           {services.map((service, index) => (
             <div key={index} className="scroll-reveal relative">
-              <div className="relative bg-light-secondary/90 dark:bg-dark-primary/90 p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-brand-slate-200/30 dark:border-brand-slate-700/30 hover:border-brand-purple dark:hover:border-brand-pink transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-purple hover:-translate-y-1 h-full">
-                <div className="flex items-center justify-center mb-6">
-                  <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-elevation-3 border-4 border-white/30`}>
-                    <service.icon className="w-10 h-10 text-white drop-shadow-lg" />
+              <div className="relative bg-light-secondary/90 dark:bg-dark-primary/90 p-6 sm:p-8 rounded-2xl md:rounded-3xl border border-brand-slate-200/30 dark:border-brand-slate-700/30 hover:border-brand-purple dark:hover:border-brand-pink transition-all duration-300 shadow-elevation-2 hover:shadow-elevation-purple hover:-translate-y-1 h-full flex flex-col">
+                <div className="flex items-center justify-center mb-5">
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-elevation-3 border-4 border-white/30`}>
+                    <service.icon className="w-8 h-8 text-white drop-shadow-lg" />
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-text-light-primary dark:text-text-dark-primary text-center">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 md:mb-3 text-text-light-primary dark:text-text-dark-primary text-center">
                   {service.title}
                 </h3>
-                <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-center text-sm sm:text-base md:text-lg font-medium">
+                <p className="text-text-light-secondary dark:text-text-dark-secondary leading-relaxed text-center text-sm sm:text-base font-medium flex-grow">
                   {service.description}
                 </p>
               </div>
