@@ -38,7 +38,6 @@ app.use((req, res, next) => {
 
 (async () => {
   registerRoutes(app);
-  await setupVite(app, app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -48,7 +47,12 @@ app.use((req, res, next) => {
   });
 
   const PORT = 5000;
-  app.listen(PORT, "0.0.0.0", () => {
+  const server = app.listen(PORT, "0.0.0.0", () => {
     log(`Server running on port ${PORT}`);
+  });
+
+  setupVite(app, server).catch((err) => {
+    console.error("Failed to setup Vite:", err);
+    process.exit(1);
   });
 })();
