@@ -9,7 +9,8 @@
     "start": "NODE_ENV=production tsx server/index.ts",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

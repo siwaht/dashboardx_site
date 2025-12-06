@@ -1,37 +1,22 @@
 import type { InsertDemoRequest, DemoRequest, InsertConsultationRequest, ConsultationRequest } from "../shared/schema.js";
+import { db } from "./db.js";
+import { demoRequests, consultationRequests } from "../shared/schema.js";
 
 export interface IStorage {
   createDemoRequest(data: InsertDemoRequest): Promise<DemoRequest>;
   createConsultationRequest(data: InsertConsultationRequest): Promise<ConsultationRequest>;
 }
 
-export class MemStorage implements IStorage {
-  private demoRequests: DemoRequest[] = [];
-  private consultationRequests: ConsultationRequest[] = [];
-
+export class DbStorage implements IStorage {
   async createDemoRequest(data: InsertDemoRequest): Promise<DemoRequest> {
-    const request: DemoRequest = {
-      id: crypto.randomUUID(),
-      ...data,
-      status: "pending",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-    this.demoRequests.push(request);
+    const [request] = await db.insert(demoRequests).values(data).returning();
     return request;
   }
 
   async createConsultationRequest(data: InsertConsultationRequest): Promise<ConsultationRequest> {
-    const request: ConsultationRequest = {
-      id: crypto.randomUUID(),
-      ...data,
-      status: "pending",
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-    this.consultationRequests.push(request);
+    const [request] = await db.insert(consultationRequests).values(data).returning();
     return request;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DbStorage();
