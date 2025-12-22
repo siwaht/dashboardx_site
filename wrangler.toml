@@ -1,0 +1,10 @@
+name = "dashboardx"
+main = "src/worker.js"
+compatibility_date = "2025-12-22"
+
+[env.production]
+route = "dashboardx.tiara.workers.dev"
+zone_name = "tiara.workers.dev"
+
+[assets]
+directory = "public"
