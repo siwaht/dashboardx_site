@@ -1,5 +1,5 @@
 import type { InsertDemoRequest, DemoRequest, InsertConsultationRequest, ConsultationRequest } from "../shared/schema.js";
-import { db } from "./db.js";
+import { getDb } from "./db.js";
 import { demoRequests, consultationRequests } from "../shared/schema.js";
 
 export interface IStorage {
@@ -9,11 +9,13 @@ export interface IStorage {
 
 export class DbStorage implements IStorage {
   async createDemoRequest(data: InsertDemoRequest): Promise<DemoRequest> {
+    const db = getDb();
     const [request] = await db.insert(demoRequests).values(data).returning();
     return request;
   }
 
   async createConsultationRequest(data: InsertConsultationRequest): Promise<ConsultationRequest> {
+    const db = getDb();
     const [request] = await db.insert(consultationRequests).values(data).returning();
     return request;
   }
